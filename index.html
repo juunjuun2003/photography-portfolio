@@ -30,7 +30,7 @@ nav{width:var(--page);height:72px;margin:auto;display:grid;grid-template-columns
 .navgroup{display:flex;align-items:center;gap:28px}.navgroup.right{justify-content:flex-end}
 nav a,nav button{border:0;padding:0;color:inherit;background:transparent;font-size:.61rem;font-weight:600;letter-spacing:.18em;text-decoration:none;text-transform:uppercase;cursor:pointer}
 nav a:hover,nav button:hover{opacity:.62}.brand{font:600 1.35rem var(--serif)!important;letter-spacing:-.02em!important;text-transform:none!important}
-.edit{padding:.48rem .72rem!important;border:1px solid currentColor!important;border-radius:999px!important}.menu{display:none}
+.edit{padding:.48rem .72rem!important;border:1px solid currentColor!important;border-radius:999px!important}.owner-only{display:none!important}.menu{display:none}
 .hero{position:relative;min-height:100svh;overflow:hidden;color:var(--white);background:var(--dark)}
 .hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;filter:grayscale(1) contrast(.93) brightness(.72);animation:zoom 15s ease-out both}
 @keyframes zoom{from{transform:scale(1.08)}to{transform:scale(1.02)}}
@@ -66,7 +66,7 @@ nav a:hover,nav button:hover{opacity:.62}.brand{font:600 1.35rem var(--serif)!im
 .dispatchInner{position:relative;z-index:2;min-height:100svh;padding:7rem 0;display:grid;grid-template-columns:1fr .8fr;gap:80px;align-items:center}
 .dispatch h2{margin:1rem 0 2rem;font:500 clamp(4.8rem,10vw,11rem)/.7 var(--serif);letter-spacing:-.08em}.dispatch .copy{max-width:650px;color:rgba(255,255,255,.76)}
 .aside{align-self:end;padding:2rem;border:1px solid rgba(255,255,255,.24);background:rgba(0,0,0,.18);backdrop-filter:blur(9px)}.aside p{margin:0;font-size:.7rem;letter-spacing:.16em;line-height:1.8;text-transform:uppercase}
-.about{padding:10rem 0;display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(50px,9vw,150px);align-items:center}.portrait{position:relative;min-height:720px;background:#cfc7bb}.portrait:before{content:"";position:absolute;z-index:2;inset:18px;border:1px solid rgba(255,255,255,.6)}
+.about{padding:10rem 0;display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(50px,9vw,150px);align-items:center}.portrait{position:relative;min-height:720px;overflow:hidden;background:#cfc7bb}.portrait:before{content:"";position:absolute;z-index:2;inset:18px;border:1px solid rgba(255,255,255,.6)}
 .portrait img{width:100%;height:100%;min-height:720px;object-fit:cover;filter:saturate(.78)}.about h2{margin:1.2rem 0 2rem;font:500 clamp(4.8rem,8vw,8rem)/.75 var(--serif);letter-spacing:-.07em}
 .aboutText>p:not(.eyebrow){max-width:680px;margin:0 0 1.4rem;color:var(--muted);font:400 clamp(1.25rem,1.8vw,1.75rem)/1.4 var(--serif)}
 .locations{margin-top:2.4rem;padding-top:1.4rem;display:flex;flex-wrap:wrap;gap:16px 28px;border-top:1px solid var(--line);font-size:.64rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
@@ -82,7 +82,7 @@ nav a:hover,nav button:hover{opacity:.62}.brand{font:600 1.35rem var(--serif)!im
 .links a{width:fit-content;padding-bottom:.25rem;border-bottom:1px solid var(--line);font-size:.73rem;font-weight:600;letter-spacing:.12em;text-decoration:none;text-transform:uppercase}
 footer{padding-top:4rem;display:flex;justify-content:space-between;gap:30px;align-items:end;border-top:1px solid var(--line);color:var(--muted);font-size:.61rem;letter-spacing:.14em;text-transform:uppercase}
 footer strong{color:var(--ink);font:600 2rem var(--serif);letter-spacing:-.03em;text-transform:none}
-.float{position:fixed;z-index:90;right:22px;bottom:22px}.floatBtn{position:relative;border:2px solid rgba(255,255,255,.75);border-radius:18px;padding:5px;color:var(--white);background:var(--dark);box-shadow:0 20px 55px rgba(0,0,0,.26);cursor:pointer}
+.float{position:fixed;z-index:90;right:22px;bottom:22px}.floatBtn{position:relative;overflow:hidden;border:2px solid rgba(255,255,255,.75);border-radius:18px;padding:5px;color:var(--white);background:var(--dark);box-shadow:0 20px 55px rgba(0,0,0,.26);cursor:pointer}
 .floatBtn img{width:auto;height:auto;max-width:92px;max-height:116px;border-radius:12px;object-fit:contain}.floatBtn span{position:absolute;right:-5px;bottom:-5px;padding:.48rem .7rem;border-radius:999px;color:var(--ink);background:#c8aa84;font-size:.56rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
 .pop{position:absolute;right:0;bottom:calc(100% + 12px);width:min(360px,calc(100vw - 32px));padding:1.4rem;border:1px solid rgba(255,255,255,.14);border-radius:18px;color:var(--white);background:rgba(17,16,14,.96);box-shadow:0 26px 80px rgba(0,0,0,.35);backdrop-filter:blur(16px);opacity:0;visibility:hidden;transform:translateY(12px);transition:.22s}
 .float.open .pop{opacity:1;visibility:visible;transform:none}.pop h3{margin:0 0 .7rem;font:500 2rem/.9 var(--serif)}.pop p{margin:0 0 1rem;color:rgba(255,255,255,.62);line-height:1.5}.pop a{display:block;margin-top:.55rem;padding:.8rem .9rem;border:1px solid rgba(255,255,255,.15);border-radius:999px;font-size:.72rem;text-decoration:none}
@@ -112,6 +112,27 @@ footer strong{color:var(--ink);font:600 2rem var(--serif);letter-spacing:-.03em;
 .customizerControls[hidden],.customizerLogin[hidden]{display:none}.studioIntro{margin:0 0 1.4rem;color:rgba(255,255,255,.62);line-height:1.55}.controlGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.control{padding:1rem;border:1px solid rgba(255,255,255,.11);border-radius:16px;background:rgba(255,255,255,.035)}.controlTop{display:flex;justify-content:space-between;gap:18px}.controlValue{color:#c8aa84;font-family:var(--serif);font-size:1.1rem;letter-spacing:0;text-transform:none}.controlWide{grid-column:1/-1}.studioActions{position:sticky;bottom:0;margin:1.4rem -1.4rem -1.4rem;padding:1rem 1.4rem;display:flex;flex-wrap:wrap;gap:.65rem;border-top:1px solid rgba(255,255,255,.12);background:rgba(21,19,16,.96);backdrop-filter:blur(16px)}.studioActions .primary{color:#15130f;background:#c8aa84;border-color:#c8aa84}.studioStatus{min-height:1.2em;margin:1rem 0 0;color:#c8aa84;font-size:.8rem}.customizerNote{margin:1rem 0 0;padding:1rem;border-left:2px solid #c8aa84;color:rgba(255,255,255,.6);background:rgba(255,255,255,.035);font-size:.78rem;line-height:1.55}
 @media(max-width:760px){.customizer{padding:0}.customizerShell{max-height:100vh;height:100vh;border:0;border-radius:0}.controlGrid{grid-template-columns:1fr}.controlWide{grid-column:auto}.studioActions{position:static}.customizerHead{padding:1rem}.customizerBody{padding:1rem}.studioActions{margin:1rem -1rem -1rem}}
 
+
+/* Complete owner website studio: animation, pictures and layout. */
+[data-layout-id]{position:relative;translate:var(--layout-x,0px) var(--layout-y,0px);scale:var(--layout-scale-x,1) var(--layout-scale-y,1);rotate:var(--layout-rotate,0deg);z-index:var(--layout-z,auto);transform-origin:center center}
+body.layout-edit-mode [data-layout-id]{outline:1px dashed rgba(148,112,71,.72);outline-offset:5px;cursor:move!important;touch-action:none}
+body.layout-edit-mode [data-layout-id]:hover,body.layout-edit-mode [data-layout-id].layout-selected{outline:3px solid #c8aa84;outline-offset:6px}
+.layoutMoveBar{position:fixed;z-index:360;top:84px;right:18px;display:none;max-width:min(520px,calc(100vw - 36px));padding:.8rem 1rem;align-items:center;gap:.65rem;flex-wrap:wrap;border:1px solid rgba(255,255,255,.16);border-radius:16px;color:var(--white);background:rgba(21,19,16,.96);box-shadow:0 24px 80px rgba(0,0,0,.38);backdrop-filter:blur(16px)}
+.layoutMoveBar.show{display:flex}.layoutMoveBar strong{margin-right:auto;font:500 1.1rem var(--serif)}.layoutMoveBar button{border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:.58rem .8rem;color:var(--white);background:rgba(255,255,255,.06);font-size:.62rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;cursor:pointer}
+.customizer{align-items:stretch;justify-items:end;padding:0;background:rgba(10,9,8,.26);pointer-events:none}
+.customizer.show{display:grid}.customizerShell{width:min(620px,100%);height:100vh;max-height:none;border-radius:0;border-width:0 0 0 1px;pointer-events:auto}
+.customizerHead{padding:1rem 1.15rem}.customizerHead h2{font-size:2rem}.customizerBody{padding:1.15rem}
+.studioTabs{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-bottom:1.15rem}.studioTabs button{border-radius:12px;padding:.75rem .5rem}.studioTabs button.active{color:#15130f;background:#c8aa84;border-color:#c8aa84}
+.studioPanel[hidden]{display:none}.editorCard{padding:1rem;border:1px solid rgba(255,255,255,.11);border-radius:16px;background:rgba(255,255,255,.035)}
+.editorCard+.editorCard{margin-top:1rem}.imagePreview{height:260px;margin-bottom:1rem;overflow:hidden;border:1px solid rgba(255,255,255,.12);border-radius:14px;background:#0e0d0b}.imagePreview img{width:100%;height:100%;object-fit:cover}
+.filePicker{display:grid;gap:.5rem;margin-bottom:1rem;color:rgba(255,255,255,.68);font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}.filePicker input{width:100%;padding:.75rem;border:1px dashed rgba(255,255,255,.24);border-radius:12px;color:rgba(255,255,255,.72);background:rgba(255,255,255,.04)}
+.customizer input[type=text],.customizer input[type=number],.customizer input[type=file]{font-family:var(--sans)}
+.compactActions{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem}.studioHelp{margin:.8rem 0 0;color:rgba(255,255,255,.56);font-size:.76rem;line-height:1.55}.studioSectionTitle{margin:0 0 1rem;font:500 1.65rem/.95 var(--serif)}
+.imageMeta{display:flex;justify-content:space-between;gap:1rem;align-items:center;margin-bottom:.8rem;color:rgba(255,255,255,.58);font-size:.72rem}.imageMeta strong{color:#c8aa84}
+.layoutPreviewName{margin:0 0 1rem;padding:.8rem 1rem;border-left:2px solid #c8aa84;color:rgba(255,255,255,.72);background:rgba(255,255,255,.035)}
+.studioActions{margin:1.15rem -1.15rem -1.15rem;padding:1rem 1.15rem}.studioActions .spacer{flex:1}
+@media(max-width:760px){.customizerShell{width:100%;border:0}.studioTabs{position:sticky;z-index:2;top:74px;background:#151310;padding:.3rem 0}.imagePreview{height:220px}.layoutMoveBar{top:70px;left:12px;right:12px}}
+
 </style>
 </head>
 <body>
@@ -119,65 +140,65 @@ footer strong{color:var(--ink);font:600 2rem var(--serif);letter-spacing:-.03em;
 <nav>
 <div class="navgroup"><a href="#stories">Stories</a><a href="#dispatch">Dispatch</a><a href="#about">About</a></div>
 <a class="brand" href="#top">Thien Dang</a>
-<div class="navgroup right"><a href="#offerings">Offerings</a><a href="#notes">Notes</a><a href="#contact">Contact</a><a class="edit" href="?customize=true" title="Open the animation studio">Customize</a><button class="menu" id="menuBtn">Menu</button></div>
+<div class="navgroup right"><a href="#offerings">Offerings</a><a href="#notes">Notes</a><a href="#contact">Contact</a><a class="edit owner-only" data-owner-only href="?owner=true&customize=true" title="Open the private website studio">Customize</a><button class="menu" id="menuBtn">Menu</button></div>
 </nav>
 </header>
 
-<div class="mobile" id="mobile"><a href="#stories">Stories</a><a href="#dispatch">Dispatch</a><a href="#about">About</a><a href="#offerings">Offerings</a><a href="#notes">Notes</a><a href="#contact">Contact</a><a href="?customize=true">Customize</a></div>
+<div class="mobile" id="mobile"><a href="#stories">Stories</a><a href="#dispatch">Dispatch</a><a href="#about">About</a><a href="#offerings">Offerings</a><a href="#notes">Notes</a><a href="#contact">Contact</a><a class="owner-only" data-owner-only href="?owner=true&customize=true">Customize</a></div>
 
 <main id="top">
 <section class="hero">
-<img src="/images/hero.jpg" alt="A cinematic photograph by Thien Dang" fetchpriority="high">
+<img data-image-slot="hero" src="/images/hero.jpg" alt="A cinematic photograph by Thien Dang" fetchpriority="high">
 <div class="shade"></div>
 <div class="heroInner">
-<div class="mast reveal"><small>A personal archive by Thien Dang</small><h1>THE PRIVATE<br>INDEX</h1><p>Issue No. 01 · Portraits · Graduation · Couples · Events · Fredericton · Moncton · New Brunswick · @letmetakephotosfor_you</p></div>
+<div class="mast reveal" data-layout-id="mast"><small>A personal archive by Thien Dang</small><h1>THE PRIVATE<br>INDEX</h1><p>Issue No. 01 · Portraits · Graduation · Couples · Events · Fredericton · Moncton · New Brunswick · @letmetakephotosfor_you</p></div>
 <div></div>
-<div class="heroQuote"><p>This is not about taking more pictures. It is about arranging memory with taste: the light, the gesture, the room, the people, and the quiet proof that something mattered.</p><span>Scroll to enter ↓</span></div>
+<div class="heroQuote" data-layout-id="heroQuote"><p>This is not about taking more pictures. It is about arranging memory with taste: the light, the gesture, the room, the people, and the quiet proof that something mattered.</p><span>Scroll to enter ↓</span></div>
 </div>
 </section>
 
 <section class="index"><div class="indexInner"><a href="#stories"><span>01</span><strong>Selected Stories</strong></a><a href="#dispatch"><span>02</span><strong>The Dispatch</strong></a><a href="#about"><span>03</span><strong>About Thien</strong></a><a href="#contact"><span>04</span><strong>Book a Session</strong></a></div></section>
 
 <section class="wrap intro">
-<div class="reveal"><p class="eyebrow">The index</p><h2 class="display">Selected<br>stories.</h2></div>
-<div class="introText reveal"><p class="copy">Photographs can be elegant without feeling distant, and personal without becoming ordinary. My work follows people through the moments that deserve a place in their private archive.</p><p class="signature">— Thien Dang, storyteller</p></div>
+<div class="reveal" data-layout-id="introHeading"><p class="eyebrow">The index</p><h2 class="display">Selected<br>stories.</h2></div>
+<div class="introText reveal" data-layout-id="introText"><p class="copy">Photographs can be elegant without feeling distant, and personal without becoming ordinary. My work follows people through the moments that deserve a place in their private archive.</p><p class="signature">— Thien Dang, storyteller</p></div>
 </section>
 
 <section class="wrap stories" id="stories">
-<div class="sectionHead reveal"><div><p class="eyebrow">Four chapters</p><h2 class="display">Lives, briefly<br>held still.</h2></div><p>Open any story to view it larger. Replace the six image files in <strong>public/images</strong> whenever you want to update the photographs.</p></div>
+<div class="sectionHead reveal" data-layout-id="storiesHeading"><div><p class="eyebrow">Four chapters</p><h2 class="display">Lives, briefly<br>held still.</h2></div><p>Open any story to view it larger. Replace the six image files in <strong>public/images</strong> whenever you want to update the photographs.</p></div>
 <div class="grid">
-<button class="card scroll-pop" data-gallery="graduation"><img src="/images/graduation.jpg" alt="Graduation photography" loading="lazy"><div class="cardText"><span>Story No. 01 · Open album</span><h3>Graduation<br>Day</h3></div></button>
-<button class="card scroll-pop" data-gallery="portrait"><img src="/images/portrait.jpg" alt="Portrait photography" loading="lazy"><div class="cardText"><span>Story No. 02 · Open album</span><h3>The<br>Sitting</h3></div></button>
-<button class="card scroll-pop" data-gallery="wedding"><img src="/images/wedding.jpg" alt="Wedding photography" loading="lazy"><div class="cardText"><span>Story No. 03 · Open album</span><h3>A Shared<br>Evening</h3></div></button>
-<button class="card scroll-pop" data-gallery="evening"><img src="/images/evening.jpg" alt="Event detail photography" loading="lazy"><div class="cardText"><span>Story No. 04 · Open album</span><h3>The Room<br>Remembers</h3></div></button>
+<button class="card scroll-pop" data-gallery="graduation" data-layout-id="graduationCard"><img data-image-slot="graduation" src="/images/graduation.jpg" alt="Graduation photography" loading="lazy"><div class="cardText"><span>Story No. 01 · Open album</span><h3>Graduation<br>Day</h3></div></button>
+<button class="card scroll-pop" data-gallery="portrait" data-layout-id="portraitCard"><img data-image-slot="portrait" src="/images/portrait.jpg" alt="Portrait photography" loading="lazy"><div class="cardText"><span>Story No. 02 · Open album</span><h3>The<br>Sitting</h3></div></button>
+<button class="card scroll-pop" data-gallery="wedding" data-layout-id="weddingCard"><img data-image-slot="wedding" src="/images/wedding.jpg" alt="Wedding photography" loading="lazy"><div class="cardText"><span>Story No. 03 · Open album</span><h3>A Shared<br>Evening</h3></div></button>
+<button class="card scroll-pop" data-gallery="evening" data-layout-id="eveningCard"><img data-image-slot="evening" src="/images/evening.jpg" alt="Event detail photography" loading="lazy"><div class="cardText"><span>Story No. 04 · Open album</span><h3>The Room<br>Remembers</h3></div></button>
 </div>
 </section>
 
 <section class="dispatch" id="dispatch">
-<img src="/images/wedding.jpg" alt="A quiet event scene" loading="lazy">
+<img data-image-slot="wedding" src="/images/wedding.jpg" alt="A quiet event scene" loading="lazy">
 <div class="wrap dispatchInner">
-<div class="reveal"><p class="eyebrow">Issue 01 / The Dispatch</p><h2>Memory,<br>arranged<br>with taste.</h2><p class="copy">The photograph is not only a record of what happened. It is the shape of a feeling, the atmosphere of a room, and the proof that a moment was worth remembering.</p></div>
-<aside class="aside reveal"><p>Portraits · Graduation · Couples · Families · Receptions · Ceremonies · Quiet gatherings · Personal archives</p></aside>
+<div class="reveal" data-layout-id="dispatchCopy"><p class="eyebrow">Issue 01 / The Dispatch</p><h2>Memory,<br>arranged<br>with taste.</h2><p class="copy">The photograph is not only a record of what happened. It is the shape of a feeling, the atmosphere of a room, and the proof that a moment was worth remembering.</p></div>
+<aside class="aside reveal" data-layout-id="dispatchAside"><p>Portraits · Graduation · Couples · Families · Receptions · Ceremonies · Quiet gatherings · Personal archives</p></aside>
 </div>
 </section>
 
 <section class="wrap about" id="about">
-<div class="portrait reveal"><img src="/images/me.jpg" alt="Thien Dang" loading="lazy"></div>
-<div class="aboutText reveal"><p class="eyebrow">About the photographer</p><h2>Quietly<br>observant.</h2><p>I am Thien, a photographer and storyteller based in Fredericton, New Brunswick. I photograph people with an editorial eye and a documentary instinct.</p><p>I look for gesture, light, relationships, and the small details that make a day feel like itself. The goal is not to make a moment look perfect. It is to preserve why it mattered.</p><div class="locations"><span>Fredericton</span><span>Moncton</span><span>New Brunswick</span><span>Available to travel</span></div></div>
+<div class="portrait reveal" data-layout-id="aboutPortrait"><img data-image-slot="profile" src="/images/me.jpg" alt="Thien Dang" loading="lazy"></div>
+<div class="aboutText reveal" data-layout-id="aboutCopy"><p class="eyebrow">About the photographer</p><h2>Quietly<br>observant.</h2><p>I am Thien, a photographer and storyteller based in Fredericton, New Brunswick. I photograph people with an editorial eye and a documentary instinct.</p><p>I look for gesture, light, relationships, and the small details that make a day feel like itself. The goal is not to make a moment look perfect. It is to preserve why it mattered.</p><div class="locations"><span>Fredericton</span><span>Moncton</span><span>New Brunswick</span><span>Available to travel</span></div></div>
 </section>
 
 <section class="wrap offerings" id="offerings">
-<div class="offerHead reveal"><div><p class="eyebrow">Offerings</p><h2 class="display">Ways to be<br>remembered.</h2></div><p class="copy">Sessions are guided enough to feel intentional and relaxed enough to remain yours.</p></div>
+<div class="offerHead reveal" data-layout-id="offeringsHeading"><div><p class="eyebrow">Offerings</p><h2 class="display">Ways to be<br>remembered.</h2></div><p class="copy">Sessions are guided enough to feel intentional and relaxed enough to remain yours.</p></div>
 <div class="offerGrid">
-<article class="offer reveal"><span>01</span><h3>Portrait<br>Sessions</h3><p>Individual portraits, creative headshots, personal branding, and quiet editorial studies.</p></article>
-<article class="offer reveal"><span>02</span><h3>Graduation<br>Stories</h3><p>Ceremony, campus portraits, family photographs, and the feeling of a chapter becoming complete.</p></article>
-<article class="offer reveal"><span>03</span><h3>Couples &<br>Families</h3><p>Honest photographs shaped around connection, movement, affection, and the places that belong to you.</p></article>
-<article class="offer reveal"><span>04</span><h3>Events &<br>Gatherings</h3><p>Receptions, intimate celebrations, cultural events, and rooms full of people who matter.</p></article>
+<article class="offer reveal" data-layout-id="offering1"><span>01</span><h3>Portrait<br>Sessions</h3><p>Individual portraits, creative headshots, personal branding, and quiet editorial studies.</p></article>
+<article class="offer reveal" data-layout-id="offering2"><span>02</span><h3>Graduation<br>Stories</h3><p>Ceremony, campus portraits, family photographs, and the feeling of a chapter becoming complete.</p></article>
+<article class="offer reveal" data-layout-id="offering3"><span>03</span><h3>Couples &<br>Families</h3><p>Honest photographs shaped around connection, movement, affection, and the places that belong to you.</p></article>
+<article class="offer reveal" data-layout-id="offering4"><span>04</span><h3>Events &<br>Gatherings</h3><p>Receptions, intimate celebrations, cultural events, and rooms full of people who matter.</p></article>
 </div>
 </section>
 
 <section class="notes" id="notes"><div class="wrap">
-<div class="noteHead reveal"><div><p class="eyebrow">Field notes</p><h2 class="display">What I look<br>for.</h2></div><p>A few principles behind the photographs: simple ideas that shape how I watch, wait, and arrange a visual story.</p></div>
+<div class="noteHead reveal" data-layout-id="notesHeading"><div><p class="eyebrow">Field notes</p><h2 class="display">What I look<br>for.</h2></div><p>A few principles behind the photographs: simple ideas that shape how I watch, wait, and arrange a visual story.</p></div>
 <div class="noteList">
 <article class="note reveal"><span>01</span><h3>The gesture before the pose.</h3><p>The photograph often begins one second before someone believes they are ready.</p></article>
 <article class="note reveal"><span>02</span><h3>The room is part of the portrait.</h3><p>Architecture, weather, light, and distance help explain who was there and how the day felt.</p></article>
@@ -187,8 +208,8 @@ footer strong{color:var(--ink);font:600 2rem var(--serif);letter-spacing:-.03em;
 
 <section class="wrap contact" id="contact">
 <div class="contactInner">
-<div class="reveal"><p class="eyebrow">Booking & inquiries</p><h2 class="display">Let me join<br>the moment.</h2></div>
-<div class="contactCard reveal"><p>For portraits, graduation, couples, families, events, and personal stories across New Brunswick.</p><div class="links"><a href="https://www.instagram.com/letmetakephotosfor_you?igsh=a255aDBrajg2bTA=" target="_blank" rel="noreferrer">Instagram · @letmetakephotosfor_you</a><a href="tel:+15069620480">Call · 506-962-0480</a><a href="sms:+15069620480">Text · 506-962-0480</a></div></div>
+<div class="reveal" data-layout-id="contactHeading"><p class="eyebrow">Booking & inquiries</p><h2 class="display">Let me join<br>the moment.</h2></div>
+<div class="contactCard reveal" data-layout-id="contactCard"><p>For portraits, graduation, couples, families, events, and personal stories across New Brunswick.</p><div class="links"><a href="https://www.instagram.com/letmetakephotosfor_you?igsh=a255aDBrajg2bTA=" target="_blank" rel="noreferrer">Instagram · @letmetakephotosfor_you</a><a href="tel:+15069620480">Call · 506-962-0480</a><a href="sms:+15069620480">Text · 506-962-0480</a></div></div>
 </div>
 <footer><strong>Thien Dang</strong><span>Photography & visual storytelling</span><span>© <span id="year"></span> · New Brunswick, Canada</span></footer>
 </section>
@@ -198,107 +219,295 @@ footer strong{color:var(--ink);font:600 2rem var(--serif);letter-spacing:-.03em;
 <script id="animationDefaults" type="application/json">
 {"preset":"apple","enabled":true,"strength":1,"minimumScale":0.84,"maximumScale":1.05,"lift":96,"tilt":4.2,"influenceRange":0.76,"focusLine":0.5,"lowOpacity":0.28,"lowSaturation":0.58,"lowBrightness":0.78,"cornerRadius":28,"shadowStrength":1,"imageZoom":0.12,"textLift":20,"easing":"smoothstep"}
 </script>
+<script id="imageDefaults" type="application/json">
+{"hero":{"src":"/images/hero.jpg","x":50,"y":42,"zoom":1.02,"fit":"cover"},"graduation":{"src":"/images/graduation.jpg","x":50,"y":50,"zoom":1,"fit":"cover"},"portrait":{"src":"/images/portrait.jpg","x":50,"y":50,"zoom":1,"fit":"cover"},"wedding":{"src":"/images/wedding.jpg","x":50,"y":50,"zoom":1,"fit":"cover"},"evening":{"src":"/images/evening.jpg","x":50,"y":50,"zoom":1,"fit":"cover"},"profile":{"src":"/images/me.jpg","x":50,"y":50,"zoom":1,"fit":"cover"}}
+</script>
+<script id="layoutDefaults" type="application/json">
+{"mast":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"heroQuote":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"introHeading":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"introText":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"storiesHeading":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"graduationCard":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"portraitCard":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"weddingCard":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"eveningCard":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"dispatchCopy":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"dispatchAside":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"aboutPortrait":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"aboutCopy":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"offeringsHeading":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"offering1":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"offering2":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"offering3":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"offering4":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"notesHeading":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"contactHeading":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"contactCard":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"floatingContact":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1}}
+</script>
+
+
 
 <section class="customizer" id="customizer" aria-hidden="true">
   <div class="customizerShell">
     <div class="customizerHead">
-      <div><p>Owner tools</p><h2>Animation Studio</h2></div>
+      <div><p>Private owner tools</p><h2>Website Studio</h2></div>
       <button class="customizerClose" id="customizerClose" type="button" aria-label="Close customizer">×</button>
     </div>
 
     <div class="customizerBody">
       <form class="customizerLogin" id="customizerLogin">
-        <p>Enter your owner password to adjust the scroll animation. Changes appear immediately in the page behind this panel.</p>
+        <p>Enter the owner password to change animation, replace and crop pictures, or move parts of the website.</p>
         <label>Password<input id="customizerPassword" type="password" autocomplete="current-password" placeholder="Owner password"></label>
         <p class="studioStatus" id="loginStatus"></p>
-        <button type="submit">Unlock studio</button>
+        <button type="submit">Unlock website studio</button>
       </form>
 
       <div class="customizerControls" id="customizerControls" hidden>
-        <p class="studioIntro">Choose a preset or adjust every part of the effect. Use <strong>Preview stories</strong> to jump to the photographs. When you are satisfied, download the complete updated website and upload it to GitHub.</p>
-
-        <div class="controlGrid">
-          <label class="control controlWide">
-            <span class="controlTop"><span>Animation preset</span></span>
-            <select id="animationPreset">
-              <option value="apple">Apple-style depth</option>
-              <option value="cinematic">Cinematic rise</option>
-              <option value="gentle">Gentle editorial</option>
-              <option value="dramatic">Dramatic gallery</option>
-              <option value="none">No scroll animation</option>
-              <option value="custom">Custom settings</option>
-            </select>
-          </label>
-
-          <label class="control"><span class="controlTop"><span>Overall strength</span><output class="controlValue" data-output="strength"></output></span><input type="range" min="0" max="1.6" step="0.05" data-setting="strength"></label>
-          <label class="control"><span class="controlTop"><span>Starting size</span><output class="controlValue" data-output="minimumScale"></output></span><input type="range" min="0.68" max="1" step="0.01" data-setting="minimumScale"></label>
-          <label class="control"><span class="controlTop"><span>Forward size</span><output class="controlValue" data-output="maximumScale"></output></span><input type="range" min="1" max="1.16" step="0.005" data-setting="maximumScale"></label>
-          <label class="control"><span class="controlTop"><span>Vertical movement</span><output class="controlValue" data-output="lift"></output></span><input type="range" min="0" max="180" step="2" data-setting="lift"></label>
-          <label class="control"><span class="controlTop"><span>3D tilt</span><output class="controlValue" data-output="tilt"></output></span><input type="range" min="0" max="12" step="0.2" data-setting="tilt"></label>
-          <label class="control"><span class="controlTop"><span>Effect distance</span><output class="controlValue" data-output="influenceRange"></output></span><input type="range" min="0.35" max="1.25" step="0.01" data-setting="influenceRange"></label>
-          <label class="control"><span class="controlTop"><span>Screen focus point</span><output class="controlValue" data-output="focusLine"></output></span><input type="range" min="0.3" max="0.7" step="0.01" data-setting="focusLine"></label>
-          <label class="control"><span class="controlTop"><span>Starting opacity</span><output class="controlValue" data-output="lowOpacity"></output></span><input type="range" min="0.1" max="1" step="0.02" data-setting="lowOpacity"></label>
-          <label class="control"><span class="controlTop"><span>Starting saturation</span><output class="controlValue" data-output="lowSaturation"></output></span><input type="range" min="0" max="1" step="0.02" data-setting="lowSaturation"></label>
-          <label class="control"><span class="controlTop"><span>Starting brightness</span><output class="controlValue" data-output="lowBrightness"></output></span><input type="range" min="0.45" max="1" step="0.01" data-setting="lowBrightness"></label>
-          <label class="control"><span class="controlTop"><span>Rounded corners</span><output class="controlValue" data-output="cornerRadius"></output></span><input type="range" min="0" max="56" step="1" data-setting="cornerRadius"></label>
-          <label class="control"><span class="controlTop"><span>Shadow depth</span><output class="controlValue" data-output="shadowStrength"></output></span><input type="range" min="0" max="1.8" step="0.05" data-setting="shadowStrength"></label>
-          <label class="control"><span class="controlTop"><span>Image zoom</span><output class="controlValue" data-output="imageZoom"></output></span><input type="range" min="0" max="0.25" step="0.01" data-setting="imageZoom"></label>
-          <label class="control"><span class="controlTop"><span>Text movement</span><output class="controlValue" data-output="textLift"></output></span><input type="range" min="0" max="60" step="1" data-setting="textLift"></label>
-          <label class="control"><span class="controlTop"><span>Motion curve</span></span><select data-setting="easing"><option value="smoothstep">Smooth</option><option value="easeOut">Fast then gentle</option><option value="linear">Linear</option><option value="cinematic">Cinematic</option></select></label>
+        <div class="studioTabs" role="tablist" aria-label="Website studio sections">
+          <button class="active" type="button" data-studio-tab="animation">Animation</button>
+          <button type="button" data-studio-tab="images">Pictures</button>
+          <button type="button" data-studio-tab="layout">Move layout</button>
         </div>
 
-        <p class="customizerNote"><strong>How publishing works:</strong> the live preview is saved only in this browser. “Download updated website” creates a complete <code>index.html</code> with these settings permanently built in. Upload that file to your GitHub repository and Vercel will publish it.</p>
+        <section class="studioPanel" data-studio-panel="animation">
+          <p class="studioIntro">Choose a preset or adjust every part of the Apple-style scroll effect. Changes appear immediately on the page.</p>
+          <div class="controlGrid">
+            <label class="control controlWide"><span class="controlTop"><span>Animation preset</span></span><select id="animationPreset"><option value="apple">Apple-style depth</option><option value="cinematic">Cinematic rise</option><option value="gentle">Gentle editorial</option><option value="dramatic">Dramatic gallery</option><option value="none">No scroll animation</option><option value="custom">Custom settings</option></select></label>
+            <label class="control"><span class="controlTop"><span>Overall strength</span><output class="controlValue" data-output="strength"></output></span><input type="range" min="0" max="1.6" step="0.05" data-setting="strength"></label>
+            <label class="control"><span class="controlTop"><span>Starting size</span><output class="controlValue" data-output="minimumScale"></output></span><input type="range" min="0.68" max="1" step="0.01" data-setting="minimumScale"></label>
+            <label class="control"><span class="controlTop"><span>Forward size</span><output class="controlValue" data-output="maximumScale"></output></span><input type="range" min="1" max="1.16" step="0.005" data-setting="maximumScale"></label>
+            <label class="control"><span class="controlTop"><span>Vertical movement</span><output class="controlValue" data-output="lift"></output></span><input type="range" min="0" max="180" step="2" data-setting="lift"></label>
+            <label class="control"><span class="controlTop"><span>3D tilt</span><output class="controlValue" data-output="tilt"></output></span><input type="range" min="0" max="12" step="0.2" data-setting="tilt"></label>
+            <label class="control"><span class="controlTop"><span>Effect distance</span><output class="controlValue" data-output="influenceRange"></output></span><input type="range" min="0.35" max="1.25" step="0.01" data-setting="influenceRange"></label>
+            <label class="control"><span class="controlTop"><span>Screen focus point</span><output class="controlValue" data-output="focusLine"></output></span><input type="range" min="0.3" max="0.7" step="0.01" data-setting="focusLine"></label>
+            <label class="control"><span class="controlTop"><span>Starting opacity</span><output class="controlValue" data-output="lowOpacity"></output></span><input type="range" min="0.1" max="1" step="0.02" data-setting="lowOpacity"></label>
+            <label class="control"><span class="controlTop"><span>Starting saturation</span><output class="controlValue" data-output="lowSaturation"></output></span><input type="range" min="0" max="1" step="0.02" data-setting="lowSaturation"></label>
+            <label class="control"><span class="controlTop"><span>Starting brightness</span><output class="controlValue" data-output="lowBrightness"></output></span><input type="range" min="0.45" max="1" step="0.01" data-setting="lowBrightness"></label>
+            <label class="control"><span class="controlTop"><span>Rounded corners</span><output class="controlValue" data-output="cornerRadius"></output></span><input type="range" min="0" max="56" step="1" data-setting="cornerRadius"></label>
+            <label class="control"><span class="controlTop"><span>Shadow depth</span><output class="controlValue" data-output="shadowStrength"></output></span><input type="range" min="0" max="1.8" step="0.05" data-setting="shadowStrength"></label>
+            <label class="control"><span class="controlTop"><span>Image zoom during scroll</span><output class="controlValue" data-output="imageZoom"></output></span><input type="range" min="0" max="0.25" step="0.01" data-setting="imageZoom"></label>
+            <label class="control"><span class="controlTop"><span>Text movement</span><output class="controlValue" data-output="textLift"></output></span><input type="range" min="0" max="60" step="1" data-setting="textLift"></label>
+            <label class="control"><span class="controlTop"><span>Motion curve</span></span><select data-setting="easing"><option value="smoothstep">Smooth</option><option value="easeOut">Fast then gentle</option><option value="linear">Linear</option><option value="cinematic">Cinematic</option></select></label>
+          </div>
+          <div class="compactActions"><button type="button" id="previewStories">Jump to story pictures</button><button type="button" id="resetAnimation">Reset animation</button></div>
+        </section>
+
+        <section class="studioPanel" data-studio-panel="images" hidden>
+          <p class="studioIntro">Replace a picture, move the crop left/right or up/down, zoom it, and choose cover or contain. One picture can appear in several places automatically.</p>
+          <div class="editorCard">
+            <h3 class="studioSectionTitle">Picture manager</h3>
+            <label class="control"><span>Picture to edit</span><select id="imageSlotSelect"><option value="hero">Opening hero picture</option><option value="graduation">Graduation story</option><option value="portrait">Portrait story</option><option value="wedding">Wedding / event story and dispatch</option><option value="evening">Evening / details story</option><option value="profile">About and floating contact picture</option></select></label>
+            <div class="imageMeta"><span>Selected picture</span><strong id="imageSlotName">Opening hero picture</strong></div>
+            <div class="imagePreview"><img id="imagePreview" src="" alt="Selected website picture preview"></div>
+            <label class="filePicker">Upload replacement picture<input id="imageUpload" type="file" accept="image/*"></label>
+            <label class="control"><span>Upload quality</span><select id="imageQuality"><option value="high">High quality · 2400 px</option><option value="maximum">Maximum · 3600 px</option><option value="light">Faster website · 1600 px</option></select></label>
+            <div class="controlGrid">
+              <label class="control"><span class="controlTop"><span>Move crop left/right</span><output class="controlValue" data-image-output="x"></output></span><input id="imageX" type="range" min="0" max="100" step="1"></label>
+              <label class="control"><span class="controlTop"><span>Move crop up/down</span><output class="controlValue" data-image-output="y"></output></span><input id="imageY" type="range" min="0" max="100" step="1"></label>
+              <label class="control"><span class="controlTop"><span>Picture zoom</span><output class="controlValue" data-image-output="zoom"></output></span><input id="imageZoom" type="range" min="1" max="2.2" step="0.01"></label>
+              <label class="control"><span>Picture fit</span><select id="imageFit"><option value="cover">Fill frame</option><option value="contain">Show full picture</option></select></label>
+            </div>
+            <div class="compactActions"><button type="button" id="jumpToImage">Jump to this picture</button><button type="button" id="resetImage">Reset selected picture</button><button type="button" id="resetAllImages">Reset all pictures</button></div>
+            <p class="studioHelp">Uploaded pictures are stored in this browser's larger image database for preview. The final downloaded <code>index.html</code> permanently includes them.</p>
+          </div>
+        </section>
+
+        <section class="studioPanel" data-studio-panel="layout" hidden>
+          <p class="studioIntro">Move, resize, stretch, rotate, or layer the main parts of the design. Story cards and photo blocks can also be dragged directly on the page.</p>
+          <div class="editorCard">
+            <h3 class="studioSectionTitle">Layout manager</h3>
+            <label class="control"><span>Part of website</span><select id="layoutSelect"></select></label>
+            <p class="layoutPreviewName">Editing: <strong id="layoutSelectedName"></strong></p>
+            <div class="controlGrid">
+              <label class="control"><span class="controlTop"><span>Move left/right</span><output class="controlValue" data-layout-output="x"></output></span><input id="layoutX" type="range" min="-500" max="500" step="2"></label>
+              <label class="control"><span class="controlTop"><span>Move up/down</span><output class="controlValue" data-layout-output="y"></output></span><input id="layoutY" type="range" min="-500" max="500" step="2"></label>
+              <label class="control"><span class="controlTop"><span>Width</span><output class="controlValue" data-layout-output="scaleX"></output></span><input id="layoutScaleX" type="range" min="0.45" max="1.6" step="0.01"></label>
+              <label class="control"><span class="controlTop"><span>Height</span><output class="controlValue" data-layout-output="scaleY"></output></span><input id="layoutScaleY" type="range" min="0.45" max="1.6" step="0.01"></label>
+              <label class="control"><span class="controlTop"><span>Rotation</span><output class="controlValue" data-layout-output="rotate"></output></span><input id="layoutRotate" type="range" min="-18" max="18" step="0.25"></label>
+              <label class="control"><span class="controlTop"><span>Layer</span><output class="controlValue" data-layout-output="z"></output></span><input id="layoutZ" type="range" min="0" max="40" step="1"></label>
+            </div>
+            <div class="compactActions"><button class="primary" type="button" id="directMove">Move directly on page</button><button type="button" id="jumpToLayout">Jump to selected part</button><button type="button" id="resetLayout">Reset selected part</button><button type="button" id="resetAllLayout">Reset all layout</button></div>
+            <p class="studioHelp">Direct move mode lets you drag outlined parts with a mouse or finger. Use the sliders when you need precise movement.</p>
+          </div>
+        </section>
+
+        <p class="customizerNote"><strong>Publishing:</strong> this is a static GitHub/Vercel website. Preview changes are private to this browser. Click <strong>Download complete website</strong>, replace your GitHub <code>index.html</code>, and commit it to publish everything.</p>
         <p class="studioStatus" id="studioStatus"></p>
 
         <div class="studioActions">
-          <button type="button" id="previewStories">Preview stories</button>
-          <button type="button" id="resetAnimation">Reset</button>
-          <button type="button" id="copyAnimation">Copy settings</button>
+          <button type="button" id="closeAndPreview">Close & preview</button>
           <a class="customizerLink" href="https://github.com/juunjuun2003" target="_blank" rel="noreferrer">Open GitHub</a>
-          <button class="primary" type="button" id="downloadWebsite">Download updated website</button>
+          <span class="spacer"></span>
+          <button class="primary" type="button" id="downloadWebsite">Download complete website</button>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="float" id="float"><div class="pop"><h3>Thien Dang<br>Photography</h3><p>Reach me directly for portraits, graduation, events, and personal story sessions.</p><a href="tel:+15069620480">Call 506-962-0480</a><a href="sms:+15069620480">Text 506-962-0480</a><a href="https://www.instagram.com/letmetakephotosfor_you?igsh=a255aDBrajg2bTA=" target="_blank" rel="noreferrer">Open Instagram</a></div><button class="floatBtn" id="floatBtn"><img src="/images/me.jpg" alt="Contact Thien Dang"><span>Contact</span></button></div>
+
+<div class="layoutMoveBar" id="layoutMoveBar"><strong id="moveBarName">Move website part</strong><button type="button" id="moveBarReset">Reset</button><button type="button" id="moveBarStudio">Open studio</button><button type="button" id="moveBarFinish">Finish moving</button></div>
+
+<div class="float" id="float" data-layout-id="floatingContact"><div class="pop"><h3>Thien Dang<br>Photography</h3><p>Reach me directly for portraits, graduation, events, and personal story sessions.</p><a href="tel:+15069620480">Call 506-962-0480</a><a href="sms:+15069620480">Text 506-962-0480</a><a href="https://www.instagram.com/letmetakephotosfor_you?igsh=a255aDBrajg2bTA=" target="_blank" rel="noreferrer">Open Instagram</a></div><button class="floatBtn" id="floatBtn"><img data-image-slot="profile" src="/images/me.jpg" alt="Contact Thien Dang"><span>Contact</span></button></div>
 
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true"><div class="lbHead"><p id="lbTitle">Album</p><button class="close" id="close">Close</button></div><div class="stage"><button class="arrow prev" id="prev">←</button><img id="lbImage" src="" alt=""><button class="arrow next" id="next">→</button></div><div class="lbFoot"><p id="counter">01 / 01</p><p>Use arrow keys to browse</p></div></div>
 
 <script>
-const galleries={
-graduation:{title:"Graduation Day",images:["/images/graduation.jpg","/images/portrait.jpg","/images/evening.jpg"]},
-portrait:{title:"The Sitting",images:["/images/portrait.jpg","/images/graduation.jpg","/images/evening.jpg"]},
-wedding:{title:"A Shared Evening",images:["/images/wedding.jpg","/images/evening.jpg","/images/portrait.jpg"]},
-evening:{title:"The Room Remembers",images:["/images/evening.jpg","/images/wedding.jpg","/images/graduation.jpg"]}
-};
-const header=document.getElementById("header"),menuBtn=document.getElementById("menuBtn"),mobile=document.getElementById("mobile"),float=document.getElementById("float"),floatBtn=document.getElementById("floatBtn"),lightbox=document.getElementById("lightbox"),lbImage=document.getElementById("lbImage"),lbTitle=document.getElementById("lbTitle"),counter=document.getElementById("counter");
-let gallery=null,index=0;
-function head(){header.classList.toggle("scrolled",scrollY>30)}addEventListener("scroll",head,{passive:true});head();
-function closeMenu(){mobile.classList.remove("open");document.body.classList.remove("lock");menuBtn.textContent="Menu"}
-menuBtn.onclick=()=>{const open=!mobile.classList.contains("open");mobile.classList.toggle("open",open);document.body.classList.toggle("lock",open);menuBtn.textContent=open?"Close":"Menu"};
-mobile.querySelectorAll("a").forEach(a=>a.onclick=closeMenu);
-floatBtn.onclick=()=>float.classList.toggle("open");document.addEventListener("click",e=>{if(!float.contains(e.target))float.classList.remove("open")});
-function render(){lbImage.src=gallery.images[index];lbImage.alt=`${gallery.title} photograph ${index+1}`;lbTitle.textContent=gallery.title;counter.textContent=`${String(index+1).padStart(2,"0")} / ${String(gallery.images.length).padStart(2,"0")}`}
-function openBox(key){gallery=galleries[key];index=0;render();lightbox.classList.add("open");document.body.classList.add("lock")}
-function closeBox(){lightbox.classList.remove("open");document.body.classList.remove("lock");gallery=null}
-function next(){index=(index+1)%gallery.images.length;render()}function prev(){index=index===0?gallery.images.length-1:index-1;render()}
-document.querySelectorAll("[data-gallery]").forEach(b=>b.onclick=()=>openBox(b.dataset.gallery));
-document.getElementById("close").onclick=closeBox;document.getElementById("next").onclick=next;document.getElementById("prev").onclick=prev;
-addEventListener("keydown",e=>{if(e.key==="Escape"){closeBox();closeMenu();float.classList.remove("open");const studio=document.getElementById("customizer");if(studio?.classList.contains("show")){studio.classList.remove("show");document.body.classList.remove("lock");history.replaceState({},"",location.pathname+location.hash)}}if(!gallery)return;if(e.key==="ArrowRight")next();if(e.key==="ArrowLeft")prev()});
-const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("show");observer.unobserve(entry.target)}}),{threshold:.14});
-document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
-
-// Customizable Apple-style continuous depth animation.
-const scrollPopCards=[...document.querySelectorAll(".scroll-pop")];
-const animationDefaultsNode=document.getElementById("animationDefaults");
-const embeddedAnimationSettings=JSON.parse(animationDefaultsNode.textContent);
-const customizeMode=new URLSearchParams(location.search).get("customize")==="true";
-const animationStorageKey="thien-animation-studio-settings";
-const animationOwnerKey="thien-animation-studio-unlocked";
+const header=document.getElementById("header");
+const menuBtn=document.getElementById("menuBtn");
+const mobile=document.getElementById("mobile");
+const float=document.getElementById("float");
+const floatBtn=document.getElementById("floatBtn");
+const lightbox=document.getElementById("lightbox");
+const lbImage=document.getElementById("lbImage");
+const lbTitle=document.getElementById("lbTitle");
+const counter=document.getElementById("counter");
+const pageParams=new URLSearchParams(location.search);
+const ownerMode=pageParams.get("owner")==="true";
+const customizeMode=ownerMode&&pageParams.get("customize")==="true";
 const OWNER_PASSWORD="thien2026";
 
+// Owner controls are removed completely for ordinary visitors.
+document.querySelectorAll("[data-owner-only]").forEach(element=>{
+  if(ownerMode)element.classList.remove("owner-only");
+  else element.remove();
+});
+
+function updateHeader(){header.classList.toggle("scrolled",scrollY>30)}
+addEventListener("scroll",updateHeader,{passive:true});
+updateHeader();
+function closeMenu(){mobile.classList.remove("open");document.body.classList.remove("lock");menuBtn.textContent="Menu"}
+menuBtn.addEventListener("click",()=>{const open=!mobile.classList.contains("open");mobile.classList.toggle("open",open);document.body.classList.toggle("lock",open);menuBtn.textContent=open?"Close":"Menu"});
+mobile.querySelectorAll("a").forEach(link=>link.addEventListener("click",closeMenu));
+floatBtn.addEventListener("click",()=>float.classList.toggle("open"));
+document.addEventListener("click",event=>{if(!float.contains(event.target))float.classList.remove("open")});
+
+// Embedded website settings.
+const embeddedAnimationSettings=JSON.parse(document.getElementById("animationDefaults").textContent);
+const embeddedImageSettings=JSON.parse(document.getElementById("imageDefaults").textContent);
+const embeddedLayoutSettings=JSON.parse(document.getElementById("layoutDefaults").textContent);
+const animationStorageKey="thien-animation-studio-settings-v2";
+const imageMetaStorageKey="thien-image-studio-meta-v2";
+const layoutStorageKey="thien-layout-studio-settings-v2";
+const studioOwnerKey="thien-website-studio-unlocked-v2";
+
+const deepCopy=value=>JSON.parse(JSON.stringify(value));
+const clamp=(number,min,max)=>Math.min(max,Math.max(min,number));
+const lerp=(start,end,amount)=>start+(end-start)*amount;
+function loadLocalObject(key,fallback){
+  if(!customizeMode)return deepCopy(fallback);
+  try{return {...deepCopy(fallback),...JSON.parse(localStorage.getItem(key)||"{}")}}catch{return deepCopy(fallback)}
+}
+
+let animationSettings=loadLocalObject(animationStorageKey,embeddedAnimationSettings);
+let imageSettings=deepCopy(embeddedImageSettings);
+let layoutSettings=loadLocalObject(layoutStorageKey,embeddedLayoutSettings);
+
+const imageLabels={
+  hero:"Opening hero picture",
+  graduation:"Graduation story",
+  portrait:"Portrait story",
+  wedding:"Wedding / event story and dispatch",
+  evening:"Evening / details story",
+  profile:"About and floating contact picture"
+};
+const layoutLabels={
+  mast:"Opening title panel",
+  heroQuote:"Opening quote",
+  introHeading:"Selected stories heading",
+  introText:"Selected stories paragraph",
+  storiesHeading:"Stories section heading",
+  graduationCard:"Graduation photo card",
+  portraitCard:"Portrait photo card",
+  weddingCard:"Wedding / event photo card",
+  eveningCard:"Evening / details photo card",
+  dispatchCopy:"Dispatch title and paragraph",
+  dispatchAside:"Dispatch category box",
+  aboutPortrait:"About/profile photo block",
+  aboutCopy:"About text block",
+  offeringsHeading:"Offerings heading",
+  offering1:"Portrait Sessions box",
+  offering2:"Graduation Stories box",
+  offering3:"Couples & Families box",
+  offering4:"Events & Gatherings box",
+  notesHeading:"Field notes heading",
+  contactHeading:"Contact heading",
+  contactCard:"Contact information",
+  floatingContact:"Floating contact picture"
+};
+
+// Larger browser image storage avoids the tiny localStorage image limit.
+const IMAGE_DB_NAME="thien-website-image-studio";
+const IMAGE_DB_STORE="images";
+function openImageDatabase(){
+  return new Promise((resolve,reject)=>{
+    const request=indexedDB.open(IMAGE_DB_NAME,1);
+    request.onupgradeneeded=()=>request.result.createObjectStore(IMAGE_DB_STORE);
+    request.onsuccess=()=>resolve(request.result);
+    request.onerror=()=>reject(request.error);
+  });
+}
+async function imageDbGet(slot){
+  try{const db=await openImageDatabase();return await new Promise((resolve,reject)=>{const tx=db.transaction(IMAGE_DB_STORE,"readonly");const request=tx.objectStore(IMAGE_DB_STORE).get(slot);request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error)})}catch{return null}
+}
+async function imageDbSet(slot,source){
+  try{const db=await openImageDatabase();await new Promise((resolve,reject)=>{const tx=db.transaction(IMAGE_DB_STORE,"readwrite");tx.objectStore(IMAGE_DB_STORE).put(source,slot);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)});return true}catch{return false}
+}
+async function imageDbDelete(slot){
+  try{const db=await openImageDatabase();await new Promise((resolve,reject)=>{const tx=db.transaction(IMAGE_DB_STORE,"readwrite");tx.objectStore(IMAGE_DB_STORE).delete(slot);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)})}catch{}
+}
+async function imageDbClear(){
+  try{const db=await openImageDatabase();await new Promise((resolve,reject)=>{const tx=db.transaction(IMAGE_DB_STORE,"readwrite");tx.objectStore(IMAGE_DB_STORE).clear();tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)})}catch{}
+}
+async function loadOwnerImages(){
+  if(!customizeMode)return;
+  let savedMeta={};
+  try{savedMeta=JSON.parse(localStorage.getItem(imageMetaStorageKey)||"{}")}catch{}
+  for(const slot of Object.keys(imageSettings)){
+    imageSettings[slot]={...imageSettings[slot],...(savedMeta[slot]||{})};
+    const savedSource=await imageDbGet(slot);
+    if(savedSource)imageSettings[slot].src=savedSource;
+  }
+  applyAllImageSettings();
+  syncImageControls();
+}
+function saveImageMeta(){
+  const metadata={};
+  Object.entries(imageSettings).forEach(([slot,setting])=>metadata[slot]={x:setting.x,y:setting.y,zoom:setting.zoom,fit:setting.fit});
+  try{localStorage.setItem(imageMetaStorageKey,JSON.stringify(metadata))}catch{}
+}
+
+function getImageSlotSource(slot){return imageSettings[slot]?.src||embeddedImageSettings[slot]?.src||""}
+function applyImageSlot(slot){
+  const setting=imageSettings[slot];
+  if(!setting)return;
+  document.querySelectorAll(`[data-image-slot="${slot}"]`).forEach(image=>{
+    image.src=setting.src;
+    image.style.objectPosition=`${setting.x}% ${setting.y}%`;
+    image.style.objectFit=setting.fit;
+    image.dataset.baseZoom=String(setting.zoom);
+    if(!image.closest(".scroll-pop")){
+      image.style.animation="none";
+      image.style.transform=`scale(${setting.zoom})`;
+      image.style.transformOrigin=`${setting.x}% ${setting.y}%`;
+    }
+  });
+  rebuildGalleries();
+  requestScrollPopUpdate();
+}
+function applyAllImageSettings(){Object.keys(imageSettings).forEach(applyImageSlot)}
+
+let galleries={};
+function rebuildGalleries(){
+  galleries={
+    graduation:{title:"Graduation Day",images:[getImageSlotSource("graduation"),getImageSlotSource("portrait"),getImageSlotSource("evening")]},
+    portrait:{title:"The Sitting",images:[getImageSlotSource("portrait"),getImageSlotSource("graduation"),getImageSlotSource("evening")]},
+    wedding:{title:"A Shared Evening",images:[getImageSlotSource("wedding"),getImageSlotSource("evening"),getImageSlotSource("portrait")]},
+    evening:{title:"The Room Remembers",images:[getImageSlotSource("evening"),getImageSlotSource("wedding"),getImageSlotSource("graduation")]}
+  };
+}
+rebuildGalleries();
+
+// Gallery lightbox.
+let gallery=null;
+let galleryIndex=0;
+function renderLightbox(){lbImage.src=gallery.images[galleryIndex];lbImage.alt=`${gallery.title} photograph ${galleryIndex+1}`;lbTitle.textContent=gallery.title;counter.textContent=`${String(galleryIndex+1).padStart(2,"0")} / ${String(gallery.images.length).padStart(2,"0")}`}
+function openBox(key){if(document.body.classList.contains("layout-edit-mode"))return;gallery=galleries[key];galleryIndex=0;renderLightbox();lightbox.classList.add("open");document.body.classList.add("lock")}
+function closeBox(){lightbox.classList.remove("open");document.body.classList.remove("lock");gallery=null}
+function nextImage(){if(!gallery)return;galleryIndex=(galleryIndex+1)%gallery.images.length;renderLightbox()}
+function previousImage(){if(!gallery)return;galleryIndex=galleryIndex===0?gallery.images.length-1:galleryIndex-1;renderLightbox()}
+document.querySelectorAll("[data-gallery]").forEach(button=>button.addEventListener("click",()=>openBox(button.dataset.gallery)));
+document.getElementById("close").addEventListener("click",closeBox);
+document.getElementById("next").addEventListener("click",nextImage);
+document.getElementById("prev").addEventListener("click",previousImage);
+
+// Reveal on scroll.
+const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("show");revealObserver.unobserve(entry.target)}}),{threshold:.14});
+document.querySelectorAll(".reveal").forEach(element=>revealObserver.observe(element));
+
+// Apple-style continuous depth animation.
+const scrollPopCards=[...document.querySelectorAll(".scroll-pop")];
 const animationPresets={
   apple:{preset:"apple",enabled:true,strength:1,minimumScale:.84,maximumScale:1.05,lift:96,tilt:4.2,influenceRange:.76,focusLine:.5,lowOpacity:.28,lowSaturation:.58,lowBrightness:.78,cornerRadius:28,shadowStrength:1,imageZoom:.12,textLift:20,easing:"smoothstep"},
   cinematic:{preset:"cinematic",enabled:true,strength:1.15,minimumScale:.78,maximumScale:1.07,lift:140,tilt:2.4,influenceRange:.92,focusLine:.52,lowOpacity:.18,lowSaturation:.42,lowBrightness:.62,cornerRadius:38,shadowStrength:1.35,imageZoom:.16,textLift:34,easing:"cinematic"},
@@ -306,75 +515,28 @@ const animationPresets={
   dramatic:{preset:"dramatic",enabled:true,strength:1.35,minimumScale:.72,maximumScale:1.1,lift:165,tilt:8,influenceRange:.68,focusLine:.48,lowOpacity:.12,lowSaturation:.18,lowBrightness:.52,cornerRadius:48,shadowStrength:1.7,imageZoom:.22,textLift:46,easing:"cinematic"},
   none:{preset:"none",enabled:false,strength:0,minimumScale:1,maximumScale:1,lift:0,tilt:0,influenceRange:.76,focusLine:.5,lowOpacity:1,lowSaturation:1,lowBrightness:1,cornerRadius:0,shadowStrength:0,imageZoom:0,textLift:0,easing:"linear"}
 };
-
-function loadLocalAnimationSettings(){
-  if(!customizeMode)return embeddedAnimationSettings;
-  try{return {...embeddedAnimationSettings,...JSON.parse(localStorage.getItem(animationStorageKey)||"{}")}}catch{return embeddedAnimationSettings}
-}
-
-let animationSettings=loadLocalAnimationSettings();
+function motionCurve(value,type){if(type==="linear")return value;if(type==="easeOut")return 1-Math.pow(1-value,3);if(type==="cinematic")return value<.5?4*value*value*value:1-Math.pow(-2*value+2,3)/2;return value*value*(3-2*value)}
 let scrollPopFrame=0;
-const clamp=(number,min,max)=>Math.min(max,Math.max(min,number));
-const lerp=(start,end,amount)=>start+(end-start)*amount;
-
-function motionCurve(value,type){
-  if(type==="linear")return value;
-  if(type==="easeOut")return 1-Math.pow(1-value,3);
-  if(type==="cinematic")return value<.5?4*value*value*value:1-Math.pow(-2*value+2,3)/2;
-  return value*value*(3-2*value);
-}
-
-function clearCardAnimation(card){
-  card.style.removeProperty("--pop-opacity");
-  card.style.removeProperty("--pop-scale");
-  card.style.removeProperty("--pop-lift");
-  card.style.removeProperty("--pop-tilt");
-  card.style.removeProperty("--pop-shadow");
-  card.style.removeProperty("--pop-radius");
-  card.style.removeProperty("--pop-image-transform");
-  card.style.removeProperty("--pop-image-filter");
-  card.style.removeProperty("--pop-overlay-top");
-  card.style.removeProperty("--pop-overlay-bottom");
-  card.style.removeProperty("--pop-text-opacity");
-  card.style.removeProperty("--pop-text-lift");
-  card.style.removeProperty("z-index");
-}
-
 function updateScrollPops(){
-  const viewportHeight=window.innerHeight||1;
+  const viewportHeight=innerHeight||1;
   const focusLine=viewportHeight*animationSettings.focusLine;
-  const mobileViewport=window.innerWidth<=760;
-  const mobileFactor=mobileViewport ? .72 : 1;
+  const mobileFactor=innerWidth<=760?.72:1;
   const range=viewportHeight*animationSettings.influenceRange;
   const strength=animationSettings.enabled?animationSettings.strength:0;
-
   scrollPopCards.forEach(card=>{
+    const picture=card.querySelector("img");
+    const baseZoom=Number(picture?.dataset.baseZoom||1);
     if(!animationSettings.enabled){
-      card.style.setProperty("--pop-opacity","1");
-      card.style.setProperty("--pop-scale","1");
-      card.style.setProperty("--pop-lift","0px");
-      card.style.setProperty("--pop-tilt","0deg");
-      card.style.setProperty("--pop-shadow","0 24px 60px rgba(0,0,0,.14)");
-      card.style.setProperty("--pop-radius","0px");
-      card.style.setProperty("--pop-image-transform","scale(1) translateY(0px)");
-      card.style.setProperty("--pop-image-filter","saturate(.9) brightness(1)");
-      card.style.setProperty("--pop-overlay-top",".03");
-      card.style.setProperty("--pop-overlay-bottom",".76");
-      card.style.setProperty("--pop-text-opacity","1");
-      card.style.setProperty("--pop-text-lift","0px");
-      return;
+      card.style.setProperty("--pop-opacity","1");card.style.setProperty("--pop-scale","1");card.style.setProperty("--pop-lift","0px");card.style.setProperty("--pop-tilt","0deg");card.style.setProperty("--pop-shadow","0 24px 60px rgba(0,0,0,.14)");card.style.setProperty("--pop-radius","0px");card.style.setProperty("--pop-image-transform",`scale(${baseZoom}) translateY(0px)`);card.style.setProperty("--pop-image-filter","saturate(.9) brightness(1)");card.style.setProperty("--pop-overlay-top",".03");card.style.setProperty("--pop-overlay-bottom",".76");card.style.setProperty("--pop-text-opacity","1");card.style.setProperty("--pop-text-lift","0px");return;
     }
-
     const rect=card.getBoundingClientRect();
-    const cardCenter=rect.top+rect.height/2;
-    const distance=Math.abs(cardCenter-focusLine);
-    const raw=clamp(1-distance/range,0,1);
+    const center=rect.top+rect.height/2;
+    const raw=clamp(1-Math.abs(center-focusLine)/range,0,1);
     const progress=motionCurve(raw,animationSettings.easing);
-    const direction=cardCenter<focusLine?-1:1;
-
-    const effectiveMinimum=1-(1-animationSettings.minimumScale)*strength*mobileFactor;
-    const effectiveMaximum=1+(animationSettings.maximumScale-1)*strength*mobileFactor;
-    const scale=lerp(effectiveMinimum,effectiveMaximum,progress);
+    const direction=center<focusLine?-1:1;
+    const minScale=1-(1-animationSettings.minimumScale)*strength*mobileFactor;
+    const maxScale=1+(animationSettings.maximumScale-1)*strength*mobileFactor;
+    const scale=lerp(minScale,maxScale,progress);
     const lift=(1-progress)*animationSettings.lift*strength*mobileFactor;
     const tilt=(1-progress)*animationSettings.tilt*strength*mobileFactor*direction;
     const opacity=lerp(animationSettings.lowOpacity,1,progress);
@@ -383,195 +545,221 @@ function updateScrollPops(){
     const shadowY=lerp(16,54,progress)*shadowAmount;
     const shadowBlur=lerp(34,112,progress)*shadowAmount;
     const shadowAlpha=lerp(.055,.27,progress)*Math.min(shadowAmount,1.8);
-    const imageZoom=1+animationSettings.imageZoom*strength*(1-progress);
+    const scrollZoom=1+animationSettings.imageZoom*strength*(1-progress);
     const imageLift=(1-progress)*10*strength;
     const saturation=lerp(animationSettings.lowSaturation,1,progress);
     const brightness=lerp(animationSettings.lowBrightness,1,progress);
     const textOpacity=lerp(Math.max(.35,animationSettings.lowOpacity+.25),1,progress);
     const textLift=(1-progress)*animationSettings.textLift*strength;
-    const overlayTop=lerp(.1,.03,progress);
-    const overlayBottom=lerp(.86,.76,progress);
-
     card.style.setProperty("--pop-opacity",opacity.toFixed(4));
     card.style.setProperty("--pop-scale",scale.toFixed(4));
     card.style.setProperty("--pop-lift",`${lift.toFixed(2)}px`);
     card.style.setProperty("--pop-tilt",`${tilt.toFixed(2)}deg`);
     card.style.setProperty("--pop-shadow",`0 ${shadowY.toFixed(1)}px ${shadowBlur.toFixed(1)}px rgba(0,0,0,${shadowAlpha.toFixed(3)})`);
     card.style.setProperty("--pop-radius",`${radius.toFixed(1)}px`);
-    card.style.setProperty("--pop-image-transform",`scale(${imageZoom.toFixed(4)}) translateY(${imageLift.toFixed(2)}px)`);
+    card.style.setProperty("--pop-image-transform",`scale(${(baseZoom*scrollZoom).toFixed(4)}) translateY(${imageLift.toFixed(2)}px)`);
     card.style.setProperty("--pop-image-filter",`saturate(${saturation.toFixed(3)}) brightness(${brightness.toFixed(3)})`);
-    card.style.setProperty("--pop-overlay-top",overlayTop.toFixed(3));
-    card.style.setProperty("--pop-overlay-bottom",overlayBottom.toFixed(3));
+    card.style.setProperty("--pop-overlay-top",lerp(.1,.03,progress).toFixed(3));
+    card.style.setProperty("--pop-overlay-bottom",lerp(.86,.76,progress).toFixed(3));
     card.style.setProperty("--pop-text-opacity",textOpacity.toFixed(3));
     card.style.setProperty("--pop-text-lift",`${textLift.toFixed(2)}px`);
-    card.style.zIndex=String(1+Math.round(progress*20));
   });
-
   scrollPopFrame=0;
 }
-
-function requestScrollPopUpdate(){
-  if(scrollPopFrame)return;
-  scrollPopFrame=requestAnimationFrame(updateScrollPops);
-}
-
+function requestScrollPopUpdate(){if(scrollPopFrame)return;scrollPopFrame=requestAnimationFrame(updateScrollPops)}
 addEventListener("scroll",requestScrollPopUpdate,{passive:true});
 addEventListener("resize",requestScrollPopUpdate,{passive:true});
+
+// Layout settings.
+function applyLayoutItem(id){
+  const element=document.querySelector(`[data-layout-id="${id}"]`);
+  const setting=layoutSettings[id];
+  if(!element||!setting)return;
+  element.style.setProperty("--layout-x",`${setting.x}px`);
+  element.style.setProperty("--layout-y",`${setting.y}px`);
+  element.style.setProperty("--layout-scale-x",setting.scaleX);
+  element.style.setProperty("--layout-scale-y",setting.scaleY);
+  element.style.setProperty("--layout-rotate",`${setting.rotate}deg`);
+  element.style.setProperty("--layout-z",setting.z);
+}
+function applyAllLayoutSettings(){Object.keys(layoutSettings).forEach(applyLayoutItem)}
+function saveLayoutSettings(){try{localStorage.setItem(layoutStorageKey,JSON.stringify(layoutSettings))}catch{}}
+applyAllLayoutSettings();
+applyAllImageSettings();
 requestScrollPopUpdate();
 
-// Animation Studio: browser preview + downloadable permanent index.html.
+// Studio elements and helpers.
 const customizer=document.getElementById("customizer");
-const customizerClose=document.getElementById("customizerClose");
 const customizerLogin=document.getElementById("customizerLogin");
 const customizerControls=document.getElementById("customizerControls");
 const customizerPassword=document.getElementById("customizerPassword");
 const loginStatus=document.getElementById("loginStatus");
 const studioStatus=document.getElementById("studioStatus");
-const presetSelect=document.getElementById("animationPreset");
-const settingInputs=[...document.querySelectorAll("[data-setting]")];
+function setStudioStatus(message){studioStatus.textContent=message;clearTimeout(setStudioStatus.timer);setStudioStatus.timer=setTimeout(()=>studioStatus.textContent="",4200)}
+function openStudio(){customizer.classList.add("show");customizer.setAttribute("aria-hidden","false")}
+function closeStudio(){customizer.classList.remove("show");customizer.setAttribute("aria-hidden","true");history.replaceState({},"",ownerMode?`${location.pathname}?owner=true${location.hash}`:location.pathname+location.hash)}
+function unlockStudio(){customizerLogin.hidden=true;customizerControls.hidden=false;sessionStorage.setItem(studioOwnerKey,"true");syncAnimationControls();syncImageControls();syncLayoutControls()}
+if(customizeMode){openStudio();if(sessionStorage.getItem(studioOwnerKey)==="true")unlockStudio()}
+customizerLogin.addEventListener("submit",event=>{event.preventDefault();if(customizerPassword.value===OWNER_PASSWORD){loginStatus.textContent="";customizerPassword.value="";unlockStudio()}else loginStatus.textContent="Incorrect password."});
+document.getElementById("customizerClose").addEventListener("click",closeStudio);
+document.getElementById("closeAndPreview").addEventListener("click",closeStudio);
 
-function formatSetting(key,value){
-  if(["minimumScale","maximumScale","lowOpacity","lowSaturation","lowBrightness","influenceRange","focusLine","imageZoom","strength","shadowStrength"].includes(key))return Number(value).toFixed(2);
-  if(key==="tilt")return `${Number(value).toFixed(1)}°`;
-  if(["lift","cornerRadius","textLift"].includes(key))return `${Math.round(value)}px`;
-  return String(value);
-}
-
-function syncStudioControls(){
-  presetSelect.value=animationSettings.preset||"custom";
-  settingInputs.forEach(input=>{
-    const key=input.dataset.setting;
-    if(key==="easing")input.value=animationSettings[key];
-    else input.value=animationSettings[key];
-    const output=document.querySelector(`[data-output="${key}"]`);
-    if(output)output.textContent=formatSetting(key,animationSettings[key]);
-  });
-}
-
-function storeAnimationPreview(){
-  localStorage.setItem(animationStorageKey,JSON.stringify(animationSettings));
-}
-
-function setStudioStatus(message){
-  studioStatus.textContent=message;
-  clearTimeout(setStudioStatus.timer);
-  setStudioStatus.timer=setTimeout(()=>studioStatus.textContent="",3200);
-}
-
-function unlockStudio(){
-  customizerLogin.hidden=true;
-  customizerControls.hidden=false;
-  sessionStorage.setItem(animationOwnerKey,"true");
-  syncStudioControls();
-}
-
-if(customizeMode){
-  customizer.classList.add("show");
-  customizer.setAttribute("aria-hidden","false");
-  document.body.classList.add("lock");
-  if(sessionStorage.getItem(animationOwnerKey)==="true")unlockStudio();
-}
-
-customizerLogin.addEventListener("submit",event=>{
-  event.preventDefault();
-  if(customizerPassword.value===OWNER_PASSWORD){
-    loginStatus.textContent="";
-    customizerPassword.value="";
-    unlockStudio();
-  }else loginStatus.textContent="Incorrect password.";
-});
-
-customizerClose.addEventListener("click",()=>{
-  customizer.classList.remove("show");
-  document.body.classList.remove("lock");
-  history.replaceState({},"",location.pathname+location.hash);
-});
-
-presetSelect.addEventListener("change",()=>{
-  const selected=presetSelect.value;
-  if(selected==="custom")return;
-  animationSettings={...animationPresets[selected]};
-  storeAnimationPreview();
-  syncStudioControls();
-  requestScrollPopUpdate();
-  setStudioStatus(`${presetSelect.options[presetSelect.selectedIndex].text} applied.`);
-});
-
-settingInputs.forEach(input=>input.addEventListener("input",()=>{
-  const key=input.dataset.setting;
-  animationSettings={...animationSettings,preset:"custom",enabled:true,[key]:input.tagName==="SELECT"?input.value:Number(input.value)};
-  storeAnimationPreview();
-  presetSelect.value="custom";
-  syncStudioControls();
-  requestScrollPopUpdate();
+// Tabs.
+document.querySelectorAll("[data-studio-tab]").forEach(button=>button.addEventListener("click",()=>{
+  const tab=button.dataset.studioTab;
+  document.querySelectorAll("[data-studio-tab]").forEach(item=>item.classList.toggle("active",item===button));
+  document.querySelectorAll("[data-studio-panel]").forEach(panel=>panel.hidden=panel.dataset.studioPanel!==tab);
 }));
 
-document.getElementById("previewStories").addEventListener("click",()=>{
-  customizer.classList.remove("show");
-  document.body.classList.remove("lock");
-  document.getElementById("stories").scrollIntoView({behavior:"smooth",block:"start"});
-  setTimeout(()=>{
-    customizer.classList.add("show");
-    document.body.classList.add("lock");
-  },1800);
-});
+// Animation controls.
+const presetSelect=document.getElementById("animationPreset");
+const animationInputs=[...document.querySelectorAll("[data-setting]")];
+function formatAnimationSetting(key,value){if(["minimumScale","maximumScale","lowOpacity","lowSaturation","lowBrightness","influenceRange","focusLine","imageZoom","strength","shadowStrength"].includes(key))return Number(value).toFixed(2);if(key==="tilt")return `${Number(value).toFixed(1)}°`;if(["lift","cornerRadius","textLift"].includes(key))return `${Math.round(value)}px`;return String(value)}
+function syncAnimationControls(){presetSelect.value=animationSettings.preset||"custom";animationInputs.forEach(input=>{const key=input.dataset.setting;input.value=animationSettings[key];const output=document.querySelector(`[data-output="${key}"]`);if(output)output.textContent=formatAnimationSetting(key,animationSettings[key])})}
+function saveAnimationSettings(){try{localStorage.setItem(animationStorageKey,JSON.stringify(animationSettings))}catch{}}
+presetSelect.addEventListener("change",()=>{const selected=presetSelect.value;if(selected==="custom")return;animationSettings={...animationPresets[selected]};saveAnimationSettings();syncAnimationControls();requestScrollPopUpdate();setStudioStatus(`${presetSelect.options[presetSelect.selectedIndex].text} applied.`)});
+animationInputs.forEach(input=>input.addEventListener("input",()=>{const key=input.dataset.setting;animationSettings={...animationSettings,preset:"custom",enabled:true,[key]:input.tagName==="SELECT"?input.value:Number(input.value)};saveAnimationSettings();presetSelect.value="custom";syncAnimationControls();requestScrollPopUpdate()}));
+document.getElementById("previewStories").addEventListener("click",()=>{closeStudio();document.getElementById("stories").scrollIntoView({behavior:"smooth",block:"start"})});
+document.getElementById("resetAnimation").addEventListener("click",()=>{animationSettings=deepCopy(embeddedAnimationSettings);localStorage.removeItem(animationStorageKey);syncAnimationControls();requestScrollPopUpdate();setStudioStatus("Animation reset.")});
 
-document.getElementById("resetAnimation").addEventListener("click",()=>{
-  animationSettings={...embeddedAnimationSettings};
-  localStorage.removeItem(animationStorageKey);
-  syncStudioControls();
-  requestScrollPopUpdate();
-  setStudioStatus("Animation returned to the website default.");
+// Picture controls.
+const imageSlotSelect=document.getElementById("imageSlotSelect");
+const imagePreview=document.getElementById("imagePreview");
+const imageUpload=document.getElementById("imageUpload");
+const imageX=document.getElementById("imageX");
+const imageY=document.getElementById("imageY");
+const imageZoomControl=document.getElementById("imageZoom");
+const imageFit=document.getElementById("imageFit");
+function activeImageSlot(){return imageSlotSelect.value}
+function syncImageControls(){
+  const slot=activeImageSlot();
+  const setting=imageSettings[slot];
+  if(!setting)return;
+  document.getElementById("imageSlotName").textContent=imageLabels[slot];
+  imagePreview.src=setting.src;
+  imagePreview.style.objectPosition=`${setting.x}% ${setting.y}%`;
+  imagePreview.style.objectFit=setting.fit;
+  imagePreview.style.transform=`scale(${setting.zoom})`;
+  imagePreview.style.transformOrigin=`${setting.x}% ${setting.y}%`;
+  imageX.value=setting.x;imageY.value=setting.y;imageZoomControl.value=setting.zoom;imageFit.value=setting.fit;
+  document.querySelector('[data-image-output="x"]').textContent=`${setting.x}%`;
+  document.querySelector('[data-image-output="y"]').textContent=`${setting.y}%`;
+  document.querySelector('[data-image-output="zoom"]').textContent=`${Number(setting.zoom).toFixed(2)}×`;
+}
+imageSlotSelect.addEventListener("change",syncImageControls);
+function updateActiveImage(field,value){const slot=activeImageSlot();imageSettings[slot]={...imageSettings[slot],[field]:value};saveImageMeta();applyImageSlot(slot);syncImageControls()}
+imageX.addEventListener("input",()=>updateActiveImage("x",Number(imageX.value)));
+imageY.addEventListener("input",()=>updateActiveImage("y",Number(imageY.value)));
+imageZoomControl.addEventListener("input",()=>updateActiveImage("zoom",Number(imageZoomControl.value)));
+imageFit.addEventListener("change",()=>updateActiveImage("fit",imageFit.value));
+function readImageFile(file){return new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=()=>reject(reader.error);reader.readAsDataURL(file)})}
+function loadImageElement(source){return new Promise((resolve,reject)=>{const image=new Image();image.onload=()=>resolve(image);image.onerror=reject;image.src=source})}
+async function compressImageFile(file){
+  const qualityMode=document.getElementById("imageQuality").value;
+  const options=qualityMode==="maximum"?{max:3600,quality:.94}:qualityMode==="light"?{max:1600,quality:.82}:{max:2400,quality:.9};
+  const source=await readImageFile(file);
+  const image=await loadImageElement(source);
+  const scale=Math.min(1,options.max/Math.max(image.naturalWidth,image.naturalHeight));
+  const canvas=document.createElement("canvas");
+  canvas.width=Math.max(1,Math.round(image.naturalWidth*scale));
+  canvas.height=Math.max(1,Math.round(image.naturalHeight*scale));
+  const context=canvas.getContext("2d");
+  context.imageSmoothingEnabled=true;context.imageSmoothingQuality="high";
+  context.drawImage(image,0,0,canvas.width,canvas.height);
+  return canvas.toDataURL("image/jpeg",options.quality);
+}
+imageUpload.addEventListener("change",async()=>{
+  const file=imageUpload.files?.[0];if(!file)return;
+  try{setStudioStatus("Preparing high-quality website picture…");const source=await compressImageFile(file);const slot=activeImageSlot();imageSettings[slot]={...imageSettings[slot],src:source};await imageDbSet(slot,source);applyImageSlot(slot);syncImageControls();setStudioStatus("Picture replaced. Download the complete website when finished.")}catch{setStudioStatus("This picture could not be processed.")}finally{imageUpload.value=""}
 });
+document.getElementById("jumpToImage").addEventListener("click",()=>{const element=document.querySelector(`[data-image-slot="${activeImageSlot()}"]`);closeStudio();element?.scrollIntoView({behavior:"smooth",block:"center"})});
+document.getElementById("resetImage").addEventListener("click",async()=>{const slot=activeImageSlot();imageSettings[slot]=deepCopy(embeddedImageSettings[slot]);await imageDbDelete(slot);saveImageMeta();applyImageSlot(slot);syncImageControls();setStudioStatus("Selected picture reset.")});
+document.getElementById("resetAllImages").addEventListener("click",async()=>{imageSettings=deepCopy(embeddedImageSettings);await imageDbClear();localStorage.removeItem(imageMetaStorageKey);applyAllImageSettings();syncImageControls();setStudioStatus("All pictures reset.")});
 
-document.getElementById("copyAnimation").addEventListener("click",async()=>{
-  const settingsText=JSON.stringify(animationSettings,null,2);
-  try{await navigator.clipboard.writeText(settingsText);setStudioStatus("Animation settings copied.")}
-  catch{setStudioStatus("Copy was blocked by the browser. Use Download instead.")}
-});
+// Layout controls and direct drag mode.
+const layoutSelect=document.getElementById("layoutSelect");
+Object.keys(layoutLabels).forEach(id=>{const option=document.createElement("option");option.value=id;option.textContent=layoutLabels[id];layoutSelect.appendChild(option)});
+const layoutControlMap={x:document.getElementById("layoutX"),y:document.getElementById("layoutY"),scaleX:document.getElementById("layoutScaleX"),scaleY:document.getElementById("layoutScaleY"),rotate:document.getElementById("layoutRotate"),z:document.getElementById("layoutZ")};
+let selectedLayoutId=layoutSelect.value;
+function formatLayoutValue(key,value){if(["x","y"].includes(key))return `${Math.round(value)}px`;if(["scaleX","scaleY"].includes(key))return `${Math.round(value*100)}%`;if(key==="rotate")return `${Number(value).toFixed(1)}°`;return String(Math.round(value))}
+function syncLayoutControls(){selectedLayoutId=layoutSelect.value;const setting=layoutSettings[selectedLayoutId];if(!setting)return;document.getElementById("layoutSelectedName").textContent=layoutLabels[selectedLayoutId];document.getElementById("moveBarName").textContent=layoutLabels[selectedLayoutId];Object.entries(layoutControlMap).forEach(([key,input])=>{input.value=setting[key];document.querySelector(`[data-layout-output="${key}"]`).textContent=formatLayoutValue(key,setting[key])});document.querySelectorAll("[data-layout-id]").forEach(element=>element.classList.toggle("layout-selected",element.dataset.layoutId===selectedLayoutId))}
+layoutSelect.addEventListener("change",syncLayoutControls);
+Object.entries(layoutControlMap).forEach(([key,input])=>input.addEventListener("input",()=>{layoutSettings[selectedLayoutId]={...layoutSettings[selectedLayoutId],[key]:Number(input.value)};applyLayoutItem(selectedLayoutId);saveLayoutSettings();syncLayoutControls();requestScrollPopUpdate()}));
+document.getElementById("jumpToLayout").addEventListener("click",()=>{const element=document.querySelector(`[data-layout-id="${selectedLayoutId}"]`);closeStudio();element?.scrollIntoView({behavior:"smooth",block:"center"})});
+document.getElementById("resetLayout").addEventListener("click",()=>{layoutSettings[selectedLayoutId]=deepCopy(embeddedLayoutSettings[selectedLayoutId]);applyLayoutItem(selectedLayoutId);saveLayoutSettings();syncLayoutControls();setStudioStatus("Selected layout part reset.")});
+document.getElementById("resetAllLayout").addEventListener("click",()=>{layoutSettings=deepCopy(embeddedLayoutSettings);localStorage.removeItem(layoutStorageKey);applyAllLayoutSettings();syncLayoutControls();setStudioStatus("All layout positions reset.")});
 
-function cleanDownloadedDocument(clone){
-  clone.querySelector("#animationDefaults").textContent=`
-${JSON.stringify(animationSettings)}
-`;
-  clone.querySelector("body").classList.remove("lock");
-  clone.querySelector("#header").classList.remove("scrolled");
-  clone.querySelector("#mobile").classList.remove("open");
-  clone.querySelector("#float").classList.remove("open");
-  clone.querySelector("#lightbox").classList.remove("open");
-  clone.querySelector("#customizer").classList.remove("show");
-  clone.querySelector("#customizer").setAttribute("aria-hidden","true");
+const layoutMoveBar=document.getElementById("layoutMoveBar");
+let directMoveActive=false;
+function startDirectMove(){directMoveActive=true;closeStudio();document.body.classList.add("layout-edit-mode");layoutMoveBar.classList.add("show");syncLayoutControls();document.querySelector(`[data-layout-id="${selectedLayoutId}"]`)?.scrollIntoView({behavior:"smooth",block:"center"})}
+function finishDirectMove(openAfter=false){directMoveActive=false;document.body.classList.remove("layout-edit-mode");layoutMoveBar.classList.remove("show");document.querySelectorAll("[data-layout-id]").forEach(element=>element.classList.remove("layout-selected"));if(openAfter)openStudio()}
+document.getElementById("directMove").addEventListener("click",startDirectMove);
+document.getElementById("moveBarFinish").addEventListener("click",()=>finishDirectMove(false));
+document.getElementById("moveBarStudio").addEventListener("click",()=>finishDirectMove(true));
+document.getElementById("moveBarReset").addEventListener("click",()=>{layoutSettings[selectedLayoutId]=deepCopy(embeddedLayoutSettings[selectedLayoutId]);applyLayoutItem(selectedLayoutId);saveLayoutSettings();syncLayoutControls()});
+let dragState=null;
+document.addEventListener("pointerdown",event=>{
+  if(!directMoveActive)return;
+  const target=event.target.closest("[data-layout-id]");
+  if(!target)return;
+  event.preventDefault();event.stopPropagation();
+  selectedLayoutId=target.dataset.layoutId;layoutSelect.value=selectedLayoutId;syncLayoutControls();
+  const setting=layoutSettings[selectedLayoutId];
+  dragState={pointerId:event.pointerId,startX:event.clientX,startY:event.clientY,originX:setting.x,originY:setting.y,target};
+  target.setPointerCapture?.(event.pointerId);
+},{capture:true});
+document.addEventListener("pointermove",event=>{
+  if(!dragState||event.pointerId!==dragState.pointerId)return;
+  event.preventDefault();
+  const setting=layoutSettings[selectedLayoutId];
+  setting.x=Math.round(dragState.originX+event.clientX-dragState.startX);
+  setting.y=Math.round(dragState.originY+event.clientY-dragState.startY);
+  applyLayoutItem(selectedLayoutId);syncLayoutControls();requestScrollPopUpdate();
+},{capture:true});
+document.addEventListener("pointerup",event=>{if(!dragState||event.pointerId!==dragState.pointerId)return;saveLayoutSettings();dragState=null},{capture:true});
+document.addEventListener("click",event=>{if(directMoveActive&&event.target.closest("[data-layout-id]")){event.preventDefault();event.stopPropagation()}},{capture:true});
+
+// Download a self-contained permanent website.
+function sanitizeClone(clone){
+  clone.querySelector("#animationDefaults").textContent=`\n${JSON.stringify(animationSettings)}\n`;
+  clone.querySelector("#imageDefaults").textContent=`\n${JSON.stringify(imageSettings)}\n`;
+  clone.querySelector("#layoutDefaults").textContent=`\n${JSON.stringify(layoutSettings)}\n`;
+  clone.querySelector("body").classList.remove("lock","layout-edit-mode");
+  clone.querySelector("#header")?.classList.remove("scrolled");
+  clone.querySelector("#mobile")?.classList.remove("open");
+  clone.querySelector("#float")?.classList.remove("open");
+  clone.querySelector("#lightbox")?.classList.remove("open");
+  clone.querySelector("#customizer")?.classList.remove("show");
+  clone.querySelector("#customizer")?.setAttribute("aria-hidden","true");
+  clone.querySelector("#layoutMoveBar")?.classList.remove("show");
   clone.querySelectorAll(".reveal").forEach(item=>item.classList.remove("show"));
-  clone.querySelectorAll(".scroll-pop").forEach(card=>{
-    card.removeAttribute("style");
-    card.querySelector("img")?.removeAttribute("style");
-    card.querySelector(".cardText")?.removeAttribute("style");
-  });
+  clone.querySelectorAll(".layout-selected").forEach(item=>item.classList.remove("layout-selected"));
+  clone.querySelectorAll(".scroll-pop").forEach(card=>{["--pop-opacity","--pop-scale","--pop-lift","--pop-tilt","--pop-shadow","--pop-radius","--pop-image-transform","--pop-image-filter","--pop-overlay-top","--pop-overlay-bottom","--pop-text-opacity","--pop-text-lift"].forEach(property=>card.style.removeProperty(property))});
   clone.querySelector("#customizerLogin")?.removeAttribute("hidden");
   clone.querySelector("#customizerControls")?.setAttribute("hidden","");
-  clone.querySelector("#customizerPassword")?.setAttribute("value","");
   clone.querySelector("#loginStatus").textContent="";
   clone.querySelector("#studioStatus").textContent="";
+  Object.entries(imageSettings).forEach(([slot,setting])=>clone.querySelectorAll(`[data-image-slot="${slot}"]`).forEach(image=>{image.src=setting.src;image.removeAttribute("style");image.dataset.baseZoom=setting.zoom}));
+  clone.querySelectorAll("[data-layout-id]").forEach(element=>element.removeAttribute("style"));
 }
-
 document.getElementById("downloadWebsite").addEventListener("click",()=>{
   const clone=document.documentElement.cloneNode(true);
-  cleanDownloadedDocument(clone);
-  const completeHtml="<!doctype html>\n"+clone.outerHTML;
-  const blob=new Blob([completeHtml],{type:"text/html;charset=utf-8"});
+  sanitizeClone(clone);
+  const blob=new Blob(["<!doctype html>\n"+clone.outerHTML],{type:"text/html;charset=utf-8"});
   const url=URL.createObjectURL(blob);
-  const link=document.createElement("a");
-  link.href=url;
-  link.download="index.html";
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
-  setTimeout(()=>URL.revokeObjectURL(url),1000);
-  setStudioStatus("Complete index.html downloaded. Upload it to GitHub to publish the animation.");
+  const link=document.createElement("a");link.href=url;link.download="index.html";document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1200);
+  setStudioStatus("Complete index.html downloaded. Replace the file in GitHub and commit it.");
 });
 
-syncStudioControls();
+addEventListener("keydown",event=>{
+  if(event.key==="Escape"){closeBox();closeMenu();float.classList.remove("open");if(directMoveActive)finishDirectMove(false);if(customizer.classList.contains("show"))closeStudio()}
+  if(!gallery)return;if(event.key==="ArrowRight")nextImage();if(event.key==="ArrowLeft")previousImage();
+});
 
+syncAnimationControls();
+syncImageControls();
+syncLayoutControls();
+loadOwnerImages();
 document.getElementById("year").textContent=new Date().getFullYear();
 </script>
 </body>
