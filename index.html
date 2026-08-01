@@ -1,766 +1,3031 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Thien Dang Photography — portraits, graduation, couples, events, and life stories in New Brunswick." />
-<meta name="theme-color" content="#eee7db" />
-<title>Thien Dang Photography — The Private Index</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Thien Dang Photography — portraits, graduation, couples and events in New Brunswick.">
+<title>Thien Dang Photography</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
 :root{
-  --paper:#eee7db;--light:#f8f3ea;--ink:#15130f;--muted:#756c62;
-  --line:rgba(21,19,15,.18);--gold:#947047;--dark:#11100e;--white:#fbf8f2;
-  --serif:"Cormorant Garamond",Georgia,serif;--sans:"Inter",Arial,sans-serif;
-  --page:min(1420px,calc(100vw - 48px))
+  --paper:#eee7db;
+  --cream:#f9f5ed;
+  --ink:#17140f;
+  --muted:#746b60;
+  --gold:#93714b;
+  --line:rgba(23,20,15,.17);
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:Inter,Arial,sans-serif;
 }
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:
-radial-gradient(circle at 20% 20%,rgba(0,0,0,.035) 0 1px,transparent 1.5px),
-linear-gradient(180deg,var(--light),var(--paper));background-size:31px 31px,100% 100%;
-font-family:var(--sans);overflow-x:hidden}body.lock{overflow:hidden}
-img{display:block;max-width:100%}a{color:inherit}button{font:inherit;color:inherit}.wrap{width:var(--page);margin:auto}
-.eyebrow{margin:0;color:var(--gold);font-size:.65rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase}
-.display{margin:0;font:500 clamp(4.5rem,9vw,10rem)/.76 var(--serif);letter-spacing:-.075em}
-.copy{margin:0;color:var(--muted);font:400 clamp(1.35rem,2vw,2rem)/1.35 var(--serif)}
-header{position:fixed;z-index:100;inset:0 0 auto;border-bottom:1px solid transparent;transition:.25s}
-header.scrolled{color:var(--ink);border-color:var(--line);background:rgba(238,231,219,.92);backdrop-filter:blur(16px)}
-nav{width:var(--page);height:72px;margin:auto;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;color:var(--white)}
-.navgroup{display:flex;align-items:center;gap:28px}.navgroup.right{justify-content:flex-end}
-nav a,nav button{border:0;padding:0;color:inherit;background:transparent;font-size:.61rem;font-weight:600;letter-spacing:.18em;text-decoration:none;text-transform:uppercase;cursor:pointer}
-nav a:hover,nav button:hover{opacity:.62}.brand{font:600 1.35rem var(--serif)!important;letter-spacing:-.02em!important;text-transform:none!important}
-.edit{padding:.48rem .72rem!important;border:1px solid currentColor!important;border-radius:999px!important}.owner-only{display:none!important}.menu{display:none}
-.hero{position:relative;min-height:100svh;overflow:hidden;color:var(--white);background:var(--dark)}
-.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;filter:grayscale(1) contrast(.93) brightness(.72);animation:zoom 15s ease-out both}
-@keyframes zoom{from{transform:scale(1.08)}to{transform:scale(1.02)}}
-.shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.22),transparent 32%),linear-gradient(180deg,transparent 52%,rgba(0,0,0,.88))}
-.heroInner{position:relative;z-index:2;min-height:100svh;padding-top:118px;display:grid;grid-template-rows:auto 1fr auto}
-.mast{width:min(1180px,calc(100% - 28px));margin:auto;padding:2.7rem 1rem 1.8rem;color:var(--ink);text-align:center;background:rgba(246,240,229,.95);box-shadow:0 20px 70px rgba(0,0,0,.16)}
-.mast small{font-size:.56rem;font-weight:600;letter-spacing:.32em;text-transform:uppercase}
-.mast h1{margin:1.1rem 0 0;font:500 clamp(5.3rem,12vw,11.5rem)/.63 var(--serif);letter-spacing:-.08em}
-.mast p{margin:1.8rem 0 0;font-size:.5rem;font-weight:600;letter-spacing:.2em;line-height:1.8;text-transform:uppercase}
-.heroQuote{width:var(--page);margin:auto;padding:2rem 0 3rem;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end}
-.heroQuote p{max-width:940px;margin:0;font:400 clamp(1.9rem,3.4vw,4rem)/1.02 var(--serif);text-transform:uppercase;text-shadow:0 2px 24px rgba(0,0,0,.5)}
-.heroQuote span{font-size:.56rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;writing-mode:vertical-rl}
-.index{border-bottom:1px solid var(--line);background:var(--light)}.indexInner{width:var(--page);margin:auto;display:grid;grid-template-columns:repeat(4,1fr)}
-.index a{min-height:78px;padding:1.35rem;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;border-left:1px solid var(--line);text-decoration:none}.index a:last-child{border-right:1px solid var(--line)}
-.index span{color:var(--gold);font:500 1.2rem var(--serif)}.index strong{font-size:.61rem;letter-spacing:.16em;text-transform:uppercase}
-.intro{min-height:85vh;padding:9rem 0;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(48px,8vw,140px);align-items:center}.intro h2{margin-top:1.5rem}
-.introText{display:grid;gap:2rem}.signature{width:fit-content;margin:0;padding-top:1rem;border-top:1px solid var(--line);color:var(--gold);font:italic 1.45rem var(--serif)}
-.stories{padding:2rem 0 10rem}.sectionHead{margin-bottom:4rem;display:flex;justify-content:space-between;gap:40px;align-items:end}.sectionHead h2{margin-top:1rem}.sectionHead>p{max-width:460px;margin:0;color:var(--muted);line-height:1.6}
-.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;perspective:1600px}.card{position:relative;min-height:650px;overflow:hidden;border:0;padding:0;color:var(--white);background:#c9c0b3;text-align:left;cursor:pointer}
-.card:nth-child(1){grid-column:span 7}.card:nth-child(2){grid-column:span 5;margin-top:120px}.card:nth-child(3){grid-column:span 5;margin-top:-80px}.card:nth-child(4){grid-column:span 7;margin-top:40px}
-.card.scroll-pop{opacity:var(--pop-opacity,.28);transform:translate3d(0,var(--pop-lift,90px),0) scale(var(--pop-scale,.84)) rotateX(var(--pop-tilt,4deg));transform-origin:center center;box-shadow:var(--pop-shadow,0 18px 38px rgba(0,0,0,.07));border-radius:var(--pop-radius,28px);will-change:transform,opacity,box-shadow,border-radius;transition:none;backface-visibility:hidden}
-.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.78);transition:.7s}
-.card.scroll-pop img{transform:var(--pop-image-transform,scale(1.12) translateY(10px));filter:var(--pop-image-filter,saturate(.58) brightness(.78));transition:none;will-change:transform,filter}
-.card.scroll-pop:hover img{filter:saturate(1.06) brightness(1.02)}
-.card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 34%,rgba(0,0,0,.78));transition:background .25s}
-.card.scroll-pop:after{background:linear-gradient(180deg,rgba(0,0,0,var(--pop-overlay-top,.09)) 20%,rgba(0,0,0,var(--pop-overlay-bottom,.84)) 100%)}
-.cardText{position:absolute;z-index:2;left:28px;right:28px;bottom:28px}.card.scroll-pop .cardText{opacity:var(--pop-text-opacity,.58);transform:translateY(var(--pop-text-lift,20px));will-change:transform,opacity}
-.cardText span{font-size:.6rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase}
-.cardText h3{margin:.7rem 0 0;font:500 clamp(2.8rem,5vw,5.6rem)/.82 var(--serif);letter-spacing:-.055em}
-.dispatch{position:relative;min-height:100svh;overflow:hidden;color:var(--white);background:var(--dark)}
-.dispatch>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.75) brightness(.46)}
-.dispatch:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.82),transparent 70%),linear-gradient(180deg,transparent,rgba(0,0,0,.55))}
-.dispatchInner{position:relative;z-index:2;min-height:100svh;padding:7rem 0;display:grid;grid-template-columns:1fr .8fr;gap:80px;align-items:center}
-.dispatch h2{margin:1rem 0 2rem;font:500 clamp(4.8rem,10vw,11rem)/.7 var(--serif);letter-spacing:-.08em}.dispatch .copy{max-width:650px;color:rgba(255,255,255,.76)}
-.aside{align-self:end;padding:2rem;border:1px solid rgba(255,255,255,.24);background:rgba(0,0,0,.18);backdrop-filter:blur(9px)}.aside p{margin:0;font-size:.7rem;letter-spacing:.16em;line-height:1.8;text-transform:uppercase}
-.about{padding:10rem 0;display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(50px,9vw,150px);align-items:center}.portrait{position:relative;min-height:720px;overflow:hidden;background:#cfc7bb}.portrait:before{content:"";position:absolute;z-index:2;inset:18px;border:1px solid rgba(255,255,255,.6)}
-.portrait img{width:100%;height:100%;min-height:720px;object-fit:cover;filter:saturate(.78)}.about h2{margin:1.2rem 0 2rem;font:500 clamp(4.8rem,8vw,8rem)/.75 var(--serif);letter-spacing:-.07em}
-.aboutText>p:not(.eyebrow){max-width:680px;margin:0 0 1.4rem;color:var(--muted);font:400 clamp(1.25rem,1.8vw,1.75rem)/1.4 var(--serif)}
-.locations{margin-top:2.4rem;padding-top:1.4rem;display:flex;flex-wrap:wrap;gap:16px 28px;border-top:1px solid var(--line);font-size:.64rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
-.offerings{padding:8rem 0 10rem;border-top:1px solid var(--line)}.offerHead{margin-bottom:4rem;display:grid;grid-template-columns:1fr .8fr;gap:70px;align-items:end}.offerHead h2{margin-top:1rem}
-.offerGrid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
-.offer{min-height:380px;padding:2rem;display:flex;flex-direction:column;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:.25s}.offer:hover{color:var(--light);background:var(--ink)}
-.offer span{color:var(--gold);font:500 1.2rem var(--serif)}.offer h3{margin:auto 0 1.2rem;font:500 2.7rem/.9 var(--serif)}.offer p{margin:0;color:var(--muted);line-height:1.55}.offer:hover p{color:rgba(255,255,255,.68)}
-.notes{padding:9rem 0;color:var(--white);background:var(--dark)}.noteHead{margin-bottom:4rem;display:flex;justify-content:space-between;gap:60px;align-items:end}.noteHead h2{margin-top:1rem}.noteHead>p{max-width:460px;margin:0;color:rgba(255,255,255,.62);line-height:1.6}
-.noteList{border-top:1px solid rgba(255,255,255,.2)}.note{padding:2rem 0;display:grid;grid-template-columns:120px 1fr auto;gap:30px;align-items:center;border-bottom:1px solid rgba(255,255,255,.2)}
-.note span{color:#c8aa84;font:500 1.2rem var(--serif)}.note h3{margin:0;font:500 clamp(2.2rem,4vw,4.5rem)/.9 var(--serif);letter-spacing:-.045em}.note p{max-width:430px;margin:0;color:rgba(255,255,255,.56);font-size:.84rem;line-height:1.5}
-.contact{min-height:92vh;padding:8rem 0 3rem;display:grid;align-items:center}.contactInner{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(60px,9vw,150px);align-items:center}.contact h2{margin:1.2rem 0 0}
-.contactCard{padding:2rem 0 2rem 2rem;border-left:1px solid var(--line)}.contactCard p{margin:0 0 2rem;color:var(--muted);font:400 1.65rem/1.38 var(--serif)}.links{display:grid;gap:.8rem}
-.links a{width:fit-content;padding-bottom:.25rem;border-bottom:1px solid var(--line);font-size:.73rem;font-weight:600;letter-spacing:.12em;text-decoration:none;text-transform:uppercase}
-footer{padding-top:4rem;display:flex;justify-content:space-between;gap:30px;align-items:end;border-top:1px solid var(--line);color:var(--muted);font-size:.61rem;letter-spacing:.14em;text-transform:uppercase}
-footer strong{color:var(--ink);font:600 2rem var(--serif);letter-spacing:-.03em;text-transform:none}
-.float{position:fixed;z-index:90;right:22px;bottom:22px}.floatBtn{position:relative;overflow:hidden;border:2px solid rgba(255,255,255,.75);border-radius:18px;padding:5px;color:var(--white);background:var(--dark);box-shadow:0 20px 55px rgba(0,0,0,.26);cursor:pointer}
-.floatBtn img{width:auto;height:auto;max-width:92px;max-height:116px;border-radius:12px;object-fit:contain}.floatBtn span{position:absolute;right:-5px;bottom:-5px;padding:.48rem .7rem;border-radius:999px;color:var(--ink);background:#c8aa84;font-size:.56rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
-.pop{position:absolute;right:0;bottom:calc(100% + 12px);width:min(360px,calc(100vw - 32px));padding:1.4rem;border:1px solid rgba(255,255,255,.14);border-radius:18px;color:var(--white);background:rgba(17,16,14,.96);box-shadow:0 26px 80px rgba(0,0,0,.35);backdrop-filter:blur(16px);opacity:0;visibility:hidden;transform:translateY(12px);transition:.22s}
-.float.open .pop{opacity:1;visibility:visible;transform:none}.pop h3{margin:0 0 .7rem;font:500 2rem/.9 var(--serif)}.pop p{margin:0 0 1rem;color:rgba(255,255,255,.62);line-height:1.5}.pop a{display:block;margin-top:.55rem;padding:.8rem .9rem;border:1px solid rgba(255,255,255,.15);border-radius:999px;font-size:.72rem;text-decoration:none}
-.lightbox{position:fixed;z-index:200;inset:0;padding:24px;display:grid;grid-template-rows:auto 1fr auto;color:var(--white);background:rgba(10,9,8,.96);opacity:0;visibility:hidden;transition:.22s}.lightbox.open{opacity:1;visibility:visible}
-.lbHead,.lbFoot{display:flex;justify-content:space-between;gap:24px;align-items:center}.lbHead p,.lbFoot p{margin:0;font-size:.61rem;letter-spacing:.2em;text-transform:uppercase}
-.close{padding:.65rem .9rem;border:1px solid rgba(255,255,255,.3);border-radius:999px;color:var(--white);background:transparent;font-size:.61rem;letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
-.stage{position:relative;min-height:0;display:grid;place-items:center}.stage img{max-width:100%;max-height:78vh;object-fit:contain;box-shadow:0 24px 90px rgba(0,0,0,.5)}.arrow{position:absolute;top:50%;width:48px;height:48px;border:1px solid rgba(255,255,255,.28);border-radius:50%;color:var(--white);background:rgba(0,0,0,.2);font-size:1.2rem;transform:translateY(-50%);cursor:pointer}.prev{left:0}.next{right:0}
-.reveal{opacity:0;transform:translateY(48px);transition:opacity .8s,transform .9s cubic-bezier(.2,.7,.2,1)}.reveal.show{opacity:1;transform:none}
-.mobile{position:fixed;z-index:95;inset:0;padding:100px 24px 40px;display:grid;align-content:center;gap:26px;color:var(--light);background:var(--dark);opacity:0;visibility:hidden;transform:translateY(-14px);transition:.22s}.mobile.open{opacity:1;visibility:visible;transform:none}.mobile a{width:fit-content;font:500 clamp(3rem,12vw,6rem)/.8 var(--serif);text-decoration:none}
-@media(max-width:1100px){
-:root{--page:min(100% - 32px,1420px)}.desktop{display:none!important}.menu{display:inline-block}.navgroup:first-child,.navgroup.right a{display:none}nav{grid-template-columns:1fr auto}.brand{justify-self:start}.navgroup.right{display:contents}
-.intro,.about,.contactInner,.dispatchInner,.offerHead{grid-template-columns:1fr}.card:nth-child(n){grid-column:span 6;margin-top:0}.card{min-height:550px}.offerGrid{grid-template-columns:repeat(2,1fr)}.portrait,.portrait img{min-height:600px}.aside{max-width:560px}
+
+*{
+  box-sizing:border-box;
 }
-@media(max-width:760px){
-:root{--page:calc(100% - 24px)}nav{height:62px}.heroInner{padding-top:86px}.mast{width:calc(100% - 24px);padding:1.8rem .7rem 1.2rem}.mast h1{font-size:clamp(4.3rem,22vw,7rem);line-height:.66}.mast p{font-size:.42rem}.heroQuote{grid-template-columns:1fr;padding-bottom:6rem}.heroQuote p{font-size:clamp(1.55rem,7vw,2.6rem)}.heroQuote span{display:none}
-.indexInner{grid-template-columns:repeat(2,1fr)}.index a:nth-child(n+3){border-top:1px solid var(--line)}.intro,.about{padding:6rem 0}.stories{padding-bottom:6rem}.sectionHead,.noteHead{display:grid;grid-template-columns:1fr;align-items:start}.grid{grid-template-columns:1fr}.card:nth-child(n){grid-column:auto;min-height:72vh}.dispatchInner{padding:5rem 0}.portrait,.portrait img{min-height:520px}.offerGrid{grid-template-columns:1fr}.offer{min-height:290px}.notes{padding:6rem 0}.note{grid-template-columns:70px 1fr}.note p{grid-column:2}.contact{padding-top:6rem}.contactCard{padding:2rem 0 0;border-top:1px solid var(--line);border-left:0}footer{align-items:flex-start;flex-direction:column}.float{right:12px;bottom:12px}.floatBtn img{max-width:72px;max-height:92px}.lightbox{padding:14px}.stage img{max-height:72vh}.arrow{top:auto;bottom:0}
+
+html{
+  scroll-behavior:smooth;
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.card.scroll-pop{opacity:1;transform:none;border-radius:0;box-shadow:0 24px 60px rgba(0,0,0,.16)}.card.scroll-pop img{transform:none;filter:saturate(.9)}}
 
-/* Owner animation studio. Open the website with ?customize=true. */
-.customizer{position:fixed;z-index:300;inset:0;display:none;place-items:center;padding:18px;background:rgba(10,9,8,.72);backdrop-filter:blur(12px)}
-.customizer.show{display:grid}.customizerShell{width:min(940px,100%);max-height:94vh;overflow:auto;border:1px solid rgba(255,255,255,.15);border-radius:24px;color:var(--white);background:#151310;box-shadow:0 35px 120px rgba(0,0,0,.5)}
-.customizerHead{position:sticky;z-index:2;top:0;padding:1.25rem 1.4rem;display:flex;justify-content:space-between;gap:24px;align-items:flex-start;border-bottom:1px solid rgba(255,255,255,.12);background:rgba(21,19,16,.96);backdrop-filter:blur(16px)}
-.customizerHead p{margin:0 0 .35rem;color:#c8aa84;font-size:.62rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase}.customizerHead h2{margin:0;font:500 2.25rem/.9 var(--serif);letter-spacing:-.045em}.customizerClose{width:38px;height:38px;border:1px solid rgba(255,255,255,.22);border-radius:50%;color:var(--white);background:transparent;cursor:pointer}
-.customizerBody{padding:1.4rem}.customizerLogin{max-width:480px;margin:3rem auto}.customizerLogin p{color:rgba(255,255,255,.62);line-height:1.55}.customizerLogin label,.control{display:grid;gap:.5rem;color:rgba(255,255,255,.68);font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
-.customizer input[type=password],.customizer select{width:100%;border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:.82rem .9rem;color:var(--white);background:rgba(255,255,255,.06);outline:none}.customizer select option{color:#15130f}.customizer input[type=range]{width:100%;accent-color:#c8aa84}.customizer button,.customizerLink{border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:.72rem 1rem;color:var(--white);background:rgba(255,255,255,.06);font-size:.67rem;font-weight:600;letter-spacing:.1em;text-decoration:none;text-transform:uppercase;cursor:pointer}.customizer button:hover,.customizerLink:hover{border-color:#c8aa84;color:#c8aa84}
-.customizerControls[hidden],.customizerLogin[hidden]{display:none}.studioIntro{margin:0 0 1.4rem;color:rgba(255,255,255,.62);line-height:1.55}.controlGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.control{padding:1rem;border:1px solid rgba(255,255,255,.11);border-radius:16px;background:rgba(255,255,255,.035)}.controlTop{display:flex;justify-content:space-between;gap:18px}.controlValue{color:#c8aa84;font-family:var(--serif);font-size:1.1rem;letter-spacing:0;text-transform:none}.controlWide{grid-column:1/-1}.studioActions{position:sticky;bottom:0;margin:1.4rem -1.4rem -1.4rem;padding:1rem 1.4rem;display:flex;flex-wrap:wrap;gap:.65rem;border-top:1px solid rgba(255,255,255,.12);background:rgba(21,19,16,.96);backdrop-filter:blur(16px)}.studioActions .primary{color:#15130f;background:#c8aa84;border-color:#c8aa84}.studioStatus{min-height:1.2em;margin:1rem 0 0;color:#c8aa84;font-size:.8rem}.customizerNote{margin:1rem 0 0;padding:1rem;border-left:2px solid #c8aa84;color:rgba(255,255,255,.6);background:rgba(255,255,255,.035);font-size:.78rem;line-height:1.55}
-@media(max-width:760px){.customizer{padding:0}.customizerShell{max-height:100vh;height:100vh;border:0;border-radius:0}.controlGrid{grid-template-columns:1fr}.controlWide{grid-column:auto}.studioActions{position:static}.customizerHead{padding:1rem}.customizerBody{padding:1rem}.studioActions{margin:1rem -1rem -1rem}}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  overflow-x:hidden;
+}
 
+body.lock{
+  overflow:hidden;
+}
 
-/* Complete owner website studio: animation, pictures and layout. */
-[data-layout-id]{position:relative;translate:var(--layout-x,0px) var(--layout-y,0px);scale:var(--layout-scale-x,1) var(--layout-scale-y,1);rotate:var(--layout-rotate,0deg);z-index:var(--layout-z,auto);transform-origin:center center}
-body.layout-edit-mode [data-layout-id]{outline:1px dashed rgba(148,112,71,.72);outline-offset:5px;cursor:move!important;touch-action:none}
-body.layout-edit-mode [data-layout-id]:hover,body.layout-edit-mode [data-layout-id].layout-selected{outline:3px solid #c8aa84;outline-offset:6px}
-.layoutMoveBar{position:fixed;z-index:360;top:84px;right:18px;display:none;max-width:min(520px,calc(100vw - 36px));padding:.8rem 1rem;align-items:center;gap:.65rem;flex-wrap:wrap;border:1px solid rgba(255,255,255,.16);border-radius:16px;color:var(--white);background:rgba(21,19,16,.96);box-shadow:0 24px 80px rgba(0,0,0,.38);backdrop-filter:blur(16px)}
-.layoutMoveBar.show{display:flex}.layoutMoveBar strong{margin-right:auto;font:500 1.1rem var(--serif)}.layoutMoveBar button{border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:.58rem .8rem;color:var(--white);background:rgba(255,255,255,.06);font-size:.62rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;cursor:pointer}
-.customizer{align-items:stretch;justify-items:end;padding:0;background:rgba(10,9,8,.26);pointer-events:none}
-.customizer.show{display:grid}.customizerShell{width:min(620px,100%);height:100vh;max-height:none;border-radius:0;border-width:0 0 0 1px;pointer-events:auto}
-.customizerHead{padding:1rem 1.15rem}.customizerHead h2{font-size:2rem}.customizerBody{padding:1.15rem}
-.studioTabs{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-bottom:1.15rem}.studioTabs button{border-radius:12px;padding:.75rem .5rem}.studioTabs button.active{color:#15130f;background:#c8aa84;border-color:#c8aa84}
-.studioPanel[hidden]{display:none}.editorCard{padding:1rem;border:1px solid rgba(255,255,255,.11);border-radius:16px;background:rgba(255,255,255,.035)}
-.editorCard+.editorCard{margin-top:1rem}.imagePreview{height:260px;margin-bottom:1rem;overflow:hidden;border:1px solid rgba(255,255,255,.12);border-radius:14px;background:#0e0d0b}.imagePreview img{width:100%;height:100%;object-fit:cover}
-.filePicker{display:grid;gap:.5rem;margin-bottom:1rem;color:rgba(255,255,255,.68);font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}.filePicker input{width:100%;padding:.75rem;border:1px dashed rgba(255,255,255,.24);border-radius:12px;color:rgba(255,255,255,.72);background:rgba(255,255,255,.04)}
-.customizer input[type=text],.customizer input[type=number],.customizer input[type=file]{font-family:var(--sans)}
-.compactActions{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem}.studioHelp{margin:.8rem 0 0;color:rgba(255,255,255,.56);font-size:.76rem;line-height:1.55}.studioSectionTitle{margin:0 0 1rem;font:500 1.65rem/.95 var(--serif)}
-.imageMeta{display:flex;justify-content:space-between;gap:1rem;align-items:center;margin-bottom:.8rem;color:rgba(255,255,255,.58);font-size:.72rem}.imageMeta strong{color:#c8aa84}
-.layoutPreviewName{margin:0 0 1rem;padding:.8rem 1rem;border-left:2px solid #c8aa84;color:rgba(255,255,255,.72);background:rgba(255,255,255,.035)}
-.studioActions{margin:1.15rem -1.15rem -1.15rem;padding:1rem 1.15rem}.studioActions .spacer{flex:1}
-@media(max-width:760px){.customizerShell{width:100%;border:0}.studioTabs{position:sticky;z-index:2;top:74px;background:#151310;padding:.3rem 0}.imagePreview{height:220px}.layoutMoveBar{top:70px;left:12px;right:12px}}
+button,
+input,
+select{
+  font:inherit;
+}
 
+button{
+  cursor:pointer;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+a{
+  color:inherit;
+}
+
+.wrap{
+  width:min(1320px,calc(100% - 40px));
+  margin:auto;
+}
+
+.eyebrow{
+  margin:0;
+  color:var(--gold);
+  font-size:.68rem;
+  font-weight:600;
+  letter-spacing:.23em;
+  text-transform:uppercase;
+}
+
+.display{
+  margin:.8rem 0 0;
+  font:500 clamp(4rem,9vw,9rem)/.78 var(--serif);
+  letter-spacing:-.065em;
+}
+
+/* Navigation */
+
+header{
+  position:fixed;
+  z-index:50;
+  inset:0 0 auto;
+  color:#fff;
+  transition:.25s;
+}
+
+header.scrolled{
+  color:var(--ink);
+  background:rgba(238,231,219,.92);
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(14px);
+}
+
+nav{
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.brand{
+  font:600 1.45rem var(--serif);
+  text-decoration:none;
+}
+
+.navlinks{
+  display:flex;
+  gap:24px;
+  align-items:center;
+}
+
+.navlinks a,
+.navlinks button{
+  border:0;
+  background:none;
+  color:inherit;
+  font-size:.61rem;
+  font-weight:600;
+  letter-spacing:.16em;
+  text-decoration:none;
+  text-transform:uppercase;
+}
+
+.ownerBtn{
+  display:none !important;
+  padding:.5rem .8rem !important;
+  border:1px solid currentColor !important;
+  border-radius:999px !important;
+}
+
+body.owner .ownerBtn{
+  display:inline-flex !important;
+}
+
+/* Hero */
+
+.hero{
+  position:relative;
+  min-height:100svh;
+  color:#fff;
+  background:#111;
+  overflow:hidden;
+}
+
+.hero > img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  filter:grayscale(.45) brightness(.62);
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.2),transparent 45%,rgba(0,0,0,.82));
+}
+
+.heroInner{
+  position:relative;
+  z-index:1;
+  min-height:100svh;
+  padding:115px 0 55px;
+  display:grid;
+  align-content:space-between;
+}
+
+.mast{
+  max-width:1040px;
+  margin:auto;
+  padding:2.5rem 1.5rem;
+  text-align:center;
+  color:var(--ink);
+  background:rgba(248,243,233,.95);
+}
+
+.mast small{
+  font-size:.58rem;
+  font-weight:600;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+}
+
+.mast h1{
+  margin:.8rem 0 0;
+  font:500 clamp(5rem,12vw,11rem)/.66 var(--serif);
+  letter-spacing:-.075em;
+}
+
+.mast p{
+  margin:1.3rem 0 0;
+  font-size:.52rem;
+  font-weight:600;
+  letter-spacing:.14em;
+  line-height:1.7;
+  text-transform:uppercase;
+}
+
+.heroQuote{
+  max-width:920px;
+  margin:0;
+  font:400 clamp(2rem,4vw,4.3rem)/1 var(--serif);
+  text-transform:uppercase;
+  text-shadow:0 4px 28px #000;
+}
+
+/* Intro */
+
+.intro{
+  padding:9rem 0;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8vw;
+  align-items:center;
+}
+
+.copy{
+  margin:0;
+  color:var(--muted);
+  font:400 clamp(1.3rem,2vw,2rem)/1.4 var(--serif);
+}
+
+/* Albums */
+
+.stories{
+  padding:2rem 0 10rem;
+}
+
+.sectionHead{
+  margin-bottom:4rem;
+  display:flex;
+  justify-content:space-between;
+  gap:3rem;
+  align-items:end;
+}
+
+.sectionHead > p{
+  max-width:430px;
+  color:var(--muted);
+  line-height:1.6;
+}
+
+.albumGrid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:46px 28px;
+  align-items:start;
+}
+
+.albumCardWrap{
+  display:flex;
+}
+
+.albumCard{
+  position:relative;
+  width:100%;
+  padding:0;
+  border:0;
+  background:#c8c0b4;
+  color:#fff;
+  overflow:hidden;
+  text-align:left;
+  transform:translateY(32px) scale(.97);
+  opacity:.35;
+  transition:
+    transform .2s linear,
+    opacity .2s linear;
+}
+
+.albumCard img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.albumCard::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(180deg,transparent 35%,rgba(0,0,0,.78));
+}
+
+.albumCardText{
+  position:absolute;
+  z-index:1;
+  left:26px;
+  right:26px;
+  bottom:24px;
+}
+
+.albumCardText span{
+  font-size:.59rem;
+  font-weight:600;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.albumCardText h3{
+  margin:.55rem 0 0;
+  font:500 clamp(2.8rem,5vw,5.4rem)/.82 var(--serif);
+  letter-spacing:-.045em;
+}
+
+.albumCount{
+  position:absolute;
+  z-index:2;
+  right:18px;
+  top:18px;
+  padding:.45rem .65rem;
+  border-radius:999px;
+  background:rgba(0,0,0,.45);
+  font-size:.62rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  backdrop-filter:blur(8px);
+}
+
+/* About */
+
+.about{
+  padding:9rem 0;
+  border-top:1px solid var(--line);
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:8vw;
+  align-items:center;
+}
+
+.aboutPhoto{
+  min-height:650px;
+}
+
+.aboutPhoto img{
+  width:100%;
+  height:650px;
+  object-fit:cover;
+}
+
+.aboutText h2{
+  margin:1rem 0 2rem;
+  font:500 clamp(4.2rem,8vw,8rem)/.78 var(--serif);
+  letter-spacing:-.06em;
+}
+
+.aboutText p:not(.eyebrow){
+  color:var(--muted);
+  font:400 clamp(1.2rem,1.8vw,1.7rem)/1.42 var(--serif);
+}
+
+/* Contact */
+
+.contact{
+  padding:8rem 0;
+}
+
+.contactBox{
+  padding:clamp(2rem,6vw,6rem);
+  color:#fff;
+  background:#17140f;
+  display:grid;
+  grid-template-columns:1.3fr .7fr;
+  gap:5vw;
+  align-items:end;
+}
+
+.contactBox h2{
+  margin:.8rem 0 0;
+  font:500 clamp(4rem,9vw,9rem)/.78 var(--serif);
+  letter-spacing:-.06em;
+}
+
+.contactLinks{
+  display:grid;
+  gap:12px;
+}
+
+.contactLinks a{
+  padding:1rem 0;
+  border-bottom:1px solid rgba(255,255,255,.22);
+  font-size:.72rem;
+  letter-spacing:.13em;
+  text-decoration:none;
+  text-transform:uppercase;
+}
+
+footer{
+  padding:2rem 0;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  color:var(--muted);
+  font-size:.65rem;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+
+/* Album viewer */
+
+.viewer{
+  position:fixed;
+  z-index:100;
+  inset:0;
+  display:none;
+  background:rgba(10,9,7,.96);
+  color:#fff;
+}
+
+.viewer.open{
+  display:block;
+}
+
+.viewerTop{
+  position:sticky;
+  z-index:2;
+  top:0;
+  padding:18px 22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:rgba(10,9,7,.88);
+  backdrop-filter:blur(12px);
+}
+
+.viewerTop h2{
+  margin:0;
+  font:500 2rem var(--serif);
+}
+
+.viewerTop button{
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:999px;
+  padding:.6rem .9rem;
+  color:#fff;
+  background:transparent;
+}
+
+.viewerBody{
+  height:calc(100vh - 76px);
+  overflow:auto;
+  padding:30px;
+}
+
+.viewerGrid{
+  max-width:1250px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px;
+}
+
+.viewerItem{
+  margin:0;
+  background:#16130f;
+}
+
+.viewerItem img{
+  width:100%;
+  height:auto;
+}
+
+.viewerEmpty{
+  padding:5rem 1rem;
+  text-align:center;
+  color:rgba(255,255,255,.65);
+}
+
+/* Website Studio */
+
+.studio{
+  position:fixed;
+  z-index:120;
+  inset:0;
+  display:none;
+  background:rgba(0,0,0,.68);
+}
+
+.studio.open{
+  display:grid;
+  place-items:center;
+}
+
+.studioPanel{
+  width:min(980px,calc(100% - 24px));
+  height:min(90vh,900px);
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:18px;
+  color:#fff;
+  background:#181510;
+  box-shadow:0 30px 100px rgba(0,0,0,.5);
+}
+
+.studioHead{
+  height:70px;
+  padding:0 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.studioHead h2{
+  margin:0;
+  font:500 2rem var(--serif);
+}
+
+.studioHead div{
+  display:flex;
+  gap:8px;
+}
+
+.studioHead button,
+.studio button{
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:10px;
+  padding:.65rem .85rem;
+  color:#fff;
+  background:rgba(255,255,255,.06);
+}
+
+.studio button.primary{
+  color:#17140f;
+  background:#c9ab82;
+  border-color:#c9ab82;
+}
+
+.studioBody{
+  height:calc(100% - 70px);
+  overflow:auto;
+  padding:20px;
+}
+
+.albumSelector{
+  display:flex;
+  gap:8px;
+  overflow:auto;
+  padding-bottom:14px;
+}
+
+.albumSelector button.active{
+  color:#17140f;
+  background:#c9ab82;
+}
+
+.studioGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.panel{
+  padding:18px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:14px;
+  background:rgba(255,255,255,.03);
+}
+
+.panel h3{
+  margin:0 0 1rem;
+  font:500 1.55rem var(--serif);
+}
+
+.field{
+  display:grid;
+  gap:7px;
+  margin:0 0 14px;
+}
+
+.field label{
+  font-size:.65rem;
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.68);
+}
+
+.field input[type="text"],
+.field input[type="number"],
+.field select{
+  width:100%;
+  padding:.75rem .8rem;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:9px;
+  color:#fff;
+  background:#242019;
+}
+
+.field input[type="range"]{
+  width:100%;
+}
+
+.rangeLine{
+  display:flex;
+  justify-content:space-between;
+  color:rgba(255,255,255,.65);
+  font-size:.7rem;
+}
+
+.uploadLabel{
+  display:block;
+  padding:1.1rem;
+  border:1px dashed rgba(255,255,255,.28);
+  border-radius:12px;
+  text-align:center;
+  cursor:pointer;
+}
+
+.uploadLabel input{
+  display:none;
+}
+
+.photoList{
+  margin-top:14px;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+
+.photoItem{
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:11px;
+  background:#100e0b;
+}
+
+.photoItem img{
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+}
+
+.photoActions{
+  padding:8px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+
+.photoActions button{
+  padding:.45rem .55rem;
+  font-size:.62rem;
+}
+
+.coverBadge{
+  position:absolute;
+  left:8px;
+  top:8px;
+  padding:.35rem .5rem;
+  border-radius:999px;
+  color:#17140f;
+  background:#c9ab82;
+  font-size:.55rem;
+  font-weight:700;
+  text-transform:uppercase;
+}
+
+.help{
+  color:rgba(255,255,255,.58);
+  font-size:.75rem;
+  line-height:1.55;
+}
+
+.status{
+  min-height:1.2rem;
+  color:#c9ab82;
+  font-size:.76rem;
+}
+
+.danger{
+  border-color:#8d4e45 !important;
+  color:#ffb9ae !important;
+}
+
+/* Login */
+
+.login{
+  position:fixed;
+  z-index:130;
+  inset:0;
+  display:none;
+  place-items:center;
+  background:rgba(0,0,0,.75);
+}
+
+.login.open{
+  display:grid;
+}
+
+.loginBox{
+  width:min(390px,calc(100% - 28px));
+  padding:24px;
+  border-radius:16px;
+  color:#fff;
+  background:#181510;
+}
+
+.loginBox h2{
+  margin:0 0 1rem;
+  font:500 2.2rem var(--serif);
+}
+
+.loginBox input{
+  width:100%;
+  margin:0 0 12px;
+  padding:.85rem;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:9px;
+  color:#fff;
+  background:#242019;
+}
+
+.loginBox div{
+  display:flex;
+  gap:8px;
+  justify-content:flex-end;
+}
+
+/* Mobile */
+
+@media(max-width:800px){
+
+  .navlinks a:not(.ownerBtn){
+    display:none;
+  }
+
+  .intro,
+  .about,
+  .contactBox,
+  .studioGrid{
+    grid-template-columns:1fr;
+  }
+
+  .albumGrid,
+  .viewerGrid{
+    grid-template-columns:1fr;
+  }
+
+  .sectionHead{
+    display:block;
+  }
+
+  .sectionHead > p{
+    margin-top:1.5rem;
+  }
+
+  .aboutPhoto,
+  .aboutPhoto img{
+    min-height:0;
+    height:auto;
+  }
+
+  .mast h1{
+    font-size:20vw;
+  }
+
+  .heroQuote{
+    font-size:8vw;
+  }
+
+  .viewerBody{
+    padding:14px;
+  }
+
+  .photoList{
+    grid-template-columns:1fr;
+  }
+
+  footer{
+    display:grid;
+  }
+
+  .wrap{
+    width:min(100% - 24px,1320px);
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  html{
+    scroll-behavior:auto;
+  }
+
+  .albumCard{
+    transform:none !important;
+    opacity:1 !important;
+    transition:none !important;
+  }
+}
 </style>
 </head>
+
 <body>
+
 <header id="header">
-<nav>
-<div class="navgroup"><a href="#stories">Stories</a><a href="#dispatch">Dispatch</a><a href="#about">About</a></div>
-<a class="brand" href="#top">Thien Dang</a>
-<div class="navgroup right"><a href="#offerings">Offerings</a><a href="#notes">Notes</a><a href="#contact">Contact</a><a class="edit owner-only" data-owner-only href="?owner=true&customize=true" title="Open the private website studio">Customize</a><button class="menu" id="menuBtn">Menu</button></div>
-</nav>
+  <nav class="wrap">
+    <a class="brand" href="#top">Thien Dang</a>
+
+    <div class="navlinks">
+      <a href="#stories">Stories</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button class="ownerBtn" id="openStudio">Customize</button>
+    </div>
+  </nav>
 </header>
 
-<div class="mobile" id="mobile"><a href="#stories">Stories</a><a href="#dispatch">Dispatch</a><a href="#about">About</a><a href="#offerings">Offerings</a><a href="#notes">Notes</a><a href="#contact">Contact</a><a class="owner-only" data-owner-only href="?owner=true&customize=true">Customize</a></div>
-
 <main id="top">
-<section class="hero">
-<img data-image-slot="hero" src="/images/hero.jpg" alt="A cinematic photograph by Thien Dang" fetchpriority="high">
-<div class="shade"></div>
-<div class="heroInner">
-<div class="mast reveal" data-layout-id="mast"><small>A personal archive by Thien Dang</small><h1>THE PRIVATE<br>INDEX</h1><p>Issue No. 01 · Portraits · Graduation · Couples · Events · Fredericton · Moncton · New Brunswick · @letmetakephotosfor_you</p></div>
-<div></div>
-<div class="heroQuote" data-layout-id="heroQuote"><p>This is not about taking more pictures. It is about arranging memory with taste: the light, the gesture, the room, the people, and the quiet proof that something mattered.</p><span>Scroll to enter ↓</span></div>
-</div>
-</section>
 
-<section class="index"><div class="indexInner"><a href="#stories"><span>01</span><strong>Selected Stories</strong></a><a href="#dispatch"><span>02</span><strong>The Dispatch</strong></a><a href="#about"><span>03</span><strong>About Thien</strong></a><a href="#contact"><span>04</span><strong>Book a Session</strong></a></div></section>
+  <section class="hero">
+    <img
+      id="heroImage"
+      src="/images/hero.jpg"
+      alt="Thien Dang Photography"
+    >
 
-<section class="wrap intro">
-<div class="reveal" data-layout-id="introHeading"><p class="eyebrow">The index</p><h2 class="display">Selected<br>stories.</h2></div>
-<div class="introText reveal" data-layout-id="introText"><p class="copy">Photographs can be elegant without feeling distant, and personal without becoming ordinary. My work follows people through the moments that deserve a place in their private archive.</p><p class="signature">— Thien Dang, storyteller</p></div>
-</section>
+    <div class="heroInner wrap">
 
-<section class="wrap stories" id="stories">
-<div class="sectionHead reveal" data-layout-id="storiesHeading"><div><p class="eyebrow">Four chapters</p><h2 class="display">Lives, briefly<br>held still.</h2></div><p>Open any story to view it larger. Replace the six image files in <strong>public/images</strong> whenever you want to update the photographs.</p></div>
-<div class="grid">
-<button class="card scroll-pop" data-gallery="graduation" data-layout-id="graduationCard"><img data-image-slot="graduation" src="/images/graduation.jpg" alt="Graduation photography" loading="lazy"><div class="cardText"><span>Story No. 01 · Open album</span><h3>Graduation<br>Day</h3></div></button>
-<button class="card scroll-pop" data-gallery="portrait" data-layout-id="portraitCard"><img data-image-slot="portrait" src="/images/portrait.jpg" alt="Portrait photography" loading="lazy"><div class="cardText"><span>Story No. 02 · Open album</span><h3>The<br>Sitting</h3></div></button>
-<button class="card scroll-pop" data-gallery="wedding" data-layout-id="weddingCard"><img data-image-slot="wedding" src="/images/wedding.jpg" alt="Wedding photography" loading="lazy"><div class="cardText"><span>Story No. 03 · Open album</span><h3>A Shared<br>Evening</h3></div></button>
-<button class="card scroll-pop" data-gallery="evening" data-layout-id="eveningCard"><img data-image-slot="evening" src="/images/evening.jpg" alt="Event detail photography" loading="lazy"><div class="cardText"><span>Story No. 04 · Open album</span><h3>The Room<br>Remembers</h3></div></button>
-</div>
-</section>
+      <div class="mast">
+        <small>A personal archive by Thien Dang</small>
 
-<section class="dispatch" id="dispatch">
-<img data-image-slot="wedding" src="/images/wedding.jpg" alt="A quiet event scene" loading="lazy">
-<div class="wrap dispatchInner">
-<div class="reveal" data-layout-id="dispatchCopy"><p class="eyebrow">Issue 01 / The Dispatch</p><h2>Memory,<br>arranged<br>with taste.</h2><p class="copy">The photograph is not only a record of what happened. It is the shape of a feeling, the atmosphere of a room, and the proof that a moment was worth remembering.</p></div>
-<aside class="aside reveal" data-layout-id="dispatchAside"><p>Portraits · Graduation · Couples · Families · Receptions · Ceremonies · Quiet gatherings · Personal archives</p></aside>
-</div>
-</section>
+        <h1>
+          THE PRIVATE<br>
+          INDEX
+        </h1>
 
-<section class="wrap about" id="about">
-<div class="portrait reveal" data-layout-id="aboutPortrait"><img data-image-slot="profile" src="/images/me.jpg" alt="Thien Dang" loading="lazy"></div>
-<div class="aboutText reveal" data-layout-id="aboutCopy"><p class="eyebrow">About the photographer</p><h2>Quietly<br>observant.</h2><p>I am Thien, a photographer and storyteller based in Fredericton, New Brunswick. I photograph people with an editorial eye and a documentary instinct.</p><p>I look for gesture, light, relationships, and the small details that make a day feel like itself. The goal is not to make a moment look perfect. It is to preserve why it mattered.</p><div class="locations"><span>Fredericton</span><span>Moncton</span><span>New Brunswick</span><span>Available to travel</span></div></div>
-</section>
+        <p>
+          Portraits · Graduation · Couples · Events · New Brunswick
+        </p>
+      </div>
 
-<section class="wrap offerings" id="offerings">
-<div class="offerHead reveal" data-layout-id="offeringsHeading"><div><p class="eyebrow">Offerings</p><h2 class="display">Ways to be<br>remembered.</h2></div><p class="copy">Sessions are guided enough to feel intentional and relaxed enough to remain yours.</p></div>
-<div class="offerGrid">
-<article class="offer reveal" data-layout-id="offering1"><span>01</span><h3>Portrait<br>Sessions</h3><p>Individual portraits, creative headshots, personal branding, and quiet editorial studies.</p></article>
-<article class="offer reveal" data-layout-id="offering2"><span>02</span><h3>Graduation<br>Stories</h3><p>Ceremony, campus portraits, family photographs, and the feeling of a chapter becoming complete.</p></article>
-<article class="offer reveal" data-layout-id="offering3"><span>03</span><h3>Couples &<br>Families</h3><p>Honest photographs shaped around connection, movement, affection, and the places that belong to you.</p></article>
-<article class="offer reveal" data-layout-id="offering4"><span>04</span><h3>Events &<br>Gatherings</h3><p>Receptions, intimate celebrations, cultural events, and rooms full of people who matter.</p></article>
-</div>
-</section>
+      <p class="heroQuote">
+        This is not about taking more pictures.
+        It is about preserving why a moment mattered.
+      </p>
 
-<section class="notes" id="notes"><div class="wrap">
-<div class="noteHead reveal" data-layout-id="notesHeading"><div><p class="eyebrow">Field notes</p><h2 class="display">What I look<br>for.</h2></div><p>A few principles behind the photographs: simple ideas that shape how I watch, wait, and arrange a visual story.</p></div>
-<div class="noteList">
-<article class="note reveal"><span>01</span><h3>The gesture before the pose.</h3><p>The photograph often begins one second before someone believes they are ready.</p></article>
-<article class="note reveal"><span>02</span><h3>The room is part of the portrait.</h3><p>Architecture, weather, light, and distance help explain who was there and how the day felt.</p></article>
-<article class="note reveal"><span>03</span><h3>Taste is a form of restraint.</h3><p>A complete story does not need every photograph. It needs the right photographs in the right order.</p></article>
-</div>
-</div></section>
+    </div>
+  </section>
 
-<section class="wrap contact" id="contact">
-<div class="contactInner">
-<div class="reveal" data-layout-id="contactHeading"><p class="eyebrow">Booking & inquiries</p><h2 class="display">Let me join<br>the moment.</h2></div>
-<div class="contactCard reveal" data-layout-id="contactCard"><p>For portraits, graduation, couples, families, events, and personal stories across New Brunswick.</p><div class="links"><a href="https://www.instagram.com/letmetakephotosfor_you?igsh=a255aDBrajg2bTA=" target="_blank" rel="noreferrer">Instagram · @letmetakephotosfor_you</a><a href="tel:+15069620480">Call · 506-962-0480</a><a href="sms:+15069620480">Text · 506-962-0480</a></div></div>
-</div>
-<footer><strong>Thien Dang</strong><span>Photography & visual storytelling</span><span>© <span id="year"></span> · New Brunswick, Canada</span></footer>
-</section>
+  <section class="intro wrap">
+
+    <div>
+      <p class="eyebrow">The index</p>
+
+      <h2 class="display">
+        Selected<br>
+        stories.
+      </h2>
+    </div>
+
+    <p class="copy">
+      Photographs can be elegant without feeling distant,
+      and personal without becoming ordinary.
+      Open a category to view its complete album.
+    </p>
+
+  </section>
+
+  <section class="stories wrap" id="stories">
+
+    <div class="sectionHead">
+
+      <div>
+        <p class="eyebrow">The albums</p>
+
+        <h2 class="display">
+          Lives, briefly<br>
+          held still.
+        </h2>
+      </div>
+
+      <p>
+        Each category can contain multiple photographs.
+        The cover box can follow the original photograph ratio
+        or use a ratio and size chosen by you.
+      </p>
+
+    </div>
+
+    <div class="albumGrid" id="albumGrid"></div>
+
+  </section>
+
+  <section class="about wrap" id="about">
+
+    <div class="aboutPhoto">
+      <img
+        id="profileImage"
+        src="/images/me.jpg"
+        alt="Thien Dang"
+      >
+    </div>
+
+    <div class="aboutText">
+
+      <p class="eyebrow">About the photographer</p>
+
+      <h2>
+        Quietly<br>
+        observant.
+      </h2>
+
+      <p>
+        I am Thien, a photographer and storyteller based in
+        Fredericton, New Brunswick. I photograph people with
+        an editorial eye and a documentary instinct.
+      </p>
+
+      <p>
+        I look for gesture, light, relationships, and the small
+        details that make a day feel like itself.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section class="contact wrap" id="contact">
+
+    <div class="contactBox">
+
+      <div>
+        <p class="eyebrow">Booking & inquiries</p>
+
+        <h2>
+          Let me join<br>
+          the moment.
+        </h2>
+      </div>
+
+      <div class="contactLinks">
+
+        <a
+          href="https://www.instagram.com/letmetakephotosfor_you?igsh=a255aDBrajg2bTA="
+          target="_blank"
+          rel="noreferrer"
+        >
+          Instagram · @letmetakephotosfor_you
+        </a>
+
+        <a href="tel:+15069620480">
+          Call · 506-962-0480
+        </a>
+
+        <a href="sms:+15069620480">
+          Text · 506-962-0480
+        </a>
+
+      </div>
+
+    </div>
+
+    <footer>
+      <strong>Thien Dang Photography</strong>
+      <span>Fredericton · New Brunswick</span>
+      <span>© <span id="year"></span></span>
+    </footer>
+
+  </section>
+
 </main>
 
+<!-- Album viewer -->
 
-<script id="animationDefaults" type="application/json">
-{"preset":"apple","enabled":true,"strength":1,"minimumScale":0.84,"maximumScale":1.05,"lift":96,"tilt":4.2,"influenceRange":0.76,"focusLine":0.5,"lowOpacity":0.28,"lowSaturation":0.58,"lowBrightness":0.78,"cornerRadius":28,"shadowStrength":1,"imageZoom":0.12,"textLift":20,"easing":"smoothstep"}
-</script>
-<script id="imageDefaults" type="application/json">
-{"hero":{"src":"/images/hero.jpg","x":50,"y":42,"zoom":1.02,"fit":"cover"},"graduation":{"src":"/images/graduation.jpg","x":50,"y":50,"zoom":1,"fit":"cover"},"portrait":{"src":"/images/portrait.jpg","x":50,"y":50,"zoom":1,"fit":"cover"},"wedding":{"src":"/images/wedding.jpg","x":50,"y":50,"zoom":1,"fit":"cover"},"evening":{"src":"/images/evening.jpg","x":50,"y":50,"zoom":1,"fit":"cover"},"profile":{"src":"/images/me.jpg","x":50,"y":50,"zoom":1,"fit":"cover"}}
-</script>
-<script id="layoutDefaults" type="application/json">
-{"mast":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"heroQuote":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"introHeading":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"introText":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"storiesHeading":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"graduationCard":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"portraitCard":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"weddingCard":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"eveningCard":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"dispatchCopy":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"dispatchAside":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"aboutPortrait":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"aboutCopy":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"offeringsHeading":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"offering1":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"offering2":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"offering3":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"offering4":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"notesHeading":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"contactHeading":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"contactCard":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1},"floatingContact":{"x":0,"y":0,"scaleX":1,"scaleY":1,"rotate":0,"z":1}}
-</script>
+<div class="viewer" id="viewer" aria-hidden="true">
 
-
-
-<section class="customizer" id="customizer" aria-hidden="true">
-  <div class="customizerShell">
-    <div class="customizerHead">
-      <div><p>Private owner tools</p><h2>Website Studio</h2></div>
-      <button class="customizerClose" id="customizerClose" type="button" aria-label="Close customizer">×</button>
-    </div>
-
-    <div class="customizerBody">
-      <form class="customizerLogin" id="customizerLogin">
-        <p>Enter the owner password to change animation, replace and crop pictures, or move parts of the website.</p>
-        <label>Password<input id="customizerPassword" type="password" autocomplete="current-password" placeholder="Owner password"></label>
-        <p class="studioStatus" id="loginStatus"></p>
-        <button type="submit">Unlock website studio</button>
-      </form>
-
-      <div class="customizerControls" id="customizerControls" hidden>
-        <div class="studioTabs" role="tablist" aria-label="Website studio sections">
-          <button class="active" type="button" data-studio-tab="animation">Animation</button>
-          <button type="button" data-studio-tab="images">Pictures</button>
-          <button type="button" data-studio-tab="layout">Move layout</button>
-        </div>
-
-        <section class="studioPanel" data-studio-panel="animation">
-          <p class="studioIntro">Choose a preset or adjust every part of the Apple-style scroll effect. Changes appear immediately on the page.</p>
-          <div class="controlGrid">
-            <label class="control controlWide"><span class="controlTop"><span>Animation preset</span></span><select id="animationPreset"><option value="apple">Apple-style depth</option><option value="cinematic">Cinematic rise</option><option value="gentle">Gentle editorial</option><option value="dramatic">Dramatic gallery</option><option value="none">No scroll animation</option><option value="custom">Custom settings</option></select></label>
-            <label class="control"><span class="controlTop"><span>Overall strength</span><output class="controlValue" data-output="strength"></output></span><input type="range" min="0" max="1.6" step="0.05" data-setting="strength"></label>
-            <label class="control"><span class="controlTop"><span>Starting size</span><output class="controlValue" data-output="minimumScale"></output></span><input type="range" min="0.68" max="1" step="0.01" data-setting="minimumScale"></label>
-            <label class="control"><span class="controlTop"><span>Forward size</span><output class="controlValue" data-output="maximumScale"></output></span><input type="range" min="1" max="1.16" step="0.005" data-setting="maximumScale"></label>
-            <label class="control"><span class="controlTop"><span>Vertical movement</span><output class="controlValue" data-output="lift"></output></span><input type="range" min="0" max="180" step="2" data-setting="lift"></label>
-            <label class="control"><span class="controlTop"><span>3D tilt</span><output class="controlValue" data-output="tilt"></output></span><input type="range" min="0" max="12" step="0.2" data-setting="tilt"></label>
-            <label class="control"><span class="controlTop"><span>Effect distance</span><output class="controlValue" data-output="influenceRange"></output></span><input type="range" min="0.35" max="1.25" step="0.01" data-setting="influenceRange"></label>
-            <label class="control"><span class="controlTop"><span>Screen focus point</span><output class="controlValue" data-output="focusLine"></output></span><input type="range" min="0.3" max="0.7" step="0.01" data-setting="focusLine"></label>
-            <label class="control"><span class="controlTop"><span>Starting opacity</span><output class="controlValue" data-output="lowOpacity"></output></span><input type="range" min="0.1" max="1" step="0.02" data-setting="lowOpacity"></label>
-            <label class="control"><span class="controlTop"><span>Starting saturation</span><output class="controlValue" data-output="lowSaturation"></output></span><input type="range" min="0" max="1" step="0.02" data-setting="lowSaturation"></label>
-            <label class="control"><span class="controlTop"><span>Starting brightness</span><output class="controlValue" data-output="lowBrightness"></output></span><input type="range" min="0.45" max="1" step="0.01" data-setting="lowBrightness"></label>
-            <label class="control"><span class="controlTop"><span>Rounded corners</span><output class="controlValue" data-output="cornerRadius"></output></span><input type="range" min="0" max="56" step="1" data-setting="cornerRadius"></label>
-            <label class="control"><span class="controlTop"><span>Shadow depth</span><output class="controlValue" data-output="shadowStrength"></output></span><input type="range" min="0" max="1.8" step="0.05" data-setting="shadowStrength"></label>
-            <label class="control"><span class="controlTop"><span>Image zoom during scroll</span><output class="controlValue" data-output="imageZoom"></output></span><input type="range" min="0" max="0.25" step="0.01" data-setting="imageZoom"></label>
-            <label class="control"><span class="controlTop"><span>Text movement</span><output class="controlValue" data-output="textLift"></output></span><input type="range" min="0" max="60" step="1" data-setting="textLift"></label>
-            <label class="control"><span class="controlTop"><span>Motion curve</span></span><select data-setting="easing"><option value="smoothstep">Smooth</option><option value="easeOut">Fast then gentle</option><option value="linear">Linear</option><option value="cinematic">Cinematic</option></select></label>
-          </div>
-          <div class="compactActions"><button type="button" id="previewStories">Jump to story pictures</button><button type="button" id="resetAnimation">Reset animation</button></div>
-        </section>
-
-        <section class="studioPanel" data-studio-panel="images" hidden>
-          <p class="studioIntro">Replace a picture, move the crop left/right or up/down, zoom it, and choose cover or contain. One picture can appear in several places automatically.</p>
-          <div class="editorCard">
-            <h3 class="studioSectionTitle">Picture manager</h3>
-            <label class="control"><span>Picture to edit</span><select id="imageSlotSelect"><option value="hero">Opening hero picture</option><option value="graduation">Graduation story</option><option value="portrait">Portrait story</option><option value="wedding">Wedding / event story and dispatch</option><option value="evening">Evening / details story</option><option value="profile">About and floating contact picture</option></select></label>
-            <div class="imageMeta"><span>Selected picture</span><strong id="imageSlotName">Opening hero picture</strong></div>
-            <div class="imagePreview"><img id="imagePreview" src="" alt="Selected website picture preview"></div>
-            <label class="filePicker">Upload replacement picture<input id="imageUpload" type="file" accept="image/*"></label>
-            <label class="control"><span>Upload quality</span><select id="imageQuality"><option value="high">High quality · 2400 px</option><option value="maximum">Maximum · 3600 px</option><option value="light">Faster website · 1600 px</option></select></label>
-            <div class="controlGrid">
-              <label class="control"><span class="controlTop"><span>Move crop left/right</span><output class="controlValue" data-image-output="x"></output></span><input id="imageX" type="range" min="0" max="100" step="1"></label>
-              <label class="control"><span class="controlTop"><span>Move crop up/down</span><output class="controlValue" data-image-output="y"></output></span><input id="imageY" type="range" min="0" max="100" step="1"></label>
-              <label class="control"><span class="controlTop"><span>Picture zoom</span><output class="controlValue" data-image-output="zoom"></output></span><input id="imageZoom" type="range" min="1" max="2.2" step="0.01"></label>
-              <label class="control"><span>Picture fit</span><select id="imageFit"><option value="cover">Fill frame</option><option value="contain">Show full picture</option></select></label>
-            </div>
-            <div class="compactActions"><button type="button" id="jumpToImage">Jump to this picture</button><button type="button" id="resetImage">Reset selected picture</button><button type="button" id="resetAllImages">Reset all pictures</button></div>
-            <p class="studioHelp">Uploaded pictures are stored in this browser's larger image database for preview. The final downloaded <code>index.html</code> permanently includes them.</p>
-          </div>
-        </section>
-
-        <section class="studioPanel" data-studio-panel="layout" hidden>
-          <p class="studioIntro">Move, resize, stretch, rotate, or layer the main parts of the design. Story cards and photo blocks can also be dragged directly on the page.</p>
-          <div class="editorCard">
-            <h3 class="studioSectionTitle">Layout manager</h3>
-            <label class="control"><span>Part of website</span><select id="layoutSelect"></select></label>
-            <p class="layoutPreviewName">Editing: <strong id="layoutSelectedName"></strong></p>
-            <div class="controlGrid">
-              <label class="control"><span class="controlTop"><span>Move left/right</span><output class="controlValue" data-layout-output="x"></output></span><input id="layoutX" type="range" min="-500" max="500" step="2"></label>
-              <label class="control"><span class="controlTop"><span>Move up/down</span><output class="controlValue" data-layout-output="y"></output></span><input id="layoutY" type="range" min="-500" max="500" step="2"></label>
-              <label class="control"><span class="controlTop"><span>Width</span><output class="controlValue" data-layout-output="scaleX"></output></span><input id="layoutScaleX" type="range" min="0.45" max="1.6" step="0.01"></label>
-              <label class="control"><span class="controlTop"><span>Height</span><output class="controlValue" data-layout-output="scaleY"></output></span><input id="layoutScaleY" type="range" min="0.45" max="1.6" step="0.01"></label>
-              <label class="control"><span class="controlTop"><span>Rotation</span><output class="controlValue" data-layout-output="rotate"></output></span><input id="layoutRotate" type="range" min="-18" max="18" step="0.25"></label>
-              <label class="control"><span class="controlTop"><span>Layer</span><output class="controlValue" data-layout-output="z"></output></span><input id="layoutZ" type="range" min="0" max="40" step="1"></label>
-            </div>
-            <div class="compactActions"><button class="primary" type="button" id="directMove">Move directly on page</button><button type="button" id="jumpToLayout">Jump to selected part</button><button type="button" id="resetLayout">Reset selected part</button><button type="button" id="resetAllLayout">Reset all layout</button></div>
-            <p class="studioHelp">Direct move mode lets you drag outlined parts with a mouse or finger. Use the sliders when you need precise movement.</p>
-          </div>
-        </section>
-
-        <p class="customizerNote"><strong>Publishing:</strong> this is a static GitHub/Vercel website. Preview changes are private to this browser. Click <strong>Download complete website</strong>, replace your GitHub <code>index.html</code>, and commit it to publish everything.</p>
-        <p class="studioStatus" id="studioStatus"></p>
-
-        <div class="studioActions">
-          <button type="button" id="closeAndPreview">Close & preview</button>
-          <a class="customizerLink" href="https://github.com/juunjuun2003" target="_blank" rel="noreferrer">Open GitHub</a>
-          <span class="spacer"></span>
-          <button class="primary" type="button" id="downloadWebsite">Download complete website</button>
-        </div>
-      </div>
-    </div>
+  <div class="viewerTop">
+    <h2 id="viewerTitle">Album</h2>
+    <button id="closeViewer">Close</button>
   </div>
-</section>
 
+  <div class="viewerBody">
+    <div class="viewerGrid" id="viewerGrid"></div>
+  </div>
 
-<div class="layoutMoveBar" id="layoutMoveBar"><strong id="moveBarName">Move website part</strong><button type="button" id="moveBarReset">Reset</button><button type="button" id="moveBarStudio">Open studio</button><button type="button" id="moveBarFinish">Finish moving</button></div>
+</div>
 
-<div class="float" id="float" data-layout-id="floatingContact"><div class="pop"><h3>Thien Dang<br>Photography</h3><p>Reach me directly for portraits, graduation, events, and personal story sessions.</p><a href="tel:+15069620480">Call 506-962-0480</a><a href="sms:+15069620480">Text 506-962-0480</a><a href="https://www.instagram.com/letmetakephotosfor_you?igsh=a255aDBrajg2bTA=" target="_blank" rel="noreferrer">Open Instagram</a></div><button class="floatBtn" id="floatBtn"><img data-image-slot="profile" src="/images/me.jpg" alt="Contact Thien Dang"><span>Contact</span></button></div>
+<!-- Owner login -->
 
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true"><div class="lbHead"><p id="lbTitle">Album</p><button class="close" id="close">Close</button></div><div class="stage"><button class="arrow prev" id="prev">←</button><img id="lbImage" src="" alt=""><button class="arrow next" id="next">→</button></div><div class="lbFoot"><p id="counter">01 / 01</p><p>Use arrow keys to browse</p></div></div>
+<div class="login" id="login">
+
+  <div class="loginBox">
+
+    <h2>Website Studio</h2>
+
+    <p class="help">
+      This is a simple browser lock, not secure server authentication.
+    </p>
+
+    <input
+      id="password"
+      type="password"
+      placeholder="Password"
+    >
+
+    <div>
+      <button id="cancelLogin">Cancel</button>
+      <button class="primary" id="loginButton">Enter</button>
+    </div>
+
+    <p class="status" id="loginStatus"></p>
+
+  </div>
+
+</div>
+
+<!-- Website Studio -->
+
+<div class="studio" id="studio" aria-hidden="true">
+
+  <div class="studioPanel">
+
+    <div class="studioHead">
+
+      <h2>Album Studio</h2>
+
+      <div>
+        <button id="downloadSite">
+          Download publishable HTML
+        </button>
+
+        <button id="closeStudio">
+          Close
+        </button>
+      </div>
+
+    </div>
+
+    <div class="studioBody">
+
+      <div class="albumSelector" id="albumSelector"></div>
+
+      <div class="studioGrid">
+
+        <section class="panel">
+
+          <h3>Album photographs</h3>
+
+          <label class="uploadLabel">
+            Add multiple photographs
+
+            <input
+              id="photoInput"
+              type="file"
+              accept="image/*"
+              multiple
+            >
+          </label>
+
+          <p class="help">
+            Images are resized to a maximum of 2400 pixels for a
+            smoother website. Choose a cover, reorder, or remove
+            photographs below.
+          </p>
+
+          <p class="status" id="uploadStatus"></p>
+
+          <div class="photoList" id="photoList"></div>
+
+        </section>
+
+        <section class="panel">
+
+          <h3>Cover picture box</h3>
+
+          <div class="field">
+            <label>Album title</label>
+            <input id="albumTitle" type="text">
+          </div>
+
+          <div class="field">
+
+            <label>Ratio</label>
+
+            <select id="ratioMode">
+              <option value="original">
+                Original photograph ratio
+              </option>
+
+              <option value="4/5">
+                Portrait 4:5
+              </option>
+
+              <option value="2/3">
+                Portrait 2:3
+              </option>
+
+              <option value="1/1">
+                Square 1:1
+              </option>
+
+              <option value="3/2">
+                Landscape 3:2
+              </option>
+
+              <option value="4/3">
+                Landscape 4:3
+              </option>
+
+              <option value="16/9">
+                Wide 16:9
+              </option>
+
+              <option value="custom">
+                Custom ratio
+              </option>
+            </select>
+
+          </div>
+
+          <div
+            id="customRatioFields"
+            style="
+              display:none;
+              grid-template-columns:1fr 1fr;
+              gap:10px;
+            "
+          >
+
+            <div class="field">
+              <label>Width ratio</label>
+
+              <input
+                id="ratioW"
+                type="number"
+                min="1"
+                max="50"
+                value="4"
+              >
+            </div>
+
+            <div class="field">
+              <label>Height ratio</label>
+
+              <input
+                id="ratioH"
+                type="number"
+                min="1"
+                max="50"
+                value="5"
+              >
+            </div>
+
+          </div>
+
+          <div class="field">
+
+            <div class="rangeLine">
+              <label>Box width</label>
+              <span id="widthValue">100%</span>
+            </div>
+
+            <input
+              id="boxWidth"
+              type="range"
+              min="45"
+              max="100"
+              step="1"
+              value="100"
+            >
+
+          </div>
+
+          <div class="field">
+
+            <label>Box alignment</label>
+
+            <select id="boxAlign">
+              <option value="flex-start">Left</option>
+              <option value="center">Centre</option>
+              <option value="flex-end">Right</option>
+            </select>
+
+          </div>
+
+          <div class="field">
+
+            <label>Image inside box</label>
+
+            <select id="imageFit">
+              <option value="cover">
+                Fill box — may crop
+              </option>
+
+              <option value="contain">
+                Show complete photograph
+              </option>
+            </select>
+
+          </div>
+
+          <div class="field">
+
+            <div class="rangeLine">
+              <label>Corner roundness</label>
+              <span id="radiusValue">0px</span>
+            </div>
+
+            <input
+              id="boxRadius"
+              type="range"
+              min="0"
+              max="40"
+              step="1"
+              value="0"
+            >
+
+          </div>
+
+          <p class="help">
+            Changes update only the selected card, so sliders remain
+            responsive. Settings save after you stop moving a control.
+          </p>
+
+          <button class="danger" id="resetAlbum">
+            Reset this album
+          </button>
+
+        </section>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script id="embeddedData" type="application/json">
+{"version":1,"state":null,"photos":{}}
+</script>
 
 <script>
-const header=document.getElementById("header");
-const menuBtn=document.getElementById("menuBtn");
-const mobile=document.getElementById("mobile");
-const float=document.getElementById("float");
-const floatBtn=document.getElementById("floatBtn");
-const lightbox=document.getElementById("lightbox");
-const lbImage=document.getElementById("lbImage");
-const lbTitle=document.getElementById("lbTitle");
-const counter=document.getElementById("counter");
-const pageParams=new URLSearchParams(location.search);
-const ownerMode=pageParams.get("owner")==="true";
-const customizeMode=ownerMode&&pageParams.get("customize")==="true";
-const OWNER_PASSWORD="thien2026";
+(() => {
 
-// Owner controls are removed completely for ordinary visitors.
-document.querySelectorAll("[data-owner-only]").forEach(element=>{
-  if(ownerMode)element.classList.remove("owner-only");
-  else element.remove();
-});
+  "use strict";
 
-function updateHeader(){header.classList.toggle("scrolled",scrollY>30)}
-addEventListener("scroll",updateHeader,{passive:true});
-updateHeader();
-function closeMenu(){mobile.classList.remove("open");document.body.classList.remove("lock");menuBtn.textContent="Menu"}
-menuBtn.addEventListener("click",()=>{const open=!mobile.classList.contains("open");mobile.classList.toggle("open",open);document.body.classList.toggle("lock",open);menuBtn.textContent=open?"Close":"Menu"});
-mobile.querySelectorAll("a").forEach(link=>link.addEventListener("click",closeMenu));
-floatBtn.addEventListener("click",()=>float.classList.toggle("open"));
-document.addEventListener("click",event=>{if(!float.contains(event.target))float.classList.remove("open")});
+  const OWNER_PASSWORD = "thien2026";
+  const STORE_KEY = "tdp_album_state_v3";
+  const DB_NAME = "tdp_album_photos_v1";
+  const DB_STORE = "photos";
 
-// Embedded website settings.
-const embeddedAnimationSettings=JSON.parse(document.getElementById("animationDefaults").textContent);
-const embeddedImageSettings=JSON.parse(document.getElementById("imageDefaults").textContent);
-const embeddedLayoutSettings=JSON.parse(document.getElementById("layoutDefaults").textContent);
-const animationStorageKey="thien-animation-studio-settings-v2";
-const imageMetaStorageKey="thien-image-studio-meta-v2";
-const layoutStorageKey="thien-layout-studio-settings-v2";
-const studioOwnerKey="thien-website-studio-unlocked-v2";
+  const $ = selector => document.querySelector(selector);
 
-const deepCopy=value=>JSON.parse(JSON.stringify(value));
-const clamp=(number,min,max)=>Math.min(max,Math.max(min,number));
-const lerp=(start,end,amount)=>start+(end-start)*amount;
-function loadLocalObject(key,fallback){
-  if(!customizeMode)return deepCopy(fallback);
-  try{return {...deepCopy(fallback),...JSON.parse(localStorage.getItem(key)||"{}")}}catch{return deepCopy(fallback)}
-}
+  const $$ = selector => [
+    ...document.querySelectorAll(selector)
+  ];
 
-let animationSettings=loadLocalObject(animationStorageKey,embeddedAnimationSettings);
-let imageSettings=deepCopy(embeddedImageSettings);
-let layoutSettings=loadLocalObject(layoutStorageKey,embeddedLayoutSettings);
-
-const imageLabels={
-  hero:"Opening hero picture",
-  graduation:"Graduation story",
-  portrait:"Portrait story",
-  wedding:"Wedding / event story and dispatch",
-  evening:"Evening / details story",
-  profile:"About and floating contact picture"
-};
-const layoutLabels={
-  mast:"Opening title panel",
-  heroQuote:"Opening quote",
-  introHeading:"Selected stories heading",
-  introText:"Selected stories paragraph",
-  storiesHeading:"Stories section heading",
-  graduationCard:"Graduation photo card",
-  portraitCard:"Portrait photo card",
-  weddingCard:"Wedding / event photo card",
-  eveningCard:"Evening / details photo card",
-  dispatchCopy:"Dispatch title and paragraph",
-  dispatchAside:"Dispatch category box",
-  aboutPortrait:"About/profile photo block",
-  aboutCopy:"About text block",
-  offeringsHeading:"Offerings heading",
-  offering1:"Portrait Sessions box",
-  offering2:"Graduation Stories box",
-  offering3:"Couples & Families box",
-  offering4:"Events & Gatherings box",
-  notesHeading:"Field notes heading",
-  contactHeading:"Contact heading",
-  contactCard:"Contact information",
-  floatingContact:"Floating contact picture"
-};
-
-// Larger browser image storage avoids the tiny localStorage image limit.
-const IMAGE_DB_NAME="thien-website-image-studio";
-const IMAGE_DB_STORE="images";
-function openImageDatabase(){
-  return new Promise((resolve,reject)=>{
-    const request=indexedDB.open(IMAGE_DB_NAME,1);
-    request.onupgradeneeded=()=>request.result.createObjectStore(IMAGE_DB_STORE);
-    request.onsuccess=()=>resolve(request.result);
-    request.onerror=()=>reject(request.error);
-  });
-}
-async function imageDbGet(slot){
-  try{const db=await openImageDatabase();return await new Promise((resolve,reject)=>{const tx=db.transaction(IMAGE_DB_STORE,"readonly");const request=tx.objectStore(IMAGE_DB_STORE).get(slot);request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error)})}catch{return null}
-}
-async function imageDbSet(slot,source){
-  try{const db=await openImageDatabase();await new Promise((resolve,reject)=>{const tx=db.transaction(IMAGE_DB_STORE,"readwrite");tx.objectStore(IMAGE_DB_STORE).put(source,slot);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)});return true}catch{return false}
-}
-async function imageDbDelete(slot){
-  try{const db=await openImageDatabase();await new Promise((resolve,reject)=>{const tx=db.transaction(IMAGE_DB_STORE,"readwrite");tx.objectStore(IMAGE_DB_STORE).delete(slot);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)})}catch{}
-}
-async function imageDbClear(){
-  try{const db=await openImageDatabase();await new Promise((resolve,reject)=>{const tx=db.transaction(IMAGE_DB_STORE,"readwrite");tx.objectStore(IMAGE_DB_STORE).clear();tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)})}catch{}
-}
-async function loadOwnerImages(){
-  if(!customizeMode)return;
-  let savedMeta={};
-  try{savedMeta=JSON.parse(localStorage.getItem(imageMetaStorageKey)||"{}")}catch{}
-  for(const slot of Object.keys(imageSettings)){
-    imageSettings[slot]={...imageSettings[slot],...(savedMeta[slot]||{})};
-    const savedSource=await imageDbGet(slot);
-    if(savedSource)imageSettings[slot].src=savedSource;
-  }
-  applyAllImageSettings();
-  syncImageControls();
-}
-function saveImageMeta(){
-  const metadata={};
-  Object.entries(imageSettings).forEach(([slot,setting])=>metadata[slot]={x:setting.x,y:setting.y,zoom:setting.zoom,fit:setting.fit});
-  try{localStorage.setItem(imageMetaStorageKey,JSON.stringify(metadata))}catch{}
-}
-
-function getImageSlotSource(slot){return imageSettings[slot]?.src||embeddedImageSettings[slot]?.src||""}
-function applyImageSlot(slot){
-  const setting=imageSettings[slot];
-  if(!setting)return;
-  document.querySelectorAll(`[data-image-slot="${slot}"]`).forEach(image=>{
-    image.src=setting.src;
-    image.style.objectPosition=`${setting.x}% ${setting.y}%`;
-    image.style.objectFit=setting.fit;
-    image.dataset.baseZoom=String(setting.zoom);
-    if(!image.closest(".scroll-pop")){
-      image.style.animation="none";
-      image.style.transform=`scale(${setting.zoom})`;
-      image.style.transformOrigin=`${setting.x}% ${setting.y}%`;
+  const uid = () => {
+    if (crypto.randomUUID) {
+      return crypto.randomUUID();
     }
-  });
-  rebuildGalleries();
-  requestScrollPopUpdate();
-}
-function applyAllImageSettings(){Object.keys(imageSettings).forEach(applyImageSlot)}
 
-let galleries={};
-function rebuildGalleries(){
-  galleries={
-    graduation:{title:"Graduation Day",images:[getImageSlotSource("graduation"),getImageSlotSource("portrait"),getImageSlotSource("evening")]},
-    portrait:{title:"The Sitting",images:[getImageSlotSource("portrait"),getImageSlotSource("graduation"),getImageSlotSource("evening")]},
-    wedding:{title:"A Shared Evening",images:[getImageSlotSource("wedding"),getImageSlotSource("evening"),getImageSlotSource("portrait")]},
-    evening:{title:"The Room Remembers",images:[getImageSlotSource("evening"),getImageSlotSource("wedding"),getImageSlotSource("graduation")]}
+    return "p" +
+      Date.now() +
+      Math.random().toString(16).slice(2);
   };
-}
-rebuildGalleries();
 
-// Gallery lightbox.
-let gallery=null;
-let galleryIndex=0;
-function renderLightbox(){lbImage.src=gallery.images[galleryIndex];lbImage.alt=`${gallery.title} photograph ${galleryIndex+1}`;lbTitle.textContent=gallery.title;counter.textContent=`${String(galleryIndex+1).padStart(2,"0")} / ${String(gallery.images.length).padStart(2,"0")}`}
-function openBox(key){if(document.body.classList.contains("layout-edit-mode"))return;gallery=galleries[key];galleryIndex=0;renderLightbox();lightbox.classList.add("open");document.body.classList.add("lock")}
-function closeBox(){lightbox.classList.remove("open");document.body.classList.remove("lock");gallery=null}
-function nextImage(){if(!gallery)return;galleryIndex=(galleryIndex+1)%gallery.images.length;renderLightbox()}
-function previousImage(){if(!gallery)return;galleryIndex=galleryIndex===0?gallery.images.length-1:galleryIndex-1;renderLightbox()}
-document.querySelectorAll("[data-gallery]").forEach(button=>button.addEventListener("click",()=>openBox(button.dataset.gallery)));
-document.getElementById("close").addEventListener("click",closeBox);
-document.getElementById("next").addEventListener("click",nextImage);
-document.getElementById("prev").addEventListener("click",previousImage);
+  const clone = object =>
+    JSON.parse(JSON.stringify(object));
 
-// Reveal on scroll.
-const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("show");revealObserver.unobserve(entry.target)}}),{threshold:.14});
-document.querySelectorAll(".reveal").forEach(element=>revealObserver.observe(element));
+  const defaultState = {
 
-// Apple-style continuous depth animation.
-const scrollPopCards=[...document.querySelectorAll(".scroll-pop")];
-const animationPresets={
-  apple:{preset:"apple",enabled:true,strength:1,minimumScale:.84,maximumScale:1.05,lift:96,tilt:4.2,influenceRange:.76,focusLine:.5,lowOpacity:.28,lowSaturation:.58,lowBrightness:.78,cornerRadius:28,shadowStrength:1,imageZoom:.12,textLift:20,easing:"smoothstep"},
-  cinematic:{preset:"cinematic",enabled:true,strength:1.15,minimumScale:.78,maximumScale:1.07,lift:140,tilt:2.4,influenceRange:.92,focusLine:.52,lowOpacity:.18,lowSaturation:.42,lowBrightness:.62,cornerRadius:38,shadowStrength:1.35,imageZoom:.16,textLift:34,easing:"cinematic"},
-  gentle:{preset:"gentle",enabled:true,strength:.7,minimumScale:.94,maximumScale:1.025,lift:44,tilt:1,influenceRange:.85,focusLine:.5,lowOpacity:.68,lowSaturation:.78,lowBrightness:.88,cornerRadius:18,shadowStrength:.55,imageZoom:.06,textLift:10,easing:"easeOut"},
-  dramatic:{preset:"dramatic",enabled:true,strength:1.35,minimumScale:.72,maximumScale:1.1,lift:165,tilt:8,influenceRange:.68,focusLine:.48,lowOpacity:.12,lowSaturation:.18,lowBrightness:.52,cornerRadius:48,shadowStrength:1.7,imageZoom:.22,textLift:46,easing:"cinematic"},
-  none:{preset:"none",enabled:false,strength:0,minimumScale:1,maximumScale:1,lift:0,tilt:0,influenceRange:.76,focusLine:.5,lowOpacity:1,lowSaturation:1,lowBrightness:1,cornerRadius:0,shadowStrength:0,imageZoom:0,textLift:0,easing:"linear"}
-};
-function motionCurve(value,type){if(type==="linear")return value;if(type==="easeOut")return 1-Math.pow(1-value,3);if(type==="cinematic")return value<.5?4*value*value*value:1-Math.pow(-2*value+2,3)/2;return value*value*(3-2*value)}
-let scrollPopFrame=0;
-function updateScrollPops(){
-  const viewportHeight=innerHeight||1;
-  const focusLine=viewportHeight*animationSettings.focusLine;
-  const mobileFactor=innerWidth<=760?.72:1;
-  const range=viewportHeight*animationSettings.influenceRange;
-  const strength=animationSettings.enabled?animationSettings.strength:0;
-  scrollPopCards.forEach(card=>{
-    const picture=card.querySelector("img");
-    const baseZoom=Number(picture?.dataset.baseZoom||1);
-    if(!animationSettings.enabled){
-      card.style.setProperty("--pop-opacity","1");card.style.setProperty("--pop-scale","1");card.style.setProperty("--pop-lift","0px");card.style.setProperty("--pop-tilt","0deg");card.style.setProperty("--pop-shadow","0 24px 60px rgba(0,0,0,.14)");card.style.setProperty("--pop-radius","0px");card.style.setProperty("--pop-image-transform",`scale(${baseZoom}) translateY(0px)`);card.style.setProperty("--pop-image-filter","saturate(.9) brightness(1)");card.style.setProperty("--pop-overlay-top",".03");card.style.setProperty("--pop-overlay-bottom",".76");card.style.setProperty("--pop-text-opacity","1");card.style.setProperty("--pop-text-lift","0px");return;
+    version: 1,
+
+    albums: [
+
+      {
+        id: "graduation",
+        title: "Graduation Day",
+        fallback: "/images/graduation.jpg",
+        photos: [],
+        coverId: null,
+        ratioMode: "original",
+        ratioW: 4,
+        ratioH: 5,
+        width: 100,
+        align: "flex-start",
+        fit: "cover",
+        radius: 0
+      },
+
+      {
+        id: "portrait",
+        title: "The Sitting",
+        fallback: "/images/portrait.jpg",
+        photos: [],
+        coverId: null,
+        ratioMode: "original",
+        ratioW: 4,
+        ratioH: 5,
+        width: 100,
+        align: "flex-end",
+        fit: "cover",
+        radius: 0
+      },
+
+      {
+        id: "wedding",
+        title: "A Shared Evening",
+        fallback: "/images/wedding.jpg",
+        photos: [],
+        coverId: null,
+        ratioMode: "original",
+        ratioW: 4,
+        ratioH: 5,
+        width: 100,
+        align: "flex-start",
+        fit: "cover",
+        radius: 0
+      },
+
+      {
+        id: "evening",
+        title: "The Room Remembers",
+        fallback: "/images/evening.jpg",
+        photos: [],
+        coverId: null,
+        ratioMode: "original",
+        ratioW: 4,
+        ratioH: 5,
+        width: 100,
+        align: "flex-end",
+        fit: "cover",
+        radius: 0
+      }
+
+    ]
+  };
+
+  let embedded = {
+    version: 1,
+    state: null,
+    photos: {}
+  };
+
+  try {
+    embedded =
+      JSON.parse(
+        $("#embeddedData").textContent
+      ) || embedded;
+  } catch (error) {
+    console.warn("Embedded data could not be loaded.");
+  }
+
+  let state = embedded.state
+    ? clone(embedded.state)
+    : loadState();
+
+  let selectedAlbumId = state.albums[0].id;
+  let dbPromise = null;
+  let saveTimer = null;
+  let scrollQueued = false;
+
+  const objectUrls = new Map();
+
+  function loadState() {
+
+    try {
+
+      const saved =
+        JSON.parse(
+          localStorage.getItem(STORE_KEY)
+        );
+
+      return saved?.albums
+        ? saved
+        : clone(defaultState);
+
+    } catch (error) {
+
+      return clone(defaultState);
+
     }
-    const rect=card.getBoundingClientRect();
-    const center=rect.top+rect.height/2;
-    const raw=clamp(1-Math.abs(center-focusLine)/range,0,1);
-    const progress=motionCurve(raw,animationSettings.easing);
-    const direction=center<focusLine?-1:1;
-    const minScale=1-(1-animationSettings.minimumScale)*strength*mobileFactor;
-    const maxScale=1+(animationSettings.maximumScale-1)*strength*mobileFactor;
-    const scale=lerp(minScale,maxScale,progress);
-    const lift=(1-progress)*animationSettings.lift*strength*mobileFactor;
-    const tilt=(1-progress)*animationSettings.tilt*strength*mobileFactor*direction;
-    const opacity=lerp(animationSettings.lowOpacity,1,progress);
-    const radius=animationSettings.cornerRadius*(1-progress)*strength;
-    const shadowAmount=animationSettings.shadowStrength*strength;
-    const shadowY=lerp(16,54,progress)*shadowAmount;
-    const shadowBlur=lerp(34,112,progress)*shadowAmount;
-    const shadowAlpha=lerp(.055,.27,progress)*Math.min(shadowAmount,1.8);
-    const scrollZoom=1+animationSettings.imageZoom*strength*(1-progress);
-    const imageLift=(1-progress)*10*strength;
-    const saturation=lerp(animationSettings.lowSaturation,1,progress);
-    const brightness=lerp(animationSettings.lowBrightness,1,progress);
-    const textOpacity=lerp(Math.max(.35,animationSettings.lowOpacity+.25),1,progress);
-    const textLift=(1-progress)*animationSettings.textLift*strength;
-    card.style.setProperty("--pop-opacity",opacity.toFixed(4));
-    card.style.setProperty("--pop-scale",scale.toFixed(4));
-    card.style.setProperty("--pop-lift",`${lift.toFixed(2)}px`);
-    card.style.setProperty("--pop-tilt",`${tilt.toFixed(2)}deg`);
-    card.style.setProperty("--pop-shadow",`0 ${shadowY.toFixed(1)}px ${shadowBlur.toFixed(1)}px rgba(0,0,0,${shadowAlpha.toFixed(3)})`);
-    card.style.setProperty("--pop-radius",`${radius.toFixed(1)}px`);
-    card.style.setProperty("--pop-image-transform",`scale(${(baseZoom*scrollZoom).toFixed(4)}) translateY(${imageLift.toFixed(2)}px)`);
-    card.style.setProperty("--pop-image-filter",`saturate(${saturation.toFixed(3)}) brightness(${brightness.toFixed(3)})`);
-    card.style.setProperty("--pop-overlay-top",lerp(.1,.03,progress).toFixed(3));
-    card.style.setProperty("--pop-overlay-bottom",lerp(.86,.76,progress).toFixed(3));
-    card.style.setProperty("--pop-text-opacity",textOpacity.toFixed(3));
-    card.style.setProperty("--pop-text-lift",`${textLift.toFixed(2)}px`);
-  });
-  scrollPopFrame=0;
-}
-function requestScrollPopUpdate(){if(scrollPopFrame)return;scrollPopFrame=requestAnimationFrame(updateScrollPops)}
-addEventListener("scroll",requestScrollPopUpdate,{passive:true});
-addEventListener("resize",requestScrollPopUpdate,{passive:true});
+  }
 
-// Layout settings.
-function applyLayoutItem(id){
-  const element=document.querySelector(`[data-layout-id="${id}"]`);
-  const setting=layoutSettings[id];
-  if(!element||!setting)return;
-  element.style.setProperty("--layout-x",`${setting.x}px`);
-  element.style.setProperty("--layout-y",`${setting.y}px`);
-  element.style.setProperty("--layout-scale-x",setting.scaleX);
-  element.style.setProperty("--layout-scale-y",setting.scaleY);
-  element.style.setProperty("--layout-rotate",`${setting.rotate}deg`);
-  element.style.setProperty("--layout-z",setting.z);
-}
-function applyAllLayoutSettings(){Object.keys(layoutSettings).forEach(applyLayoutItem)}
-function saveLayoutSettings(){try{localStorage.setItem(layoutStorageKey,JSON.stringify(layoutSettings))}catch{}}
-applyAllLayoutSettings();
-applyAllImageSettings();
-requestScrollPopUpdate();
+  function scheduleSave() {
 
-// Studio elements and helpers.
-const customizer=document.getElementById("customizer");
-const customizerLogin=document.getElementById("customizerLogin");
-const customizerControls=document.getElementById("customizerControls");
-const customizerPassword=document.getElementById("customizerPassword");
-const loginStatus=document.getElementById("loginStatus");
-const studioStatus=document.getElementById("studioStatus");
-function setStudioStatus(message){studioStatus.textContent=message;clearTimeout(setStudioStatus.timer);setStudioStatus.timer=setTimeout(()=>studioStatus.textContent="",4200)}
-function openStudio(){customizer.classList.add("show");customizer.setAttribute("aria-hidden","false")}
-function closeStudio(){customizer.classList.remove("show");customizer.setAttribute("aria-hidden","true");history.replaceState({},"",ownerMode?`${location.pathname}?owner=true${location.hash}`:location.pathname+location.hash)}
-function unlockStudio(){customizerLogin.hidden=true;customizerControls.hidden=false;sessionStorage.setItem(studioOwnerKey,"true");syncAnimationControls();syncImageControls();syncLayoutControls()}
-if(customizeMode){openStudio();if(sessionStorage.getItem(studioOwnerKey)==="true")unlockStudio()}
-customizerLogin.addEventListener("submit",event=>{event.preventDefault();if(customizerPassword.value===OWNER_PASSWORD){loginStatus.textContent="";customizerPassword.value="";unlockStudio()}else loginStatus.textContent="Incorrect password."});
-document.getElementById("customizerClose").addEventListener("click",closeStudio);
-document.getElementById("closeAndPreview").addEventListener("click",closeStudio);
+    clearTimeout(saveTimer);
 
-// Tabs.
-document.querySelectorAll("[data-studio-tab]").forEach(button=>button.addEventListener("click",()=>{
-  const tab=button.dataset.studioTab;
-  document.querySelectorAll("[data-studio-tab]").forEach(item=>item.classList.toggle("active",item===button));
-  document.querySelectorAll("[data-studio-panel]").forEach(panel=>panel.hidden=panel.dataset.studioPanel!==tab);
-}));
+    saveTimer = setTimeout(() => {
 
-// Animation controls.
-const presetSelect=document.getElementById("animationPreset");
-const animationInputs=[...document.querySelectorAll("[data-setting]")];
-function formatAnimationSetting(key,value){if(["minimumScale","maximumScale","lowOpacity","lowSaturation","lowBrightness","influenceRange","focusLine","imageZoom","strength","shadowStrength"].includes(key))return Number(value).toFixed(2);if(key==="tilt")return `${Number(value).toFixed(1)}°`;if(["lift","cornerRadius","textLift"].includes(key))return `${Math.round(value)}px`;return String(value)}
-function syncAnimationControls(){presetSelect.value=animationSettings.preset||"custom";animationInputs.forEach(input=>{const key=input.dataset.setting;input.value=animationSettings[key];const output=document.querySelector(`[data-output="${key}"]`);if(output)output.textContent=formatAnimationSetting(key,animationSettings[key])})}
-function saveAnimationSettings(){try{localStorage.setItem(animationStorageKey,JSON.stringify(animationSettings))}catch{}}
-presetSelect.addEventListener("change",()=>{const selected=presetSelect.value;if(selected==="custom")return;animationSettings={...animationPresets[selected]};saveAnimationSettings();syncAnimationControls();requestScrollPopUpdate();setStudioStatus(`${presetSelect.options[presetSelect.selectedIndex].text} applied.`)});
-animationInputs.forEach(input=>input.addEventListener("input",()=>{const key=input.dataset.setting;animationSettings={...animationSettings,preset:"custom",enabled:true,[key]:input.tagName==="SELECT"?input.value:Number(input.value)};saveAnimationSettings();presetSelect.value="custom";syncAnimationControls();requestScrollPopUpdate()}));
-document.getElementById("previewStories").addEventListener("click",()=>{closeStudio();document.getElementById("stories").scrollIntoView({behavior:"smooth",block:"start"})});
-document.getElementById("resetAnimation").addEventListener("click",()=>{animationSettings=deepCopy(embeddedAnimationSettings);localStorage.removeItem(animationStorageKey);syncAnimationControls();requestScrollPopUpdate();setStudioStatus("Animation reset.")});
+      try {
 
-// Picture controls.
-const imageSlotSelect=document.getElementById("imageSlotSelect");
-const imagePreview=document.getElementById("imagePreview");
-const imageUpload=document.getElementById("imageUpload");
-const imageX=document.getElementById("imageX");
-const imageY=document.getElementById("imageY");
-const imageZoomControl=document.getElementById("imageZoom");
-const imageFit=document.getElementById("imageFit");
-function activeImageSlot(){return imageSlotSelect.value}
-function syncImageControls(){
-  const slot=activeImageSlot();
-  const setting=imageSettings[slot];
-  if(!setting)return;
-  document.getElementById("imageSlotName").textContent=imageLabels[slot];
-  imagePreview.src=setting.src;
-  imagePreview.style.objectPosition=`${setting.x}% ${setting.y}%`;
-  imagePreview.style.objectFit=setting.fit;
-  imagePreview.style.transform=`scale(${setting.zoom})`;
-  imagePreview.style.transformOrigin=`${setting.x}% ${setting.y}%`;
-  imageX.value=setting.x;imageY.value=setting.y;imageZoomControl.value=setting.zoom;imageFit.value=setting.fit;
-  document.querySelector('[data-image-output="x"]').textContent=`${setting.x}%`;
-  document.querySelector('[data-image-output="y"]').textContent=`${setting.y}%`;
-  document.querySelector('[data-image-output="zoom"]').textContent=`${Number(setting.zoom).toFixed(2)}×`;
-}
-imageSlotSelect.addEventListener("change",syncImageControls);
-function updateActiveImage(field,value){const slot=activeImageSlot();imageSettings[slot]={...imageSettings[slot],[field]:value};saveImageMeta();applyImageSlot(slot);syncImageControls()}
-imageX.addEventListener("input",()=>updateActiveImage("x",Number(imageX.value)));
-imageY.addEventListener("input",()=>updateActiveImage("y",Number(imageY.value)));
-imageZoomControl.addEventListener("input",()=>updateActiveImage("zoom",Number(imageZoomControl.value)));
-imageFit.addEventListener("change",()=>updateActiveImage("fit",imageFit.value));
-function readImageFile(file){return new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=()=>reject(reader.error);reader.readAsDataURL(file)})}
-function loadImageElement(source){return new Promise((resolve,reject)=>{const image=new Image();image.onload=()=>resolve(image);image.onerror=reject;image.src=source})}
-async function compressImageFile(file){
-  const qualityMode=document.getElementById("imageQuality").value;
-  const options=qualityMode==="maximum"?{max:3600,quality:.94}:qualityMode==="light"?{max:1600,quality:.82}:{max:2400,quality:.9};
-  const source=await readImageFile(file);
-  const image=await loadImageElement(source);
-  const scale=Math.min(1,options.max/Math.max(image.naturalWidth,image.naturalHeight));
-  const canvas=document.createElement("canvas");
-  canvas.width=Math.max(1,Math.round(image.naturalWidth*scale));
-  canvas.height=Math.max(1,Math.round(image.naturalHeight*scale));
-  const context=canvas.getContext("2d");
-  context.imageSmoothingEnabled=true;context.imageSmoothingQuality="high";
-  context.drawImage(image,0,0,canvas.width,canvas.height);
-  return canvas.toDataURL("image/jpeg",options.quality);
-}
-imageUpload.addEventListener("change",async()=>{
-  const file=imageUpload.files?.[0];if(!file)return;
-  try{setStudioStatus("Preparing high-quality website picture…");const source=await compressImageFile(file);const slot=activeImageSlot();imageSettings[slot]={...imageSettings[slot],src:source};await imageDbSet(slot,source);applyImageSlot(slot);syncImageControls();setStudioStatus("Picture replaced. Download the complete website when finished.")}catch{setStudioStatus("This picture could not be processed.")}finally{imageUpload.value=""}
-});
-document.getElementById("jumpToImage").addEventListener("click",()=>{const element=document.querySelector(`[data-image-slot="${activeImageSlot()}"]`);closeStudio();element?.scrollIntoView({behavior:"smooth",block:"center"})});
-document.getElementById("resetImage").addEventListener("click",async()=>{const slot=activeImageSlot();imageSettings[slot]=deepCopy(embeddedImageSettings[slot]);await imageDbDelete(slot);saveImageMeta();applyImageSlot(slot);syncImageControls();setStudioStatus("Selected picture reset.")});
-document.getElementById("resetAllImages").addEventListener("click",async()=>{imageSettings=deepCopy(embeddedImageSettings);await imageDbClear();localStorage.removeItem(imageMetaStorageKey);applyAllImageSettings();syncImageControls();setStudioStatus("All pictures reset.")});
+        localStorage.setItem(
+          STORE_KEY,
+          JSON.stringify(state)
+        );
 
-// Layout controls and direct drag mode.
-const layoutSelect=document.getElementById("layoutSelect");
-Object.keys(layoutLabels).forEach(id=>{const option=document.createElement("option");option.value=id;option.textContent=layoutLabels[id];layoutSelect.appendChild(option)});
-const layoutControlMap={x:document.getElementById("layoutX"),y:document.getElementById("layoutY"),scaleX:document.getElementById("layoutScaleX"),scaleY:document.getElementById("layoutScaleY"),rotate:document.getElementById("layoutRotate"),z:document.getElementById("layoutZ")};
-let selectedLayoutId=layoutSelect.value;
-function formatLayoutValue(key,value){if(["x","y"].includes(key))return `${Math.round(value)}px`;if(["scaleX","scaleY"].includes(key))return `${Math.round(value*100)}%`;if(key==="rotate")return `${Number(value).toFixed(1)}°`;return String(Math.round(value))}
-function syncLayoutControls(){selectedLayoutId=layoutSelect.value;const setting=layoutSettings[selectedLayoutId];if(!setting)return;document.getElementById("layoutSelectedName").textContent=layoutLabels[selectedLayoutId];document.getElementById("moveBarName").textContent=layoutLabels[selectedLayoutId];Object.entries(layoutControlMap).forEach(([key,input])=>{input.value=setting[key];document.querySelector(`[data-layout-output="${key}"]`).textContent=formatLayoutValue(key,setting[key])});document.querySelectorAll("[data-layout-id]").forEach(element=>element.classList.toggle("layout-selected",element.dataset.layoutId===selectedLayoutId))}
-layoutSelect.addEventListener("change",syncLayoutControls);
-Object.entries(layoutControlMap).forEach(([key,input])=>input.addEventListener("input",()=>{layoutSettings[selectedLayoutId]={...layoutSettings[selectedLayoutId],[key]:Number(input.value)};applyLayoutItem(selectedLayoutId);saveLayoutSettings();syncLayoutControls();requestScrollPopUpdate()}));
-document.getElementById("jumpToLayout").addEventListener("click",()=>{const element=document.querySelector(`[data-layout-id="${selectedLayoutId}"]`);closeStudio();element?.scrollIntoView({behavior:"smooth",block:"center"})});
-document.getElementById("resetLayout").addEventListener("click",()=>{layoutSettings[selectedLayoutId]=deepCopy(embeddedLayoutSettings[selectedLayoutId]);applyLayoutItem(selectedLayoutId);saveLayoutSettings();syncLayoutControls();setStudioStatus("Selected layout part reset.")});
-document.getElementById("resetAllLayout").addEventListener("click",()=>{layoutSettings=deepCopy(embeddedLayoutSettings);localStorage.removeItem(layoutStorageKey);applyAllLayoutSettings();syncLayoutControls();setStudioStatus("All layout positions reset.")});
+      } catch (error) {
 
-const layoutMoveBar=document.getElementById("layoutMoveBar");
-let directMoveActive=false;
-function startDirectMove(){directMoveActive=true;closeStudio();document.body.classList.add("layout-edit-mode");layoutMoveBar.classList.add("show");syncLayoutControls();document.querySelector(`[data-layout-id="${selectedLayoutId}"]`)?.scrollIntoView({behavior:"smooth",block:"center"})}
-function finishDirectMove(openAfter=false){directMoveActive=false;document.body.classList.remove("layout-edit-mode");layoutMoveBar.classList.remove("show");document.querySelectorAll("[data-layout-id]").forEach(element=>element.classList.remove("layout-selected"));if(openAfter)openStudio()}
-document.getElementById("directMove").addEventListener("click",startDirectMove);
-document.getElementById("moveBarFinish").addEventListener("click",()=>finishDirectMove(false));
-document.getElementById("moveBarStudio").addEventListener("click",()=>finishDirectMove(true));
-document.getElementById("moveBarReset").addEventListener("click",()=>{layoutSettings[selectedLayoutId]=deepCopy(embeddedLayoutSettings[selectedLayoutId]);applyLayoutItem(selectedLayoutId);saveLayoutSettings();syncLayoutControls()});
-let dragState=null;
-document.addEventListener("pointerdown",event=>{
-  if(!directMoveActive)return;
-  const target=event.target.closest("[data-layout-id]");
-  if(!target)return;
-  event.preventDefault();event.stopPropagation();
-  selectedLayoutId=target.dataset.layoutId;layoutSelect.value=selectedLayoutId;syncLayoutControls();
-  const setting=layoutSettings[selectedLayoutId];
-  dragState={pointerId:event.pointerId,startX:event.clientX,startY:event.clientY,originX:setting.x,originY:setting.y,target};
-  target.setPointerCapture?.(event.pointerId);
-},{capture:true});
-document.addEventListener("pointermove",event=>{
-  if(!dragState||event.pointerId!==dragState.pointerId)return;
-  event.preventDefault();
-  const setting=layoutSettings[selectedLayoutId];
-  setting.x=Math.round(dragState.originX+event.clientX-dragState.startX);
-  setting.y=Math.round(dragState.originY+event.clientY-dragState.startY);
-  applyLayoutItem(selectedLayoutId);syncLayoutControls();requestScrollPopUpdate();
-},{capture:true});
-document.addEventListener("pointerup",event=>{if(!dragState||event.pointerId!==dragState.pointerId)return;saveLayoutSettings();dragState=null},{capture:true});
-document.addEventListener("click",event=>{if(directMoveActive&&event.target.closest("[data-layout-id]")){event.preventDefault();event.stopPropagation()}},{capture:true});
+        console.warn(
+          "Could not save website settings.",
+          error
+        );
 
-// Download a self-contained permanent website.
-function sanitizeClone(clone){
-  clone.querySelector("#animationDefaults").textContent=`\n${JSON.stringify(animationSettings)}\n`;
-  clone.querySelector("#imageDefaults").textContent=`\n${JSON.stringify(imageSettings)}\n`;
-  clone.querySelector("#layoutDefaults").textContent=`\n${JSON.stringify(layoutSettings)}\n`;
-  clone.querySelector("body").classList.remove("lock","layout-edit-mode");
-  clone.querySelector("#header")?.classList.remove("scrolled");
-  clone.querySelector("#mobile")?.classList.remove("open");
-  clone.querySelector("#float")?.classList.remove("open");
-  clone.querySelector("#lightbox")?.classList.remove("open");
-  clone.querySelector("#customizer")?.classList.remove("show");
-  clone.querySelector("#customizer")?.setAttribute("aria-hidden","true");
-  clone.querySelector("#layoutMoveBar")?.classList.remove("show");
-  clone.querySelectorAll(".reveal").forEach(item=>item.classList.remove("show"));
-  clone.querySelectorAll(".layout-selected").forEach(item=>item.classList.remove("layout-selected"));
-  clone.querySelectorAll(".scroll-pop").forEach(card=>{["--pop-opacity","--pop-scale","--pop-lift","--pop-tilt","--pop-shadow","--pop-radius","--pop-image-transform","--pop-image-filter","--pop-overlay-top","--pop-overlay-bottom","--pop-text-opacity","--pop-text-lift"].forEach(property=>card.style.removeProperty(property))});
-  clone.querySelector("#customizerLogin")?.removeAttribute("hidden");
-  clone.querySelector("#customizerControls")?.setAttribute("hidden","");
-  clone.querySelector("#loginStatus").textContent="";
-  clone.querySelector("#studioStatus").textContent="";
-  Object.entries(imageSettings).forEach(([slot,setting])=>clone.querySelectorAll(`[data-image-slot="${slot}"]`).forEach(image=>{image.src=setting.src;image.removeAttribute("style");image.dataset.baseZoom=setting.zoom}));
-  clone.querySelectorAll("[data-layout-id]").forEach(element=>element.removeAttribute("style"));
-}
-document.getElementById("downloadWebsite").addEventListener("click",()=>{
-  const clone=document.documentElement.cloneNode(true);
-  sanitizeClone(clone);
-  const blob=new Blob(["<!doctype html>\n"+clone.outerHTML],{type:"text/html;charset=utf-8"});
-  const url=URL.createObjectURL(blob);
-  const link=document.createElement("a");link.href=url;link.download="index.html";document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1200);
-  setStudioStatus("Complete index.html downloaded. Replace the file in GitHub and commit it.");
-});
+      }
 
-addEventListener("keydown",event=>{
-  if(event.key==="Escape"){closeBox();closeMenu();float.classList.remove("open");if(directMoveActive)finishDirectMove(false);if(customizer.classList.contains("show"))closeStudio()}
-  if(!gallery)return;if(event.key==="ArrowRight")nextImage();if(event.key==="ArrowLeft")previousImage();
-});
+    }, 350);
+  }
 
-syncAnimationControls();
-syncImageControls();
-syncLayoutControls();
-loadOwnerImages();
-document.getElementById("year").textContent=new Date().getFullYear();
+  function openDB() {
+
+    if (dbPromise) {
+      return dbPromise;
+    }
+
+    dbPromise = new Promise(
+      (resolve, reject) => {
+
+        const request =
+          indexedDB.open(DB_NAME, 1);
+
+        request.onupgradeneeded = () => {
+
+          if (
+            !request.result
+              .objectStoreNames
+              .contains(DB_STORE)
+          ) {
+
+            request.result.createObjectStore(
+              DB_STORE,
+              {
+                keyPath: "id"
+              }
+            );
+
+          }
+        };
+
+        request.onsuccess = () =>
+          resolve(request.result);
+
+        request.onerror = () =>
+          reject(request.error);
+
+      }
+    );
+
+    return dbPromise;
+  }
+
+  async function dbPut(record) {
+
+    const database = await openDB();
+
+    return new Promise(
+      (resolve, reject) => {
+
+        const transaction =
+          database.transaction(
+            DB_STORE,
+            "readwrite"
+          );
+
+        transaction
+          .objectStore(DB_STORE)
+          .put(record);
+
+        transaction.oncomplete = resolve;
+
+        transaction.onerror = () =>
+          reject(transaction.error);
+
+      }
+    );
+  }
+
+  async function dbGet(id) {
+
+    const database = await openDB();
+
+    return new Promise(
+      (resolve, reject) => {
+
+        const request =
+          database
+            .transaction(DB_STORE)
+            .objectStore(DB_STORE)
+            .get(id);
+
+        request.onsuccess = () =>
+          resolve(request.result || null);
+
+        request.onerror = () =>
+          reject(request.error);
+
+      }
+    );
+  }
+
+  async function dbDelete(id) {
+
+    const database = await openDB();
+
+    return new Promise(
+      (resolve, reject) => {
+
+        const transaction =
+          database.transaction(
+            DB_STORE,
+            "readwrite"
+          );
+
+        transaction
+          .objectStore(DB_STORE)
+          .delete(id);
+
+        transaction.oncomplete = resolve;
+
+        transaction.onerror = () =>
+          reject(transaction.error);
+
+      }
+    );
+  }
+
+  async function sourceFor(photo) {
+
+    if (!photo) {
+      return "";
+    }
+
+    if (embedded.photos?.[photo.id]) {
+      return embedded.photos[photo.id];
+    }
+
+    if (objectUrls.has(photo.id)) {
+      return objectUrls.get(photo.id);
+    }
+
+    const record =
+      await dbGet(photo.id)
+        .catch(() => null);
+
+    if (!record) {
+      return "";
+    }
+
+    const url =
+      URL.createObjectURL(record.blob);
+
+    objectUrls.set(photo.id, url);
+
+    return url;
+  }
+
+  function selectedAlbum() {
+
+    return (
+      state.albums.find(
+        album =>
+          album.id === selectedAlbumId
+      ) ||
+      state.albums[0]
+    );
+  }
+
+  function coverPhoto(album) {
+
+    return (
+      album.photos.find(
+        photo =>
+          photo.id === album.coverId
+      ) ||
+      album.photos[0] ||
+      null
+    );
+  }
+
+  function ratioFor(album) {
+
+    if (album.ratioMode === "custom") {
+
+      return (
+        Math.max(1, album.ratioW) +
+        "/" +
+        Math.max(1, album.ratioH)
+      );
+
+    }
+
+    if (album.ratioMode !== "original") {
+      return album.ratioMode;
+    }
+
+    const photo = coverPhoto(album);
+
+    if (
+      photo?.width &&
+      photo?.height
+    ) {
+
+      return (
+        photo.width +
+        "/" +
+        photo.height
+      );
+
+    }
+
+    return "4/5";
+  }
+
+  function escapeHTML(value) {
+
+    return String(value).replace(
+      /[&<>"]/g,
+      character => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;"
+      })[character]
+    );
+  }
+
+  async function renderAlbums() {
+
+    const grid = $("#albumGrid");
+
+    grid.innerHTML = "";
+
+    for (
+      const [index, album]
+      of state.albums.entries()
+    ) {
+
+      const wrapper =
+        document.createElement("div");
+
+      wrapper.className =
+        "albumCardWrap";
+
+      wrapper.style.justifyContent =
+        album.align;
+
+      const card =
+        document.createElement("button");
+
+      card.className = "albumCard";
+      card.dataset.id = album.id;
+
+      card.style.width =
+        album.width + "%";
+
+      card.style.aspectRatio =
+        ratioFor(album);
+
+      card.style.borderRadius =
+        album.radius + "px";
+
+      const image =
+        document.createElement("img");
+
+      const cover =
+        coverPhoto(album);
+
+      image.src = cover
+        ? (
+          await sourceFor(cover) ||
+          album.fallback
+        )
+        : album.fallback;
+
+      image.alt = album.title;
+
+      image.loading =
+        index < 2
+          ? "eager"
+          : "lazy";
+
+      image.style.objectFit =
+        album.fit;
+
+      card.append(image);
+
+      const count =
+        document.createElement("span");
+
+      count.className =
+        "albumCount";
+
+      const photoCount =
+        album.photos.length || 1;
+
+      count.textContent =
+        photoCount +
+        " photo" +
+        (
+          photoCount === 1
+            ? ""
+            : "s"
+        );
+
+      card.append(count);
+
+      const text =
+        document.createElement("div");
+
+      text.className =
+        "albumCardText";
+
+      text.innerHTML =
+        "<span>Open album</span>" +
+        "<h3>" +
+        escapeHTML(album.title) +
+        "</h3>";
+
+      card.append(text);
+
+      card.onclick = () =>
+        openViewer(album.id);
+
+      wrapper.append(card);
+      grid.append(wrapper);
+    }
+
+    updateScrollEffect();
+  }
+
+  async function updateCard(album) {
+
+    const card =
+      document.querySelector(
+        '.albumCard[data-id="' +
+        album.id +
+        '"]'
+      );
+
+    if (!card) {
+      return;
+    }
+
+    const wrapper =
+      card.parentElement;
+
+    wrapper.style.justifyContent =
+      album.align;
+
+    card.style.width =
+      album.width + "%";
+
+    card.style.aspectRatio =
+      ratioFor(album);
+
+    card.style.borderRadius =
+      album.radius + "px";
+
+    const image =
+      card.querySelector("img");
+
+    const cover =
+      coverPhoto(album);
+
+    image.src = cover
+      ? (
+        await sourceFor(cover) ||
+        album.fallback
+      )
+      : album.fallback;
+
+    image.style.objectFit =
+      album.fit;
+
+    card
+      .querySelector("h3")
+      .textContent =
+        album.title;
+
+    const photoCount =
+      album.photos.length || 1;
+
+    card
+      .querySelector(".albumCount")
+      .textContent =
+        photoCount +
+        " photo" +
+        (
+          photoCount === 1
+            ? ""
+            : "s"
+        );
+  }
+
+  async function openViewer(id) {
+
+    const album =
+      state.albums.find(
+        item =>
+          item.id === id
+      );
+
+    if (!album) {
+      return;
+    }
+
+    $("#viewerTitle").textContent =
+      album.title;
+
+    const grid =
+      $("#viewerGrid");
+
+    grid.innerHTML = "";
+
+    if (!album.photos.length) {
+
+      grid.innerHTML =
+        '<figure class="viewerItem">' +
+        '<img src="' +
+        album.fallback +
+        '" alt="' +
+        escapeHTML(album.title) +
+        '">' +
+        "</figure>";
+
+    } else {
+
+      for (
+        const photo
+        of album.photos
+      ) {
+
+        const source =
+          await sourceFor(photo);
+
+        if (!source) {
+          continue;
+        }
+
+        const figure =
+          document.createElement(
+            "figure"
+          );
+
+        figure.className =
+          "viewerItem";
+
+        const image =
+          document.createElement(
+            "img"
+          );
+
+        image.src = source;
+
+        image.alt =
+          photo.name ||
+          album.title;
+
+        figure.append(image);
+        grid.append(figure);
+      }
+
+      if (!grid.children.length) {
+
+        grid.innerHTML =
+          '<p class="viewerEmpty">' +
+          "No photographs are available " +
+          "in this browser." +
+          "</p>";
+
+      }
+    }
+
+    $("#viewer")
+      .classList
+      .add("open");
+
+    document.body
+      .classList
+      .add("lock");
+  }
+
+  function closeViewer() {
+
+    $("#viewer")
+      .classList
+      .remove("open");
+
+    if (
+      !$("#studio")
+        .classList
+        .contains("open")
+    ) {
+
+      document.body
+        .classList
+        .remove("lock");
+
+    }
+  }
+
+  function updateScrollEffect() {
+
+    if (
+      $("#studio")
+        .classList
+        .contains("open")
+    ) {
+      return;
+    }
+
+    const screenCentre =
+      innerHeight / 2;
+
+    $$(".albumCard").forEach(
+      card => {
+
+        const rectangle =
+          card.getBoundingClientRect();
+
+        const cardCentre =
+          rectangle.top +
+          rectangle.height / 2;
+
+        const distance =
+          Math.min(
+            1,
+            Math.abs(
+              cardCentre -
+              screenCentre
+            ) /
+            (
+              innerHeight *
+              .85
+            )
+          );
+
+        const progress =
+          1 - distance;
+
+        card.style.transform =
+          "translateY(" +
+          (
+            (1 - progress) *
+            32
+          ) +
+          "px) scale(" +
+          (
+            .97 +
+            progress *
+            .03
+          ) +
+          ")";
+
+        card.style.opacity =
+          String(
+            .35 +
+            progress *
+            .65
+          );
+      }
+    );
+  }
+
+  function onScroll() {
+
+    if (scrollQueued) {
+      return;
+    }
+
+    scrollQueued = true;
+
+    requestAnimationFrame(() => {
+
+      scrollQueued = false;
+
+      $("#header")
+        .classList
+        .toggle(
+          "scrolled",
+          scrollY > 30
+        );
+
+      updateScrollEffect();
+
+    });
+  }
+
+  function isOwner() {
+
+    return new URLSearchParams(
+      location.search
+    ).get("owner") === "true";
+  }
+
+  function requestStudio() {
+
+    if (
+      sessionStorage.getItem(
+        "tdp_owner_ok"
+      ) === "yes"
+    ) {
+
+      openStudio();
+
+    } else {
+
+      $("#login")
+        .classList
+        .add("open");
+
+      setTimeout(
+        () =>
+          $("#password").focus(),
+        50
+      );
+
+    }
+  }
+
+  function openStudio() {
+
+    closeViewer();
+
+    $("#login")
+      .classList
+      .remove("open");
+
+    $("#studio")
+      .classList
+      .add("open");
+
+    document.body
+      .classList
+      .add("lock");
+
+    renderStudio();
+  }
+
+  function closeStudio() {
+
+    $("#studio")
+      .classList
+      .remove("open");
+
+    document.body
+      .classList
+      .remove("lock");
+
+    updateScrollEffect();
+  }
+
+  function login() {
+
+    if (
+      $("#password").value ===
+      OWNER_PASSWORD
+    ) {
+
+      sessionStorage.setItem(
+        "tdp_owner_ok",
+        "yes"
+      );
+
+      $("#password").value = "";
+
+      $("#loginStatus")
+        .textContent = "";
+
+      openStudio();
+
+    } else {
+
+      $("#loginStatus")
+        .textContent =
+          "Incorrect password.";
+
+    }
+  }
+
+  function renderAlbumSelector() {
+
+    const container =
+      $("#albumSelector");
+
+    container.innerHTML = "";
+
+    state.albums.forEach(
+      album => {
+
+        const button =
+          document.createElement(
+            "button"
+          );
+
+        button.textContent =
+          album.title;
+
+        button.classList.toggle(
+          "active",
+          album.id ===
+            selectedAlbumId
+        );
+
+        button.onclick = () => {
+
+          selectedAlbumId =
+            album.id;
+
+          renderStudio();
+
+        };
+
+        container.append(button);
+      }
+    );
+  }
+
+  async function renderPhotoList() {
+
+    const album =
+      selectedAlbum();
+
+    const list =
+      $("#photoList");
+
+    list.innerHTML = "";
+
+    if (!album.photos.length) {
+
+      list.innerHTML =
+        '<p class="help">' +
+        "No uploaded photographs yet. " +
+        "The default repository image " +
+        "is being used." +
+        "</p>";
+
+      return;
+    }
+
+    for (
+      const [index, photo]
+      of album.photos.entries()
+    ) {
+
+      const item =
+        document.createElement(
+          "article"
+        );
+
+      item.className =
+        "photoItem";
+
+      const source =
+        await sourceFor(photo);
+
+      item.innerHTML =
+        (
+          photo.id ===
+          album.coverId
+        )
+          ? '<span class="coverBadge">Cover</span>'
+          : "";
+
+      const image =
+        document.createElement(
+          "img"
+        );
+
+      image.src = source;
+
+      image.alt =
+        photo.name ||
+        "Album photograph";
+
+      item.append(image);
+
+      const actions =
+        document.createElement(
+          "div"
+        );
+
+      actions.className =
+        "photoActions";
+
+      const buttons = [
+
+        [
+          "Cover",
+          () =>
+            setCover(photo.id)
+        ],
+
+        [
+          "←",
+          () =>
+            movePhoto(index, -1)
+        ],
+
+        [
+          "→",
+          () =>
+            movePhoto(index, 1)
+        ],
+
+        [
+          "Remove",
+          () =>
+            removePhoto(photo.id)
+        ]
+
+      ];
+
+      buttons.forEach(
+        ([label, action]) => {
+
+          const button =
+            document.createElement(
+              "button"
+            );
+
+          button.textContent =
+            label;
+
+          button.onclick =
+            action;
+
+          actions.append(button);
+        }
+      );
+
+      item.append(actions);
+      list.append(item);
+    }
+  }
+
+  function syncControls() {
+
+    const album =
+      selectedAlbum();
+
+    $("#albumTitle").value =
+      album.title;
+
+    $("#ratioMode").value =
+      album.ratioMode;
+
+    $("#ratioW").value =
+      album.ratioW;
+
+    $("#ratioH").value =
+      album.ratioH;
+
+    $("#customRatioFields")
+      .style
+      .display =
+        album.ratioMode ===
+        "custom"
+          ? "grid"
+          : "none";
+
+    $("#boxWidth").value =
+      album.width;
+
+    $("#widthValue")
+      .textContent =
+        album.width + "%";
+
+    $("#boxAlign").value =
+      album.align;
+
+    $("#imageFit").value =
+      album.fit;
+
+    $("#boxRadius").value =
+      album.radius;
+
+    $("#radiusValue")
+      .textContent =
+        album.radius + "px";
+  }
+
+  async function renderStudio() {
+
+    renderAlbumSelector();
+    syncControls();
+    await renderPhotoList();
+  }
+
+  function changeSetting(
+    key,
+    value
+  ) {
+
+    const album =
+      selectedAlbum();
+
+    album[key] = value;
+
+    updateCard(album);
+    scheduleSave();
+  }
+
+  async function setCover(id) {
+
+    const album =
+      selectedAlbum();
+
+    album.coverId = id;
+
+    await updateCard(album);
+
+    scheduleSave();
+    renderPhotoList();
+  }
+
+  async function movePhoto(
+    index,
+    direction
+  ) {
+
+    const album =
+      selectedAlbum();
+
+    const destination =
+      index + direction;
+
+    if (
+      destination < 0 ||
+      destination >=
+        album.photos.length
+    ) {
+      return;
+    }
+
+    [
+      album.photos[index],
+      album.photos[destination]
+    ] = [
+      album.photos[destination],
+      album.photos[index]
+    ];
+
+    scheduleSave();
+
+    await renderPhotoList();
+    await updateCard(album);
+  }
+
+  async function removePhoto(id) {
+
+    const album =
+      selectedAlbum();
+
+    album.photos =
+      album.photos.filter(
+        photo =>
+          photo.id !== id
+      );
+
+    if (
+      album.coverId === id
+    ) {
+
+      album.coverId =
+        album.photos[0]?.id ||
+        null;
+
+    }
+
+    await dbDelete(id)
+      .catch(() => {});
+
+    if (objectUrls.has(id)) {
+
+      URL.revokeObjectURL(
+        objectUrls.get(id)
+      );
+
+      objectUrls.delete(id);
+    }
+
+    delete embedded.photos[id];
+
+    scheduleSave();
+
+    await renderPhotoList();
+    await updateCard(album);
+  }
+
+  async function resizeImage(
+    file,
+    maxSide = 2400,
+    quality = .86
+  ) {
+
+    const bitmap =
+      await createImageBitmap(file);
+
+    const scale =
+      Math.min(
+        1,
+        maxSide /
+          Math.max(
+            bitmap.width,
+            bitmap.height
+          )
+      );
+
+    const width =
+      Math.max(
+        1,
+        Math.round(
+          bitmap.width *
+          scale
+        )
+      );
+
+    const height =
+      Math.max(
+        1,
+        Math.round(
+          bitmap.height *
+          scale
+        )
+      );
+
+    const canvas =
+      document.createElement(
+        "canvas"
+      );
+
+    canvas.width = width;
+    canvas.height = height;
+
+    canvas
+      .getContext(
+        "2d",
+        {
+          alpha: false
+        }
+      )
+      .drawImage(
+        bitmap,
+        0,
+        0,
+        width,
+        height
+      );
+
+    bitmap.close();
+
+    const type =
+      file.type === "image/png"
+        ? "image/webp"
+        : "image/jpeg";
+
+    const blob =
+      await new Promise(
+        resolve =>
+          canvas.toBlob(
+            resolve,
+            type,
+            quality
+          )
+      );
+
+    return {
+      blob,
+      width,
+      height
+    };
+  }
+
+  async function addPhotos(files) {
+
+    const album =
+      selectedAlbum();
+
+    const status =
+      $("#uploadStatus");
+
+    status.textContent =
+      "Preparing photographs…";
+
+    let completed = 0;
+
+    for (const file of files) {
+
+      if (
+        !file.type.startsWith(
+          "image/"
+        )
+      ) {
+        continue;
+      }
+
+      try {
+
+        const processed =
+          await resizeImage(file);
+
+        const id = uid();
+
+        await dbPut({
+
+          id,
+
+          blob:
+            processed.blob,
+
+          name:
+            file.name
+
+        });
+
+        album.photos.push({
+
+          id,
+
+          name:
+            file.name,
+
+          width:
+            processed.width,
+
+          height:
+            processed.height
+
+        });
+
+        if (!album.coverId) {
+          album.coverId = id;
+        }
+
+        completed++;
+
+        status.textContent =
+          "Added " +
+          completed +
+          " of " +
+          files.length +
+          "…";
+
+      } catch (error) {
+
+        console.error(error);
+
+      }
+    }
+
+    status.textContent =
+      completed
+        ? (
+          completed +
+          " photograph" +
+          (
+            completed === 1
+              ? ""
+              : "s"
+          ) +
+          " added."
+        )
+        : "No photographs were added.";
+
+    scheduleSave();
+
+    await renderPhotoList();
+    await updateCard(album);
+  }
+
+  function resetSelectedAlbum() {
+
+    const id =
+      selectedAlbumId;
+
+    const fresh =
+      clone(
+        defaultState.albums.find(
+          album =>
+            album.id === id
+        )
+      );
+
+    const old =
+      selectedAlbum();
+
+    old.photos.forEach(
+      photo =>
+        dbDelete(photo.id)
+          .catch(() => {})
+    );
+
+    const index =
+      state.albums.findIndex(
+        album =>
+          album.id === id
+      );
+
+    state.albums[index] =
+      fresh;
+
+    scheduleSave();
+
+    renderAlbums();
+    renderStudio();
+  }
+
+  function blobToDataURL(blob) {
+
+    return new Promise(
+      (resolve, reject) => {
+
+        const reader =
+          new FileReader();
+
+        reader.onload = () =>
+          resolve(reader.result);
+
+        reader.onerror = () =>
+          reject(reader.error);
+
+        reader.readAsDataURL(blob);
+
+      }
+    );
+  }
+
+  async function collectExportPhotos() {
+
+    const exported = {};
+
+    for (
+      const album
+      of state.albums
+    ) {
+
+      for (
+        const photo
+        of album.photos
+      ) {
+
+        if (exported[photo.id]) {
+          continue;
+        }
+
+        if (
+          embedded.photos?.[
+            photo.id
+          ]
+        ) {
+
+          exported[photo.id] =
+            embedded.photos[
+              photo.id
+            ];
+
+          continue;
+        }
+
+        const record =
+          await dbGet(photo.id)
+            .catch(() => null);
+
+        if (record?.blob) {
+
+          exported[photo.id] =
+            await blobToDataURL(
+              record.blob
+            );
+
+        }
+      }
+    }
+
+    return exported;
+  }
+
+  async function downloadPublishable() {
+
+    const button =
+      $("#downloadSite");
+
+    const oldText =
+      button.textContent;
+
+    button.textContent =
+      "Preparing…";
+
+    button.disabled = true;
+
+    try {
+
+      const payload = {
+
+        version: 1,
+
+        state:
+          clone(state),
+
+        photos:
+          await collectExportPhotos()
+
+      };
+
+      const dataNode =
+        $("#embeddedData");
+
+      const previous =
+        dataNode.textContent;
+
+      dataNode.textContent =
+        JSON.stringify(payload)
+          .replace(
+            /<\//g,
+            "<\\/"
+          );
+
+      const studioWasOpen =
+        $("#studio")
+          .classList
+          .contains("open");
+
+      $("#studio")
+        .classList
+        .remove("open");
+
+      $("#login")
+        .classList
+        .remove("open");
+
+      document.body
+        .classList
+        .remove("lock");
+
+      const html =
+        "<!doctype html>\n" +
+        document.documentElement
+          .outerHTML;
+
+      dataNode.textContent =
+        previous;
+
+      if (studioWasOpen) {
+
+        $("#studio")
+          .classList
+          .add("open");
+
+        document.body
+          .classList
+          .add("lock");
+
+      }
+
+      const blob =
+        new Blob(
+          [html],
+          {
+            type: "text/html"
+          }
+        );
+
+      const url =
+        URL.createObjectURL(blob);
+
+      const link =
+        document.createElement("a");
+
+      link.href = url;
+      link.download = "index.html";
+
+      link.click();
+
+      setTimeout(
+        () =>
+          URL.revokeObjectURL(url),
+        3000
+      );
+
+    } catch (error) {
+
+      alert(
+        "The website could not be prepared. " +
+        "Try fewer or smaller photographs."
+      );
+
+    } finally {
+
+      button.textContent =
+        oldText;
+
+      button.disabled = false;
+
+    }
+  }
+
+  $("#year").textContent =
+    new Date().getFullYear();
+
+  $("#closeViewer").onclick =
+    closeViewer;
+
+  $("#viewer")
+    .addEventListener(
+      "click",
+      event => {
+
+        if (
+          event.target ===
+          $("#viewer")
+        ) {
+
+          closeViewer();
+
+        }
+      }
+    );
+
+  $("#openStudio").onclick =
+    requestStudio;
+
+  $("#cancelLogin").onclick =
+    () =>
+      $("#login")
+        .classList
+        .remove("open");
+
+  $("#loginButton").onclick =
+    login;
+
+  $("#password")
+    .addEventListener(
+      "keydown",
+      event => {
+
+        if (
+          event.key ===
+          "Enter"
+        ) {
+
+          login();
+
+        }
+      }
+    );
+
+  $("#closeStudio").onclick =
+    closeStudio;
+
+  $("#downloadSite").onclick =
+    downloadPublishable;
+
+  $("#photoInput").onchange =
+    event => {
+
+      addPhotos([
+        ...event.target.files
+      ]);
+
+      event.target.value = "";
+
+    };
+
+  $("#albumTitle").oninput =
+    event =>
+      changeSetting(
+        "title",
+        event.target.value.trim() ||
+          "Untitled Album"
+      );
+
+  $("#ratioMode").onchange =
+    event => {
+
+      changeSetting(
+        "ratioMode",
+        event.target.value
+      );
+
+      $("#customRatioFields")
+        .style
+        .display =
+          event.target.value ===
+          "custom"
+            ? "grid"
+            : "none";
+
+    };
+
+  $("#ratioW").oninput =
+    event =>
+      changeSetting(
+        "ratioW",
+        Math.max(
+          1,
+          Number(
+            event.target.value
+          ) || 1
+        )
+      );
+
+  $("#ratioH").oninput =
+    event =>
+      changeSetting(
+        "ratioH",
+        Math.max(
+          1,
+          Number(
+            event.target.value
+          ) || 1
+        )
+      );
+
+  $("#boxWidth").oninput =
+    event => {
+
+      $("#widthValue")
+        .textContent =
+          event.target.value +
+          "%";
+
+      changeSetting(
+        "width",
+        Number(
+          event.target.value
+        )
+      );
+
+    };
+
+  $("#boxAlign").onchange =
+    event =>
+      changeSetting(
+        "align",
+        event.target.value
+      );
+
+  $("#imageFit").onchange =
+    event =>
+      changeSetting(
+        "fit",
+        event.target.value
+      );
+
+  $("#boxRadius").oninput =
+    event => {
+
+      $("#radiusValue")
+        .textContent =
+          event.target.value +
+          "px";
+
+      changeSetting(
+        "radius",
+        Number(
+          event.target.value
+        )
+      );
+
+    };
+
+  $("#resetAlbum").onclick =
+    () => {
+
+      const confirmed =
+        confirm(
+          "Reset this album and remove " +
+          "its uploaded photographs " +
+          "from this browser?"
+        );
+
+      if (confirmed) {
+        resetSelectedAlbum();
+      }
+
+    };
+
+  addEventListener(
+    "scroll",
+    onScroll,
+    {
+      passive: true
+    }
+  );
+
+  addEventListener(
+    "resize",
+    onScroll,
+    {
+      passive: true
+    }
+  );
+
+  if (isOwner()) {
+
+    document.body
+      .classList
+      .add("owner");
+
+    const customize =
+      new URLSearchParams(
+        location.search
+      ).get("customize");
+
+    if (
+      customize === "true"
+    ) {
+
+      setTimeout(
+        requestStudio,
+        250
+      );
+
+    }
+  }
+
+  renderAlbums();
+  onScroll();
+
+})();
 </script>
+
 </body>
 </html>
