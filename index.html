@@ -5,11 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Thien Dang Photography — portraits, graduation, couples and events in New Brunswick.">
 <title>Thien Dang Photography</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
 <style>
 :root{
   --paper:#eee7db;
@@ -21,795 +19,162 @@
   --serif:"Cormorant Garamond",Georgia,serif;
   --sans:Inter,Arial,sans-serif;
 }
-
-*{
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:var(--sans);
-  overflow-x:hidden;
-}
-
-body.lock{
-  overflow:hidden;
-}
-
-button,
-input,
-select{
-  font:inherit;
-}
-
-button{
-  cursor:pointer;
-}
-
-img{
-  display:block;
-  max-width:100%;
-}
-
-a{
-  color:inherit;
-}
-
-.wrap{
-  width:min(1320px,calc(100% - 40px));
-  margin:auto;
-}
-
-.eyebrow{
-  margin:0;
-  color:var(--gold);
-  font-size:.68rem;
-  font-weight:600;
-  letter-spacing:.23em;
-  text-transform:uppercase;
-}
-
-.display{
-  margin:.8rem 0 0;
-  font:500 clamp(4rem,9vw,9rem)/.78 var(--serif);
-  letter-spacing:-.065em;
-}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);overflow-x:hidden}
+body.lock{overflow:hidden}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(1320px,calc(100% - 40px));margin:auto}
+.eyebrow{margin:0;color:var(--gold);font-size:.68rem;font-weight:600;letter-spacing:.23em;text-transform:uppercase}
+.display{margin:.8rem 0 0;font:500 clamp(4rem,9vw,9rem)/.78 var(--serif);letter-spacing:-.065em}
+[data-layout-key]{transform-origin:center center;will-change:transform}
 
 /* Navigation */
-
-header{
-  position:fixed;
-  z-index:50;
-  inset:0 0 auto;
-  color:#fff;
-  transition:.25s;
-}
-
-header.scrolled{
-  color:var(--ink);
-  background:rgba(238,231,219,.92);
-  border-bottom:1px solid var(--line);
-  backdrop-filter:blur(14px);
-}
-
-nav{
-  height:70px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.brand{
-  font:600 1.45rem var(--serif);
-  text-decoration:none;
-}
-
-.navlinks{
-  display:flex;
-  gap:24px;
-  align-items:center;
-}
-
-.navlinks a,
-.navlinks button{
-  border:0;
-  background:none;
-  color:inherit;
-  font-size:.61rem;
-  font-weight:600;
-  letter-spacing:.16em;
-  text-decoration:none;
-  text-transform:uppercase;
-}
-
-.ownerBtn{
-  display:none !important;
-  padding:.5rem .8rem !important;
-  border:1px solid currentColor !important;
-  border-radius:999px !important;
-}
-
-body.owner .ownerBtn{
-  display:inline-flex !important;
-}
+header{position:fixed;z-index:50;inset:0 0 auto;color:#fff;transition:.25s}
+header.scrolled{color:var(--ink);background:rgba(238,231,219,.92);border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
+nav{height:70px;display:flex;align-items:center;justify-content:space-between}
+.brand{font:600 1.45rem var(--serif);text-decoration:none}
+.navlinks{display:flex;gap:24px;align-items:center}
+.navlinks a,.navlinks button{border:0;background:none;color:inherit;font-size:.61rem;font-weight:600;letter-spacing:.16em;text-decoration:none;text-transform:uppercase}
+.ownerBtn{display:none!important;padding:.5rem .8rem!important;border:1px solid currentColor!important;border-radius:999px!important}
+body.owner .ownerBtn{display:inline-flex!important}
 
 /* Hero */
+.hero{position:relative;min-height:100svh;color:#fff;background:#111;overflow:hidden}
+.heroMedia{position:absolute;inset:0;overflow:hidden}
+.heroMedia img{position:absolute;inset:-8%;width:116%;height:116%;object-fit:cover;filter:grayscale(.45) brightness(.62);transform-origin:center}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.2),transparent 45%,rgba(0,0,0,.82))}
+.heroInner{position:relative;z-index:1;min-height:100svh;padding:115px 0 55px;display:grid;align-content:space-between}
+.mast{max-width:1040px;margin:auto;padding:2.5rem 1.5rem;text-align:center;color:var(--ink);background:rgba(248,243,233,.95)}
+.mast small{font-size:.58rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase}
+.mast h1{margin:.8rem 0 0;font:500 clamp(5rem,12vw,11rem)/.66 var(--serif);letter-spacing:-.075em}
+.mast p{margin:1.3rem 0 0;font-size:.52rem;font-weight:600;letter-spacing:.14em;line-height:1.7;text-transform:uppercase}
+.heroQuote{max-width:920px;margin:0;font:400 clamp(2rem,4vw,4.3rem)/1 var(--serif);text-transform:uppercase;text-shadow:0 4px 28px #000}
 
-.hero{
-  position:relative;
-  min-height:100svh;
-  color:#fff;
-  background:#111;
-  overflow:hidden;
-}
-
-.hero > img{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center;
-  filter:grayscale(.45) brightness(.62);
-}
-
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(180deg,rgba(0,0,0,.2),transparent 45%,rgba(0,0,0,.82));
-}
-
-.heroInner{
-  position:relative;
-  z-index:1;
-  min-height:100svh;
-  padding:115px 0 55px;
-  display:grid;
-  align-content:space-between;
-}
-
-.mast{
-  max-width:1040px;
-  margin:auto;
-  padding:2.5rem 1.5rem;
-  text-align:center;
-  color:var(--ink);
-  background:rgba(248,243,233,.95);
-}
-
-.mast small{
-  font-size:.58rem;
-  font-weight:600;
-  letter-spacing:.28em;
-  text-transform:uppercase;
-}
-
-.mast h1{
-  margin:.8rem 0 0;
-  font:500 clamp(5rem,12vw,11rem)/.66 var(--serif);
-  letter-spacing:-.075em;
-}
-
-.mast p{
-  margin:1.3rem 0 0;
-  font-size:.52rem;
-  font-weight:600;
-  letter-spacing:.14em;
-  line-height:1.7;
-  text-transform:uppercase;
-}
-
-.heroQuote{
-  max-width:920px;
-  margin:0;
-  font:400 clamp(2rem,4vw,4.3rem)/1 var(--serif);
-  text-transform:uppercase;
-  text-shadow:0 4px 28px #000;
-}
-
-/* Intro */
-
-.intro{
-  padding:9rem 0;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8vw;
-  align-items:center;
-}
-
-.copy{
-  margin:0;
-  color:var(--muted);
-  font:400 clamp(1.3rem,2vw,2rem)/1.4 var(--serif);
-}
-
-/* Albums */
-
-.stories{
-  padding:2rem 0 10rem;
-}
-
-.sectionHead{
-  margin-bottom:4rem;
-  display:flex;
-  justify-content:space-between;
-  gap:3rem;
-  align-items:end;
-}
-
-.sectionHead > p{
-  max-width:430px;
-  color:var(--muted);
-  line-height:1.6;
-}
-
-.albumGrid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:46px 28px;
-  align-items:start;
-}
-
-.albumCardWrap{
-  display:flex;
-}
-
-.albumCard{
-  position:relative;
-  width:100%;
-  padding:0;
-  border:0;
-  background:#c8c0b4;
-  color:#fff;
-  overflow:hidden;
-  text-align:left;
-  transform:translateY(32px) scale(.97);
-  opacity:.35;
-  transition:
-    transform .2s linear,
-    opacity .2s linear;
-}
-
-.albumCard img{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.albumCard::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(180deg,transparent 35%,rgba(0,0,0,.78));
-}
-
-.albumCardText{
-  position:absolute;
-  z-index:1;
-  left:26px;
-  right:26px;
-  bottom:24px;
-}
-
-.albumCardText span{
-  font-size:.59rem;
-  font-weight:600;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-}
-
-.albumCardText h3{
-  margin:.55rem 0 0;
-  font:500 clamp(2.8rem,5vw,5.4rem)/.82 var(--serif);
-  letter-spacing:-.045em;
-}
-
-.albumCount{
-  position:absolute;
-  z-index:2;
-  right:18px;
-  top:18px;
-  padding:.45rem .65rem;
-  border-radius:999px;
-  background:rgba(0,0,0,.45);
-  font-size:.62rem;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  backdrop-filter:blur(8px);
-}
-
-/* About */
-
-.about{
-  padding:9rem 0;
-  border-top:1px solid var(--line);
-  display:grid;
-  grid-template-columns:.85fr 1.15fr;
-  gap:8vw;
-  align-items:center;
-}
-
-.aboutPhoto{
-  min-height:650px;
-}
-
-.aboutPhoto img{
-  width:100%;
-  height:650px;
-  object-fit:cover;
-}
-
-.aboutText h2{
-  margin:1rem 0 2rem;
-  font:500 clamp(4.2rem,8vw,8rem)/.78 var(--serif);
-  letter-spacing:-.06em;
-}
-
-.aboutText p:not(.eyebrow){
-  color:var(--muted);
-  font:400 clamp(1.2rem,1.8vw,1.7rem)/1.42 var(--serif);
-}
-
-/* Contact */
-
-.contact{
-  padding:8rem 0;
-}
-
-.contactBox{
-  padding:clamp(2rem,6vw,6rem);
-  color:#fff;
-  background:#17140f;
-  display:grid;
-  grid-template-columns:1.3fr .7fr;
-  gap:5vw;
-  align-items:end;
-}
-
-.contactBox h2{
-  margin:.8rem 0 0;
-  font:500 clamp(4rem,9vw,9rem)/.78 var(--serif);
-  letter-spacing:-.06em;
-}
-
-.contactLinks{
-  display:grid;
-  gap:12px;
-}
-
-.contactLinks a{
-  padding:1rem 0;
-  border-bottom:1px solid rgba(255,255,255,.22);
-  font-size:.72rem;
-  letter-spacing:.13em;
-  text-decoration:none;
-  text-transform:uppercase;
-}
-
-footer{
-  padding:2rem 0;
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  color:var(--muted);
-  font-size:.65rem;
-  letter-spacing:.13em;
-  text-transform:uppercase;
-}
+/* Main sections */
+.intro{padding:9rem 0;display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:center}
+.copy{margin:0;color:var(--muted);font:400 clamp(1.3rem,2vw,2rem)/1.4 var(--serif)}
+.stories{padding:2rem 0 10rem}
+.sectionHead{margin-bottom:4rem;display:flex;justify-content:space-between;gap:3rem;align-items:end}
+.sectionHead>p{max-width:430px;color:var(--muted);line-height:1.6}
+.albumGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:46px 28px;align-items:start}
+.albumCardWrap{display:flex}
+.albumCard{position:relative;width:100%;padding:0;border:0;background:#c8c0b4;color:#fff;overflow:hidden;text-align:left;transform:translateY(32px) scale(.97);opacity:.35;transition:transform .18s linear,opacity .18s linear;box-shadow:0 18px 55px rgba(30,25,18,.12)}
+.albumCard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1);transition:transform .18s linear}
+.albumCard::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.78))}
+.albumCardText{position:absolute;z-index:1;left:26px;right:26px;bottom:24px}
+.albumCardText span{font-size:.59rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
+.albumCardText h3{margin:.55rem 0 0;font:500 clamp(2.8rem,5vw,5.4rem)/.82 var(--serif);letter-spacing:-.045em}
+.albumCount{position:absolute;z-index:2;right:18px;top:18px;padding:.45rem .65rem;border-radius:999px;background:rgba(0,0,0,.45);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;backdrop-filter:blur(8px)}
+.about{padding:9rem 0;border-top:1px solid var(--line);display:grid;grid-template-columns:.85fr 1.15fr;gap:8vw;align-items:center}
+.aboutPhoto{min-height:650px;overflow:hidden}
+.aboutPhoto img{width:100%;height:650px;object-fit:cover;transform-origin:center}
+.aboutText h2{margin:1rem 0 2rem;font:500 clamp(4.2rem,8vw,8rem)/.78 var(--serif);letter-spacing:-.06em}
+.aboutText p:not(.eyebrow){color:var(--muted);font:400 clamp(1.2rem,1.8vw,1.7rem)/1.42 var(--serif)}
+.contact{padding:8rem 0}
+.contactBox{padding:clamp(2rem,6vw,6rem);color:#fff;background:#17140f;display:grid;grid-template-columns:1.3fr .7fr;gap:5vw;align-items:end}
+.contactBox h2{margin:.8rem 0 0;font:500 clamp(4rem,9vw,9rem)/.78 var(--serif);letter-spacing:-.06em}
+.contactLinks{display:grid;gap:12px}
+.contactLinks a{padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.22);font-size:.72rem;letter-spacing:.13em;text-decoration:none;text-transform:uppercase}
+footer{padding:2rem 0;display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:.65rem;letter-spacing:.13em;text-transform:uppercase}
 
 /* Album viewer */
+.viewer{position:fixed;z-index:100;inset:0;display:none;background:rgba(10,9,7,.96);color:#fff}
+.viewer.open{display:block}
+.viewerTop{position:sticky;z-index:2;top:0;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,9,7,.88);backdrop-filter:blur(12px)}
+.viewerTop h2{margin:0;font:500 2rem var(--serif)}
+.viewerTop button{border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:.6rem .9rem;color:#fff;background:transparent}
+.viewerBody{height:calc(100vh - 76px);overflow:auto;padding:30px}
+.viewerGrid{max-width:1250px;margin:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:start}
+.viewerItem{margin:0;background:#16130f}
+.viewerItem img{width:100%;height:auto}
+.viewerEmpty{padding:5rem 1rem;text-align:center;color:rgba(255,255,255,.65)}
 
-.viewer{
-  position:fixed;
-  z-index:100;
-  inset:0;
-  display:none;
-  background:rgba(10,9,7,.96);
-  color:#fff;
-}
-
-.viewer.open{
-  display:block;
-}
-
-.viewerTop{
-  position:sticky;
-  z-index:2;
-  top:0;
-  padding:18px 22px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  background:rgba(10,9,7,.88);
-  backdrop-filter:blur(12px);
-}
-
-.viewerTop h2{
-  margin:0;
-  font:500 2rem var(--serif);
-}
-
-.viewerTop button{
-  border:1px solid rgba(255,255,255,.35);
-  border-radius:999px;
-  padding:.6rem .9rem;
-  color:#fff;
-  background:transparent;
-}
-
-.viewerBody{
-  height:calc(100vh - 76px);
-  overflow:auto;
-  padding:30px;
-}
-
-.viewerGrid{
-  max-width:1250px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:22px;
-}
-
-.viewerItem{
-  margin:0;
-  background:#16130f;
-}
-
-.viewerItem img{
-  width:100%;
-  height:auto;
-}
-
-.viewerEmpty{
-  padding:5rem 1rem;
-  text-align:center;
-  color:rgba(255,255,255,.65);
-}
-
-/* Website Studio */
-
-.studio{
-  position:fixed;
-  z-index:120;
-  inset:0;
-  display:none;
-  background:rgba(0,0,0,.68);
-}
-
-.studio.open{
-  display:grid;
-  place-items:center;
-}
-
-.studioPanel{
-  width:min(980px,calc(100% - 24px));
-  height:min(90vh,900px);
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,.14);
-  border-radius:18px;
-  color:#fff;
-  background:#181510;
-  box-shadow:0 30px 100px rgba(0,0,0,.5);
-}
-
-.studioHead{
-  height:70px;
-  padding:0 20px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  border-bottom:1px solid rgba(255,255,255,.12);
-}
-
-.studioHead h2{
-  margin:0;
-  font:500 2rem var(--serif);
-}
-
-.studioHead div{
-  display:flex;
-  gap:8px;
-}
-
-.studioHead button,
-.studio button{
-  border:1px solid rgba(255,255,255,.22);
-  border-radius:10px;
-  padding:.65rem .85rem;
-  color:#fff;
-  background:rgba(255,255,255,.06);
-}
-
-.studio button.primary{
-  color:#17140f;
-  background:#c9ab82;
-  border-color:#c9ab82;
-}
-
-.studioBody{
-  height:calc(100% - 70px);
-  overflow:auto;
-  padding:20px;
-}
-
-.albumSelector{
-  display:flex;
-  gap:8px;
-  overflow:auto;
-  padding-bottom:14px;
-}
-
-.albumSelector button.active{
-  color:#17140f;
-  background:#c9ab82;
-}
-
-.studioGrid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
-}
-
-.panel{
-  padding:18px;
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:14px;
-  background:rgba(255,255,255,.03);
-}
-
-.panel h3{
-  margin:0 0 1rem;
-  font:500 1.55rem var(--serif);
-}
-
-.field{
-  display:grid;
-  gap:7px;
-  margin:0 0 14px;
-}
-
-.field label{
-  font-size:.65rem;
-  font-weight:600;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,.68);
-}
-
-.field input[type="text"],
-.field input[type="number"],
-.field select{
-  width:100%;
-  padding:.75rem .8rem;
-  border:1px solid rgba(255,255,255,.16);
-  border-radius:9px;
-  color:#fff;
-  background:#242019;
-}
-
-.field input[type="range"]{
-  width:100%;
-}
-
-.rangeLine{
-  display:flex;
-  justify-content:space-between;
-  color:rgba(255,255,255,.65);
-  font-size:.7rem;
-}
-
-.uploadLabel{
-  display:block;
-  padding:1.1rem;
-  border:1px dashed rgba(255,255,255,.28);
-  border-radius:12px;
-  text-align:center;
-  cursor:pointer;
-}
-
-.uploadLabel input{
-  display:none;
-}
-
-.photoList{
-  margin-top:14px;
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:10px;
-}
-
-.photoItem{
-  position:relative;
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:11px;
-  background:#100e0b;
-}
-
-.photoItem img{
-  width:100%;
-  aspect-ratio:4/3;
-  object-fit:cover;
-}
-
-.photoActions{
-  padding:8px;
-  display:flex;
-  flex-wrap:wrap;
-  gap:6px;
-}
-
-.photoActions button{
-  padding:.45rem .55rem;
-  font-size:.62rem;
-}
-
-.coverBadge{
-  position:absolute;
-  left:8px;
-  top:8px;
-  padding:.35rem .5rem;
-  border-radius:999px;
-  color:#17140f;
-  background:#c9ab82;
-  font-size:.55rem;
-  font-weight:700;
-  text-transform:uppercase;
-}
-
-.help{
-  color:rgba(255,255,255,.58);
-  font-size:.75rem;
-  line-height:1.55;
-}
-
-.status{
-  min-height:1.2rem;
-  color:#c9ab82;
-  font-size:.76rem;
-}
-
-.danger{
-  border-color:#8d4e45 !important;
-  color:#ffb9ae !important;
-}
+/* Studio shell */
+.studio{position:fixed;z-index:120;inset:0;display:none;background:rgba(0,0,0,.68)}
+.studio.open{display:grid;place-items:center}
+.studioPanel{width:min(1120px,calc(100% - 24px));height:min(92vh,940px);overflow:hidden;border:1px solid rgba(255,255,255,.14);border-radius:18px;color:#fff;background:#181510;box-shadow:0 30px 100px rgba(0,0,0,.5)}
+.studioHead{min-height:70px;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid rgba(255,255,255,.12)}
+.studioHead h2{margin:0;font:500 2rem var(--serif)}
+.studioHeadActions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.studio button,.studioHead button{border:1px solid rgba(255,255,255,.22);border-radius:10px;padding:.65rem .85rem;color:#fff;background:rgba(255,255,255,.06)}
+.studio button.primary{color:#17140f;background:#c9ab82;border-color:#c9ab82}
+.studio button.active{color:#17140f;background:#c9ab82;border-color:#c9ab82}
+.studioBody{height:calc(100% - 70px);overflow:auto;padding:20px}
+.studioTabs{position:sticky;z-index:3;top:-20px;margin:-20px -20px 20px;padding:14px 20px;display:flex;gap:8px;overflow:auto;background:#181510;border-bottom:1px solid rgba(255,255,255,.1)}
+.studioTabPanel{display:none}
+.studioTabPanel.active{display:block}
+.studioGrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.studioGrid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.panel{padding:18px;border:1px solid rgba(255,255,255,.12);border-radius:14px;background:rgba(255,255,255,.03)}
+.panel h3{margin:0 0 1rem;font:500 1.55rem var(--serif)}
+.panel h4{margin:1.2rem 0 .7rem;font:600 .72rem var(--sans);letter-spacing:.12em;text-transform:uppercase;color:#c9ab82}
+.field{display:grid;gap:7px;margin:0 0 14px}
+.field label{font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.68)}
+.field input[type=text],.field input[type=url],.field input[type=tel],.field input[type=number],.field select,.field textarea{width:100%;padding:.75rem .8rem;border:1px solid rgba(255,255,255,.16);border-radius:9px;color:#fff;background:#242019}
+.field textarea{min-height:92px;resize:vertical;line-height:1.45}
+.field input[type=range]{width:100%}
+.rangeLine{display:flex;justify-content:space-between;gap:10px;color:rgba(255,255,255,.65);font-size:.7rem}
+.uploadLabel{display:block;padding:1.1rem;border:1px dashed rgba(255,255,255,.28);border-radius:12px;text-align:center;cursor:pointer}
+.uploadLabel input{display:none}
+.help{color:rgba(255,255,255,.58);font-size:.75rem;line-height:1.55}
+.status{min-height:1.2rem;color:#c9ab82;font-size:.76rem}
+.danger{border-color:#8d4e45!important;color:#ffb9ae!important}
+.albumToolbar{display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:14px}
+.albumSelector{display:flex;gap:8px;overflow:auto;flex:1;padding-bottom:4px}
+.photoList{margin-top:14px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.photoItem{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.12);border-radius:11px;background:#100e0b}
+.photoItem img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.photoActions{padding:8px;display:flex;flex-wrap:wrap;gap:6px}
+.photoActions button{padding:.45rem .55rem;font-size:.62rem}
+.coverBadge{position:absolute;left:8px;top:8px;padding:.35rem .5rem;border-radius:999px;color:#17140f;background:#c9ab82;font-size:.55rem;font-weight:700;text-transform:uppercase}
+.previewBox{position:relative;min-height:220px;overflow:hidden;border-radius:12px;background:#0f0d0a}
+.previewBox img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.layoutTargetOutline{outline:3px solid #c9ab82!important;outline-offset:6px}
+.notice{margin:0 0 16px;padding:12px 14px;border:1px solid rgba(201,171,130,.3);border-radius:10px;background:rgba(201,171,130,.08);color:#e4cfb0;font-size:.78rem;line-height:1.5}
 
 /* Login */
+.login{position:fixed;z-index:130;inset:0;display:none;place-items:center;background:rgba(0,0,0,.75)}
+.login.open{display:grid}
+.loginBox{width:min(390px,calc(100% - 28px));padding:24px;border-radius:16px;color:#fff;background:#181510}
+.loginBox h2{margin:0 0 1rem;font:500 2.2rem var(--serif)}
+.loginBox input{width:100%;margin:0 0 12px;padding:.85rem;border:1px solid rgba(255,255,255,.18);border-radius:9px;color:#fff;background:#242019}
+.loginBox div{display:flex;gap:8px;justify-content:flex-end}
 
-.login{
-  position:fixed;
-  z-index:130;
-  inset:0;
-  display:none;
-  place-items:center;
-  background:rgba(0,0,0,.75);
+@media(max-width:900px){
+  .studioGrid,.studioGrid.three{grid-template-columns:1fr}
 }
-
-.login.open{
-  display:grid;
-}
-
-.loginBox{
-  width:min(390px,calc(100% - 28px));
-  padding:24px;
-  border-radius:16px;
-  color:#fff;
-  background:#181510;
-}
-
-.loginBox h2{
-  margin:0 0 1rem;
-  font:500 2.2rem var(--serif);
-}
-
-.loginBox input{
-  width:100%;
-  margin:0 0 12px;
-  padding:.85rem;
-  border:1px solid rgba(255,255,255,.18);
-  border-radius:9px;
-  color:#fff;
-  background:#242019;
-}
-
-.loginBox div{
-  display:flex;
-  gap:8px;
-  justify-content:flex-end;
-}
-
-/* Mobile */
-
 @media(max-width:800px){
-
-  .navlinks a:not(.ownerBtn){
-    display:none;
-  }
-
-  .intro,
-  .about,
-  .contactBox,
-  .studioGrid{
-    grid-template-columns:1fr;
-  }
-
-  .albumGrid,
-  .viewerGrid{
-    grid-template-columns:1fr;
-  }
-
-  .sectionHead{
-    display:block;
-  }
-
-  .sectionHead > p{
-    margin-top:1.5rem;
-  }
-
-  .aboutPhoto,
-  .aboutPhoto img{
-    min-height:0;
-    height:auto;
-  }
-
-  .mast h1{
-    font-size:20vw;
-  }
-
-  .heroQuote{
-    font-size:8vw;
-  }
-
-  .viewerBody{
-    padding:14px;
-  }
-
-  .photoList{
-    grid-template-columns:1fr;
-  }
-
-  footer{
-    display:grid;
-  }
-
-  .wrap{
-    width:min(100% - 24px,1320px);
-  }
+  .navlinks a:not(.ownerBtn){display:none}
+  .intro,.about,.contactBox{grid-template-columns:1fr}
+  .albumGrid,.viewerGrid{grid-template-columns:1fr}
+  .sectionHead{display:block}
+  .sectionHead>p{margin-top:1.5rem}
+  .aboutPhoto,.aboutPhoto img{min-height:0;height:auto}
+  .mast h1{font-size:20vw}
+  .heroQuote{font-size:8vw}
+  .viewerBody{padding:14px}
+  .photoList{grid-template-columns:1fr}
+  footer{display:grid}
+  .wrap{width:min(100% - 24px,1320px)}
+  .studioHead{align-items:flex-start}
+  .studioHead h2{font-size:1.55rem}
+  .studioHeadActions button{font-size:.72rem;padding:.55rem .65rem}
 }
-
 @media(prefers-reduced-motion:reduce){
-
-  html{
-    scroll-behavior:auto;
-  }
-
-  .albumCard{
-    transform:none !important;
-    opacity:1 !important;
-    transition:none !important;
-  }
+  html{scroll-behavior:auto}
+  .albumCard{transform:none!important;opacity:1!important;transition:none!important}
+  .albumCard img{transform:none!important}
 }
 </style>
 </head>
-
 <body>
-
 <header id="header">
   <nav class="wrap">
-    <a class="brand" href="#top">Thien Dang</a>
-
+    <a class="brand" id="brandText" href="#top">Thien Dang</a>
     <div class="navlinks">
       <a href="#stories">Stories</a>
       <a href="#about">About</a>
@@ -820,2212 +185,1243 @@ footer{
 </header>
 
 <main id="top">
-
   <section class="hero">
-    <img
-      id="heroImage"
-      src="/images/hero.jpg"
-      alt="Thien Dang Photography"
-    >
-
+    <div class="heroMedia"><img id="heroImage" src="/images/hero.jpg" alt="Thien Dang Photography"></div>
     <div class="heroInner wrap">
-
-      <div class="mast">
-        <small>A personal archive by Thien Dang</small>
-
-        <h1>
-          THE PRIVATE<br>
-          INDEX
-        </h1>
-
-        <p>
-          Portraits · Graduation · Couples · Events · New Brunswick
-        </p>
+      <div class="mast" data-layout-key="heroMast">
+        <small id="mastSmall">A personal archive by Thien Dang</small>
+        <h1 id="mastTitle">THE PRIVATE<br>INDEX</h1>
+        <p id="mastMeta">Portraits · Graduation · Couples · Events · New Brunswick</p>
       </div>
-
-      <p class="heroQuote">
-        This is not about taking more pictures.
-        It is about preserving why a moment mattered.
-      </p>
-
+      <p class="heroQuote" id="heroQuote" data-layout-key="heroQuote">This is not about taking more pictures. It is about preserving why a moment mattered.</p>
     </div>
   </section>
 
   <section class="intro wrap">
-
-    <div>
-      <p class="eyebrow">The index</p>
-
-      <h2 class="display">
-        Selected<br>
-        stories.
-      </h2>
+    <div data-layout-key="introTitle">
+      <p class="eyebrow" id="introEyebrow">The index</p>
+      <h2 class="display" id="introTitle">Selected<br>stories.</h2>
     </div>
-
-    <p class="copy">
-      Photographs can be elegant without feeling distant,
-      and personal without becoming ordinary.
-      Open a category to view its complete album.
-    </p>
-
+    <p class="copy" id="introCopy" data-layout-key="introCopy">Photographs can be elegant without feeling distant, and personal without becoming ordinary. Open a category to view its complete album.</p>
   </section>
 
-  <section class="stories wrap" id="stories">
-
+  <section class="stories wrap" id="stories" data-layout-key="storiesSection">
     <div class="sectionHead">
-
       <div>
-        <p class="eyebrow">The albums</p>
-
-        <h2 class="display">
-          Lives, briefly<br>
-          held still.
-        </h2>
+        <p class="eyebrow" id="storiesEyebrow">The albums</p>
+        <h2 class="display" id="storiesTitle">Lives, briefly<br>held still.</h2>
       </div>
-
-      <p>
-        Each category can contain multiple photographs.
-        The cover box can follow the original photograph ratio
-        or use a ratio and size chosen by you.
-      </p>
-
+      <p id="storiesCopy">Each category can contain multiple photographs. The cover box can follow the original photograph ratio or use a ratio and size chosen by you.</p>
     </div>
-
     <div class="albumGrid" id="albumGrid"></div>
-
   </section>
 
   <section class="about wrap" id="about">
-
-    <div class="aboutPhoto">
-      <img
-        id="profileImage"
-        src="/images/me.jpg"
-        alt="Thien Dang"
-      >
+    <div class="aboutPhoto" data-layout-key="aboutPhoto"><img id="profileImage" src="/images/me.jpg" alt="Thien Dang"></div>
+    <div class="aboutText" data-layout-key="aboutText">
+      <p class="eyebrow" id="aboutEyebrow">About the photographer</p>
+      <h2 id="aboutTitle">Quietly<br>observant.</h2>
+      <p id="aboutP1">I am Thien, a photographer and storyteller based in Fredericton, New Brunswick. I photograph people with an editorial eye and a documentary instinct.</p>
+      <p id="aboutP2">I look for gesture, light, relationships, and the small details that make a day feel like itself.</p>
     </div>
-
-    <div class="aboutText">
-
-      <p class="eyebrow">About the photographer</p>
-
-      <h2>
-        Quietly<br>
-        observant.
-      </h2>
-
-      <p>
-        I am Thien, a photographer and storyteller based in
-        Fredericton, New Brunswick. I photograph people with
-        an editorial eye and a documentary instinct.
-      </p>
-
-      <p>
-        I look for gesture, light, relationships, and the small
-        details that make a day feel like itself.
-      </p>
-
-    </div>
-
   </section>
 
   <section class="contact wrap" id="contact">
-
-    <div class="contactBox">
-
+    <div class="contactBox" data-layout-key="contactBox">
       <div>
-        <p class="eyebrow">Booking & inquiries</p>
-
-        <h2>
-          Let me join<br>
-          the moment.
-        </h2>
+        <p class="eyebrow" id="contactEyebrow">Booking & inquiries</p>
+        <h2 id="contactTitle">Let me join<br>the moment.</h2>
       </div>
-
       <div class="contactLinks">
-
-        <a
-          href="https://www.instagram.com/letmetakephotosfor_you?igsh=a255aDBrajg2bTA="
-          target="_blank"
-          rel="noreferrer"
-        >
-          Instagram · @letmetakephotosfor_you
-        </a>
-
-        <a href="tel:+15069620480">
-          Call · 506-962-0480
-        </a>
-
-        <a href="sms:+15069620480">
-          Text · 506-962-0480
-        </a>
-
+        <a id="instagramLink" href="https://www.instagram.com/letmetakephotosfor_you?igsh=a255aDBrajg2bTA=" target="_blank" rel="noreferrer">Instagram · @letmetakephotosfor_you</a>
+        <a id="phoneLink" href="tel:+15069620480">Call · 506-962-0480</a>
+        <a id="smsLink" href="sms:+15069620480">Text · 506-962-0480</a>
       </div>
-
     </div>
-
     <footer>
-      <strong>Thien Dang Photography</strong>
-      <span>Fredericton · New Brunswick</span>
+      <strong id="footerBrand">Thien Dang Photography</strong>
+      <span id="footerLocation">Fredericton · New Brunswick</span>
       <span>© <span id="year"></span></span>
     </footer>
-
   </section>
-
 </main>
 
-<!-- Album viewer -->
-
 <div class="viewer" id="viewer" aria-hidden="true">
-
-  <div class="viewerTop">
-    <h2 id="viewerTitle">Album</h2>
-    <button id="closeViewer">Close</button>
-  </div>
-
-  <div class="viewerBody">
-    <div class="viewerGrid" id="viewerGrid"></div>
-  </div>
-
+  <div class="viewerTop"><h2 id="viewerTitle">Album</h2><button id="closeViewer">Close</button></div>
+  <div class="viewerBody"><div class="viewerGrid" id="viewerGrid"></div></div>
 </div>
-
-<!-- Owner login -->
 
 <div class="login" id="login">
-
   <div class="loginBox">
-
     <h2>Website Studio</h2>
-
-    <p class="help">
-      This is a simple browser lock, not secure server authentication.
-    </p>
-
-    <input
-      id="password"
-      type="password"
-      placeholder="Password"
-    >
-
-    <div>
-      <button id="cancelLogin">Cancel</button>
-      <button class="primary" id="loginButton">Enter</button>
-    </div>
-
+    <p class="help">This password hides the editor from normal visitors, but it is not secure server authentication.</p>
+    <input id="password" type="password" placeholder="Password">
+    <div><button id="cancelLogin">Cancel</button><button class="primary" id="loginButton">Enter</button></div>
     <p class="status" id="loginStatus"></p>
-
   </div>
-
 </div>
 
-<!-- Website Studio -->
-
 <div class="studio" id="studio" aria-hidden="true">
-
   <div class="studioPanel">
-
     <div class="studioHead">
-
-      <h2>Album Studio</h2>
-
-      <div>
-        <button id="downloadSite">
-          Download publishable HTML
-        </button>
-
-        <button id="closeStudio">
-          Close
-        </button>
+      <h2>Website Studio</h2>
+      <div class="studioHeadActions">
+        <button id="downloadSite">Download complete website</button>
+        <button id="resetEverything">Reset all</button>
+        <button id="closeStudio">Close</button>
       </div>
-
     </div>
 
     <div class="studioBody">
-
-      <div class="albumSelector" id="albumSelector"></div>
-
-      <div class="studioGrid">
-
-        <section class="panel">
-
-          <h3>Album photographs</h3>
-
-          <label class="uploadLabel">
-            Add multiple photographs
-
-            <input
-              id="photoInput"
-              type="file"
-              accept="image/*"
-              multiple
-            >
-          </label>
-
-          <p class="help">
-            Images are resized to a maximum of 2400 pixels for a
-            smoother website. Choose a cover, reorder, or remove
-            photographs below.
-          </p>
-
-          <p class="status" id="uploadStatus"></p>
-
-          <div class="photoList" id="photoList"></div>
-
-        </section>
-
-        <section class="panel">
-
-          <h3>Cover picture box</h3>
-
-          <div class="field">
-            <label>Album title</label>
-            <input id="albumTitle" type="text">
-          </div>
-
-          <div class="field">
-
-            <label>Ratio</label>
-
-            <select id="ratioMode">
-              <option value="original">
-                Original photograph ratio
-              </option>
-
-              <option value="4/5">
-                Portrait 4:5
-              </option>
-
-              <option value="2/3">
-                Portrait 2:3
-              </option>
-
-              <option value="1/1">
-                Square 1:1
-              </option>
-
-              <option value="3/2">
-                Landscape 3:2
-              </option>
-
-              <option value="4/3">
-                Landscape 4:3
-              </option>
-
-              <option value="16/9">
-                Wide 16:9
-              </option>
-
-              <option value="custom">
-                Custom ratio
-              </option>
-            </select>
-
-          </div>
-
-          <div
-            id="customRatioFields"
-            style="
-              display:none;
-              grid-template-columns:1fr 1fr;
-              gap:10px;
-            "
-          >
-
-            <div class="field">
-              <label>Width ratio</label>
-
-              <input
-                id="ratioW"
-                type="number"
-                min="1"
-                max="50"
-                value="4"
-              >
-            </div>
-
-            <div class="field">
-              <label>Height ratio</label>
-
-              <input
-                id="ratioH"
-                type="number"
-                min="1"
-                max="50"
-                value="5"
-              >
-            </div>
-
-          </div>
-
-          <div class="field">
-
-            <div class="rangeLine">
-              <label>Box width</label>
-              <span id="widthValue">100%</span>
-            </div>
-
-            <input
-              id="boxWidth"
-              type="range"
-              min="45"
-              max="100"
-              step="1"
-              value="100"
-            >
-
-          </div>
-
-          <div class="field">
-
-            <label>Box alignment</label>
-
-            <select id="boxAlign">
-              <option value="flex-start">Left</option>
-              <option value="center">Centre</option>
-              <option value="flex-end">Right</option>
-            </select>
-
-          </div>
-
-          <div class="field">
-
-            <label>Image inside box</label>
-
-            <select id="imageFit">
-              <option value="cover">
-                Fill box — may crop
-              </option>
-
-              <option value="contain">
-                Show complete photograph
-              </option>
-            </select>
-
-          </div>
-
-          <div class="field">
-
-            <div class="rangeLine">
-              <label>Corner roundness</label>
-              <span id="radiusValue">0px</span>
-            </div>
-
-            <input
-              id="boxRadius"
-              type="range"
-              min="0"
-              max="40"
-              step="1"
-              value="0"
-            >
-
-          </div>
-
-          <p class="help">
-            Changes update only the selected card, so sliders remain
-            responsive. Settings save after you stop moving a control.
-          </p>
-
-          <button class="danger" id="resetAlbum">
-            Reset this album
-          </button>
-
-        </section>
-
+      <div class="studioTabs" id="studioTabs">
+        <button data-tab="text">Text</button>
+        <button data-tab="animation">Animation</button>
+        <button data-tab="albums">Albums & boxes</button>
+        <button data-tab="pictures">Pictures</button>
+        <button data-tab="layout">Layout</button>
       </div>
 
+      <p class="notice">Changes are saved in this browser. To make them public for everyone, use <strong>Download complete website</strong>, then replace the root <strong>index.html</strong> in GitHub.</p>
+
+      <section class="studioTabPanel" data-panel="text">
+        <div class="studioGrid">
+          <div class="panel">
+            <h3>Hero and introduction</h3>
+            <div class="field"><label>Brand name</label><input data-text-field="brand" type="text"></div>
+            <div class="field"><label>Small hero line</label><input data-text-field="mastSmall" type="text"></div>
+            <div class="field"><label>Main hero title — use a new line where desired</label><textarea data-text-field="mastTitle"></textarea></div>
+            <div class="field"><label>Hero categories line</label><input data-text-field="mastMeta" type="text"></div>
+            <div class="field"><label>Hero quotation</label><textarea data-text-field="heroQuote"></textarea></div>
+            <div class="field"><label>Introduction small title</label><input data-text-field="introEyebrow" type="text"></div>
+            <div class="field"><label>Introduction large title</label><textarea data-text-field="introTitle"></textarea></div>
+            <div class="field"><label>Introduction paragraph</label><textarea data-text-field="introCopy"></textarea></div>
+          </div>
+
+          <div class="panel">
+            <h3>Albums, about and contact</h3>
+            <div class="field"><label>Albums small title</label><input data-text-field="storiesEyebrow" type="text"></div>
+            <div class="field"><label>Albums large title</label><textarea data-text-field="storiesTitle"></textarea></div>
+            <div class="field"><label>Albums explanation</label><textarea data-text-field="storiesCopy"></textarea></div>
+            <div class="field"><label>About small title</label><input data-text-field="aboutEyebrow" type="text"></div>
+            <div class="field"><label>About large title</label><textarea data-text-field="aboutTitle"></textarea></div>
+            <div class="field"><label>About paragraph 1</label><textarea data-text-field="aboutP1"></textarea></div>
+            <div class="field"><label>About paragraph 2</label><textarea data-text-field="aboutP2"></textarea></div>
+            <div class="field"><label>Contact small title</label><input data-text-field="contactEyebrow" type="text"></div>
+            <div class="field"><label>Contact large title</label><textarea data-text-field="contactTitle"></textarea></div>
+          </div>
+
+          <div class="panel">
+            <h3>Contact information</h3>
+            <div class="field"><label>Instagram label</label><input data-text-field="instagramLabel" type="text"></div>
+            <div class="field"><label>Instagram URL</label><input data-text-field="instagramUrl" type="url"></div>
+            <div class="field"><label>Phone label</label><input data-text-field="phoneLabel" type="text"></div>
+            <div class="field"><label>Phone number</label><input data-text-field="phoneNumber" type="tel"></div>
+            <div class="field"><label>Footer brand</label><input data-text-field="footerBrand" type="text"></div>
+            <div class="field"><label>Footer location</label><input data-text-field="footerLocation" type="text"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="studioTabPanel" data-panel="animation">
+        <div class="studioGrid">
+          <div class="panel">
+            <h3>Apple-style scroll movement</h3>
+            <div class="field"><label>Animation preset</label>
+              <select id="animationPreset">
+                <option value="gentle">Gentle</option>
+                <option value="cinematic">Cinematic</option>
+                <option value="minimal">Minimal</option>
+                <option value="off">Off</option>
+                <option value="custom">Custom</option>
+              </select>
+            </div>
+            <div class="field"><div class="rangeLine"><label>Movement distance</label><span id="animLiftValue"></span></div><input id="animLift" type="range" min="0" max="100" step="1"></div>
+            <div class="field"><div class="rangeLine"><label>Starting scale</label><span id="animStartScaleValue"></span></div><input id="animStartScale" type="range" min="80" max="100" step="1"></div>
+            <div class="field"><div class="rangeLine"><label>Starting opacity</label><span id="animOpacityValue"></span></div><input id="animOpacity" type="range" min="10" max="100" step="1"></div>
+            <div class="field"><div class="rangeLine"><label>Image zoom at centre</label><span id="animImageZoomValue"></span></div><input id="animImageZoom" type="range" min="100" max="112" step="1"></div>
+            <p class="help">The animation uses only transform and opacity for better performance. It pauses while the studio is open.</p>
+          </div>
+
+          <div class="panel">
+            <h3>Hero movement</h3>
+            <div class="field"><div class="rangeLine"><label>Hero image zoom</label><span id="heroScrollZoomValue"></span></div><input id="heroScrollZoom" type="range" min="100" max="118" step="1"></div>
+            <div class="field"><div class="rangeLine"><label>Hero text movement</label><span id="heroTextMoveValue"></span></div><input id="heroTextMove" type="range" min="0" max="80" step="1"></div>
+            <button id="previewAnimation" class="primary">Preview on page</button>
+            <button id="resetAnimation">Reset animation</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="studioTabPanel" data-panel="albums">
+        <div class="albumToolbar">
+          <div class="albumSelector" id="albumSelector"></div>
+          <button id="addAlbum">Add category</button>
+          <button id="removeAlbum" class="danger">Remove category</button>
+        </div>
+        <div class="studioGrid">
+          <section class="panel">
+            <h3>Album photographs</h3>
+            <label class="uploadLabel">Add multiple photographs<input id="photoInput" type="file" accept="image/*" multiple></label>
+            <p class="help">Images are resized to a maximum of 2200 pixels. Choose a cover, reorder, or remove photographs below.</p>
+            <p class="status" id="uploadStatus"></p>
+            <div class="photoList" id="photoList"></div>
+          </section>
+
+          <section class="panel">
+            <h3>Category and cover box</h3>
+            <div class="field"><label>Category title</label><input id="albumTitle" type="text"></div>
+            <div class="field"><label>Small card label</label><input id="albumLabel" type="text"></div>
+            <div class="field"><label>Ratio</label>
+              <select id="ratioMode">
+                <option value="original">Original cover photograph ratio</option>
+                <option value="4/5">Portrait 4:5</option>
+                <option value="2/3">Portrait 2:3</option>
+                <option value="1/1">Square 1:1</option>
+                <option value="3/2">Landscape 3:2</option>
+                <option value="4/3">Landscape 4:3</option>
+                <option value="16/9">Wide 16:9</option>
+                <option value="custom">Custom ratio</option>
+              </select>
+            </div>
+            <div id="customRatioFields" style="display:none;grid-template-columns:1fr 1fr;gap:10px">
+              <div class="field"><label>Width ratio</label><input id="ratioW" type="number" min="1" max="50"></div>
+              <div class="field"><label>Height ratio</label><input id="ratioH" type="number" min="1" max="50"></div>
+            </div>
+            <div class="field"><div class="rangeLine"><label>Box width</label><span id="widthValue"></span></div><input id="boxWidth" type="range" min="40" max="100" step="1"></div>
+            <div class="field"><label>Box alignment</label><select id="boxAlign"><option value="flex-start">Left</option><option value="center">Centre</option><option value="flex-end">Right</option></select></div>
+            <div class="field"><label>Image inside box</label><select id="imageFit"><option value="cover">Fill box — may crop</option><option value="contain">Show complete photograph</option></select></div>
+            <div class="field"><div class="rangeLine"><label>Corner roundness</label><span id="radiusValue"></span></div><input id="boxRadius" type="range" min="0" max="40" step="1"></div>
+            <button id="resetAlbum">Reset this category settings</button>
+          </section>
+        </div>
+      </section>
+
+      <section class="studioTabPanel" data-panel="pictures">
+        <div class="studioGrid">
+          <div class="panel">
+            <h3>Picture to edit</h3>
+            <div class="field"><label>Select picture</label><select id="mediaSelect"><option value="hero">Hero photograph</option><option value="profile">About/profile photograph</option></select></div>
+            <div class="previewBox" id="mediaPreview"><img alt="Picture preview"></div>
+            <label class="uploadLabel" style="margin-top:14px">Replace selected picture<input id="mediaInput" type="file" accept="image/*"></label>
+            <p class="status" id="mediaStatus"></p>
+            <button id="restoreMedia">Restore repository picture</button>
+          </div>
+          <div class="panel">
+            <h3>Position and crop</h3>
+            <div class="field"><label>Fit</label><select id="mediaFit"><option value="cover">Fill the box</option><option value="contain">Show the complete picture</option></select></div>
+            <div class="field"><div class="rangeLine"><label>Horizontal position</label><span id="mediaXValue"></span></div><input id="mediaX" type="range" min="0" max="100" step="1"></div>
+            <div class="field"><div class="rangeLine"><label>Vertical position</label><span id="mediaYValue"></span></div><input id="mediaY" type="range" min="0" max="100" step="1"></div>
+            <div class="field"><div class="rangeLine"><label>Zoom</label><span id="mediaZoomValue"></span></div><input id="mediaZoom" type="range" min="100" max="160" step="1"></div>
+            <p class="help">These controls keep the original website structure. They only change the selected picture.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="studioTabPanel" data-panel="layout">
+        <div class="studioGrid">
+          <div class="panel">
+            <h3>Move and resize a section</h3>
+            <div class="field"><label>Element</label>
+              <select id="layoutTarget">
+                <option value="heroMast">Hero title box</option>
+                <option value="heroQuote">Hero quotation</option>
+                <option value="introTitle">Introduction title</option>
+                <option value="introCopy">Introduction paragraph</option>
+                <option value="storiesSection">Albums section</option>
+                <option value="aboutPhoto">About photograph</option>
+                <option value="aboutText">About text</option>
+                <option value="contactBox">Contact box</option>
+              </select>
+            </div>
+            <div class="field"><div class="rangeLine"><label>Move left / right</label><span id="layoutXValue"></span></div><input id="layoutX" type="range" min="-300" max="300" step="1"></div>
+            <div class="field"><div class="rangeLine"><label>Move up / down</label><span id="layoutYValue"></span></div><input id="layoutY" type="range" min="-300" max="300" step="1"></div>
+            <div class="field"><div class="rangeLine"><label>Scale</label><span id="layoutScaleValue"></span></div><input id="layoutScale" type="range" min="60" max="140" step="1"></div>
+            <div class="field"><div class="rangeLine"><label>Maximum width</label><span id="layoutWidthValue"></span></div><input id="layoutWidth" type="range" min="40" max="120" step="1"></div>
+            <button id="resetLayoutTarget">Reset selected element</button>
+          </div>
+          <div class="panel">
+            <h3>How layout editing works</h3>
+            <p class="help">The selected element is outlined on the page. Move it carefully, especially on mobile. The original editorial structure remains underneath your adjustments.</p>
+            <button id="showLayoutTarget" class="primary">Show selected element</button>
+            <button id="resetLayoutAll">Reset all layout changes</button>
+          </div>
+        </div>
+      </section>
     </div>
-
   </div>
-
 </div>
 
-<script id="embeddedData" type="application/json">
-{"version":1,"state":null,"photos":{}}
-</script>
-
+<script id="embeddedData" type="application/json">{"version":2,"state":null,"photos":{}}</script>
 <script>
 (() => {
+  'use strict';
 
-  "use strict";
-
-  const OWNER_PASSWORD = "thien2026";
-  const STORE_KEY = "tdp_album_state_v3";
-  const DB_NAME = "tdp_album_photos_v1";
-  const DB_STORE = "photos";
-
+  const OWNER_PASSWORD = 'thien2026';
+  const STORE_KEY = 'tdp_complete_studio_v2';
+  const LEGACY_ALBUM_KEY = 'tdp_album_state_v3';
+  const DB_NAME = 'tdp_album_photos_v1';
+  const DB_STORE = 'photos';
   const $ = selector => document.querySelector(selector);
-
-  const $$ = selector => [
-    ...document.querySelectorAll(selector)
-  ];
-
-  const uid = () => {
-    if (crypto.randomUUID) {
-      return crypto.randomUUID();
-    }
-
-    return "p" +
-      Date.now() +
-      Math.random().toString(16).slice(2);
-  };
-
-  const clone = object =>
-    JSON.parse(JSON.stringify(object));
+  const $$ = selector => [...document.querySelectorAll(selector)];
+  const clone = value => JSON.parse(JSON.stringify(value));
+  const uid = () => crypto.randomUUID ? crypto.randomUUID() : 'p' + Date.now() + Math.random().toString(16).slice(2);
 
   const defaultState = {
-
-    version: 1,
-
+    version: 2,
+    savedAt: 0,
+    text: {
+      brand: 'Thien Dang',
+      mastSmall: 'A personal archive by Thien Dang',
+      mastTitle: 'THE PRIVATE\nINDEX',
+      mastMeta: 'Portraits · Graduation · Couples · Events · New Brunswick',
+      heroQuote: 'This is not about taking more pictures. It is about preserving why a moment mattered.',
+      introEyebrow: 'The index',
+      introTitle: 'Selected\nstories.',
+      introCopy: 'Photographs can be elegant without feeling distant, and personal without becoming ordinary. Open a category to view its complete album.',
+      storiesEyebrow: 'The albums',
+      storiesTitle: 'Lives, briefly\nheld still.',
+      storiesCopy: 'Each category can contain multiple photographs. The cover box can follow the original photograph ratio or use a ratio and size chosen by you.',
+      aboutEyebrow: 'About the photographer',
+      aboutTitle: 'Quietly\nobservant.',
+      aboutP1: 'I am Thien, a photographer and storyteller based in Fredericton, New Brunswick. I photograph people with an editorial eye and a documentary instinct.',
+      aboutP2: 'I look for gesture, light, relationships, and the small details that make a day feel like itself.',
+      contactEyebrow: 'Booking & inquiries',
+      contactTitle: 'Let me join\nthe moment.',
+      instagramLabel: 'Instagram · @letmetakephotosfor_you',
+      instagramUrl: 'https://www.instagram.com/letmetakephotosfor_you?igsh=a255aDBrajg2bTA=',
+      phoneLabel: 'Call · 506-962-0480',
+      phoneNumber: '+15069620480',
+      footerBrand: 'Thien Dang Photography',
+      footerLocation: 'Fredericton · New Brunswick'
+    },
+    animation: {
+      preset: 'gentle',
+      lift: 32,
+      startScale: 97,
+      startOpacity: 35,
+      imageZoom: 103,
+      heroScrollZoom: 106,
+      heroTextMove: 30
+    },
+    media: {
+      hero: {id:null,name:'Hero photograph',fallback:'/images/hero.jpg',width:0,height:0,fit:'cover',x:50,y:50,zoom:100},
+      profile: {id:null,name:'About/profile photograph',fallback:'/images/me.jpg',width:0,height:0,fit:'cover',x:50,y:50,zoom:100}
+    },
+    layout: {
+      heroMast:{x:0,y:0,scale:100,width:100},
+      heroQuote:{x:0,y:0,scale:100,width:100},
+      introTitle:{x:0,y:0,scale:100,width:100},
+      introCopy:{x:0,y:0,scale:100,width:100},
+      storiesSection:{x:0,y:0,scale:100,width:100},
+      aboutPhoto:{x:0,y:0,scale:100,width:100},
+      aboutText:{x:0,y:0,scale:100,width:100},
+      contactBox:{x:0,y:0,scale:100,width:100}
+    },
     albums: [
-
-      {
-        id: "graduation",
-        title: "Graduation Day",
-        fallback: "/images/graduation.jpg",
-        photos: [],
-        coverId: null,
-        ratioMode: "original",
-        ratioW: 4,
-        ratioH: 5,
-        width: 100,
-        align: "flex-start",
-        fit: "cover",
-        radius: 0
-      },
-
-      {
-        id: "portrait",
-        title: "The Sitting",
-        fallback: "/images/portrait.jpg",
-        photos: [],
-        coverId: null,
-        ratioMode: "original",
-        ratioW: 4,
-        ratioH: 5,
-        width: 100,
-        align: "flex-end",
-        fit: "cover",
-        radius: 0
-      },
-
-      {
-        id: "wedding",
-        title: "A Shared Evening",
-        fallback: "/images/wedding.jpg",
-        photos: [],
-        coverId: null,
-        ratioMode: "original",
-        ratioW: 4,
-        ratioH: 5,
-        width: 100,
-        align: "flex-start",
-        fit: "cover",
-        radius: 0
-      },
-
-      {
-        id: "evening",
-        title: "The Room Remembers",
-        fallback: "/images/evening.jpg",
-        photos: [],
-        coverId: null,
-        ratioMode: "original",
-        ratioW: 4,
-        ratioH: 5,
-        width: 100,
-        align: "flex-end",
-        fit: "cover",
-        radius: 0
-      }
-
+      {id:'graduation',title:'Graduation Day',label:'Open album',fallback:'/images/graduation.jpg',photos:[],coverId:null,ratioMode:'original',ratioW:4,ratioH:5,width:100,align:'flex-start',fit:'cover',radius:0},
+      {id:'portrait',title:'The Sitting',label:'Open album',fallback:'/images/portrait.jpg',photos:[],coverId:null,ratioMode:'original',ratioW:4,ratioH:5,width:100,align:'flex-end',fit:'cover',radius:0},
+      {id:'wedding',title:'A Shared Evening',label:'Open album',fallback:'/images/wedding.jpg',photos:[],coverId:null,ratioMode:'original',ratioW:4,ratioH:5,width:100,align:'flex-start',fit:'cover',radius:0},
+      {id:'evening',title:'The Room Remembers',label:'Open album',fallback:'/images/evening.jpg',photos:[],coverId:null,ratioMode:'original',ratioW:4,ratioH:5,width:100,align:'flex-end',fit:'cover',radius:0}
     ]
   };
 
-  let embedded = {
-    version: 1,
-    state: null,
-    photos: {}
-  };
+  let embedded = {version:2,state:null,photos:{}};
+  try { embedded = JSON.parse($('#embeddedData').textContent) || embedded; } catch (error) { console.warn('Embedded settings could not be read.'); }
 
-  try {
-    embedded =
-      JSON.parse(
-        $("#embeddedData").textContent
-      ) || embedded;
-  } catch (error) {
-    console.warn("Embedded data could not be loaded.");
+  function mergeState(base, incoming) {
+    const output = clone(base);
+    if (!incoming || typeof incoming !== 'object') return output;
+    output.savedAt = Number(incoming.savedAt || 0);
+    output.text = {...output.text, ...(incoming.text || {})};
+    output.animation = {...output.animation, ...(incoming.animation || {})};
+    output.media = {
+      hero: {...output.media.hero, ...(incoming.media?.hero || {})},
+      profile: {...output.media.profile, ...(incoming.media?.profile || {})}
+    };
+    output.layout = clone(output.layout);
+    Object.keys(output.layout).forEach(key => {
+      output.layout[key] = {...output.layout[key], ...(incoming.layout?.[key] || {})};
+    });
+    if (Array.isArray(incoming.albums) && incoming.albums.length) {
+      output.albums = incoming.albums.map((album, index) => ({
+        id: album.id || uid(),
+        title: album.title || 'Untitled category',
+        label: album.label || 'Open album',
+        fallback: album.fallback || defaultState.albums[index]?.fallback || '/images/portrait.jpg',
+        photos: Array.isArray(album.photos) ? album.photos : [],
+        coverId: album.coverId || null,
+        ratioMode: album.ratioMode || 'original',
+        ratioW: Number(album.ratioW || 4),
+        ratioH: Number(album.ratioH || 5),
+        width: Number(album.width ?? 100),
+        align: album.align || 'flex-start',
+        fit: album.fit || 'cover',
+        radius: Number(album.radius || 0)
+      }));
+    }
+    return output;
   }
 
-  let state = embedded.state
-    ? clone(embedded.state)
-    : loadState();
+  function readLocalState() {
+    try {
+      const complete = JSON.parse(localStorage.getItem(STORE_KEY));
+      if (complete) return mergeState(defaultState, complete);
+    } catch (error) {}
+    try {
+      const legacy = JSON.parse(localStorage.getItem(LEGACY_ALBUM_KEY));
+      if (legacy?.albums) {
+        const migrated = clone(defaultState);
+        migrated.albums = legacy.albums;
+        return mergeState(defaultState, migrated);
+      }
+    } catch (error) {}
+    return clone(defaultState);
+  }
 
-  let selectedAlbumId = state.albums[0].id;
+  const localState = readLocalState();
+  const embeddedState = embedded.state ? mergeState(defaultState, embedded.state) : null;
+  let state = embeddedState && embeddedState.savedAt >= localState.savedAt ? embeddedState : localState;
+
+  let selectedAlbumId = state.albums[0]?.id;
+  let selectedMediaKey = 'hero';
+  let selectedLayoutKey = 'heroMast';
+  let activeTab = 'text';
   let dbPromise = null;
   let saveTimer = null;
   let scrollQueued = false;
-
   const objectUrls = new Map();
 
-  function loadState() {
-
-    try {
-
-      const saved =
-        JSON.parse(
-          localStorage.getItem(STORE_KEY)
-        );
-
-      return saved?.albums
-        ? saved
-        : clone(defaultState);
-
-    } catch (error) {
-
-      return clone(defaultState);
-
-    }
-  }
-
   function scheduleSave() {
-
     clearTimeout(saveTimer);
-
     saveTimer = setTimeout(() => {
-
-      try {
-
-        localStorage.setItem(
-          STORE_KEY,
-          JSON.stringify(state)
-        );
-
-      } catch (error) {
-
-        console.warn(
-          "Could not save website settings.",
-          error
-        );
-
-      }
-
+      state.savedAt = Date.now();
+      try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); }
+      catch (error) { console.warn('Could not save settings.', error); }
     }, 350);
   }
 
   function openDB() {
-
-    if (dbPromise) {
-      return dbPromise;
-    }
-
-    dbPromise = new Promise(
-      (resolve, reject) => {
-
-        const request =
-          indexedDB.open(DB_NAME, 1);
-
-        request.onupgradeneeded = () => {
-
-          if (
-            !request.result
-              .objectStoreNames
-              .contains(DB_STORE)
-          ) {
-
-            request.result.createObjectStore(
-              DB_STORE,
-              {
-                keyPath: "id"
-              }
-            );
-
-          }
-        };
-
-        request.onsuccess = () =>
-          resolve(request.result);
-
-        request.onerror = () =>
-          reject(request.error);
-
-      }
-    );
-
+    if (dbPromise) return dbPromise;
+    dbPromise = new Promise((resolve, reject) => {
+      const request = indexedDB.open(DB_NAME, 1);
+      request.onupgradeneeded = () => {
+        if (!request.result.objectStoreNames.contains(DB_STORE)) request.result.createObjectStore(DB_STORE, {keyPath:'id'});
+      };
+      request.onsuccess = () => resolve(request.result);
+      request.onerror = () => reject(request.error);
+    });
     return dbPromise;
   }
 
   async function dbPut(record) {
-
     const database = await openDB();
-
-    return new Promise(
-      (resolve, reject) => {
-
-        const transaction =
-          database.transaction(
-            DB_STORE,
-            "readwrite"
-          );
-
-        transaction
-          .objectStore(DB_STORE)
-          .put(record);
-
-        transaction.oncomplete = resolve;
-
-        transaction.onerror = () =>
-          reject(transaction.error);
-
-      }
-    );
+    return new Promise((resolve, reject) => {
+      const transaction = database.transaction(DB_STORE, 'readwrite');
+      transaction.objectStore(DB_STORE).put(record);
+      transaction.oncomplete = resolve;
+      transaction.onerror = () => reject(transaction.error);
+    });
   }
 
   async function dbGet(id) {
-
     const database = await openDB();
-
-    return new Promise(
-      (resolve, reject) => {
-
-        const request =
-          database
-            .transaction(DB_STORE)
-            .objectStore(DB_STORE)
-            .get(id);
-
-        request.onsuccess = () =>
-          resolve(request.result || null);
-
-        request.onerror = () =>
-          reject(request.error);
-
-      }
-    );
+    return new Promise((resolve, reject) => {
+      const request = database.transaction(DB_STORE).objectStore(DB_STORE).get(id);
+      request.onsuccess = () => resolve(request.result || null);
+      request.onerror = () => reject(request.error);
+    });
   }
 
   async function dbDelete(id) {
-
     const database = await openDB();
-
-    return new Promise(
-      (resolve, reject) => {
-
-        const transaction =
-          database.transaction(
-            DB_STORE,
-            "readwrite"
-          );
-
-        transaction
-          .objectStore(DB_STORE)
-          .delete(id);
-
-        transaction.oncomplete = resolve;
-
-        transaction.onerror = () =>
-          reject(transaction.error);
-
-      }
-    );
+    return new Promise((resolve, reject) => {
+      const transaction = database.transaction(DB_STORE, 'readwrite');
+      transaction.objectStore(DB_STORE).delete(id);
+      transaction.oncomplete = resolve;
+      transaction.onerror = () => reject(transaction.error);
+    });
   }
 
   async function sourceFor(photo) {
-
-    if (!photo) {
-      return "";
-    }
-
-    if (embedded.photos?.[photo.id]) {
-      return embedded.photos[photo.id];
-    }
-
-    if (objectUrls.has(photo.id)) {
-      return objectUrls.get(photo.id);
-    }
-
-    const record =
-      await dbGet(photo.id)
-        .catch(() => null);
-
-    if (!record) {
-      return "";
-    }
-
-    const url =
-      URL.createObjectURL(record.blob);
-
+    if (!photo) return '';
+    if (embedded.photos?.[photo.id]) return embedded.photos[photo.id];
+    if (objectUrls.has(photo.id)) return objectUrls.get(photo.id);
+    const record = await dbGet(photo.id).catch(() => null);
+    if (!record?.blob) return '';
+    const url = URL.createObjectURL(record.blob);
     objectUrls.set(photo.id, url);
-
     return url;
   }
 
-  function selectedAlbum() {
-
-    return (
-      state.albums.find(
-        album =>
-          album.id === selectedAlbumId
-      ) ||
-      state.albums[0]
-    );
+  function setMultiline(element, value) {
+    element.textContent = '';
+    String(value ?? '').split('\n').forEach((line, index, array) => {
+      element.append(document.createTextNode(line));
+      if (index < array.length - 1) element.append(document.createElement('br'));
+    });
   }
 
-  function coverPhoto(album) {
-
-    return (
-      album.photos.find(
-        photo =>
-          photo.id === album.coverId
-      ) ||
-      album.photos[0] ||
-      null
-    );
+  function applyText() {
+    const text = state.text;
+    $('#brandText').textContent = text.brand;
+    $('#mastSmall').textContent = text.mastSmall;
+    setMultiline($('#mastTitle'), text.mastTitle);
+    $('#mastMeta').textContent = text.mastMeta;
+    $('#heroQuote').textContent = text.heroQuote;
+    $('#introEyebrow').textContent = text.introEyebrow;
+    setMultiline($('#introTitle'), text.introTitle);
+    $('#introCopy').textContent = text.introCopy;
+    $('#storiesEyebrow').textContent = text.storiesEyebrow;
+    setMultiline($('#storiesTitle'), text.storiesTitle);
+    $('#storiesCopy').textContent = text.storiesCopy;
+    $('#aboutEyebrow').textContent = text.aboutEyebrow;
+    setMultiline($('#aboutTitle'), text.aboutTitle);
+    $('#aboutP1').textContent = text.aboutP1;
+    $('#aboutP2').textContent = text.aboutP2;
+    $('#contactEyebrow').textContent = text.contactEyebrow;
+    setMultiline($('#contactTitle'), text.contactTitle);
+    $('#instagramLink').textContent = text.instagramLabel;
+    $('#instagramLink').href = text.instagramUrl || '#';
+    $('#phoneLink').textContent = text.phoneLabel;
+    $('#phoneLink').href = 'tel:' + String(text.phoneNumber || '').replace(/[^+\d]/g, '');
+    $('#smsLink').textContent = 'Text · ' + String(text.phoneNumber || '').replace(/^\+1/, '').replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
+    $('#smsLink').href = 'sms:' + String(text.phoneNumber || '').replace(/[^+\d]/g, '');
+    $('#footerBrand').textContent = text.footerBrand;
+    $('#footerLocation').textContent = text.footerLocation;
+    document.title = text.footerBrand || 'Photography Portfolio';
   }
 
-  function ratioFor(album) {
-
-    if (album.ratioMode === "custom") {
-
-      return (
-        Math.max(1, album.ratioW) +
-        "/" +
-        Math.max(1, album.ratioH)
-      );
-
-    }
-
-    if (album.ratioMode !== "original") {
-      return album.ratioMode;
-    }
-
-    const photo = coverPhoto(album);
-
-    if (
-      photo?.width &&
-      photo?.height
-    ) {
-
-      return (
-        photo.width +
-        "/" +
-        photo.height
-      );
-
-    }
-
-    return "4/5";
+  function populateTextControls() {
+    $$('[data-text-field]').forEach(input => {
+      input.value = state.text[input.dataset.textField] ?? '';
+    });
   }
 
-  function escapeHTML(value) {
-
-    return String(value).replace(
-      /[&<>"]/g,
-      character => ({
-        "&": "&amp;",
-        "<": "&lt;",
-        ">": "&gt;",
-        '"': "&quot;"
-      })[character]
-    );
+  async function applyMedia(key) {
+    const media = state.media[key];
+    const element = key === 'hero' ? $('#heroImage') : $('#profileImage');
+    const source = media.id ? (await sourceFor(media) || media.fallback) : media.fallback;
+    element.src = source;
+    element.style.objectFit = media.fit;
+    element.style.objectPosition = media.x + '% ' + media.y + '%';
+    const extraHeroScale = key === 'hero' ? 1 : 1;
+    element.dataset.baseMediaScale = String((media.zoom / 100) * extraHeroScale);
+    if (key !== 'hero') element.style.transform = 'scale(' + (media.zoom / 100) + ')';
   }
 
-  async function renderAlbums() {
-
-    const grid = $("#albumGrid");
-
-    grid.innerHTML = "";
-
-    for (
-      const [index, album]
-      of state.albums.entries()
-    ) {
-
-      const wrapper =
-        document.createElement("div");
-
-      wrapper.className =
-        "albumCardWrap";
-
-      wrapper.style.justifyContent =
-        album.align;
-
-      const card =
-        document.createElement("button");
-
-      card.className = "albumCard";
-      card.dataset.id = album.id;
-
-      card.style.width =
-        album.width + "%";
-
-      card.style.aspectRatio =
-        ratioFor(album);
-
-      card.style.borderRadius =
-        album.radius + "px";
-
-      const image =
-        document.createElement("img");
-
-      const cover =
-        coverPhoto(album);
-
-      image.src = cover
-        ? (
-          await sourceFor(cover) ||
-          album.fallback
-        )
-        : album.fallback;
-
-      image.alt = album.title;
-
-      image.loading =
-        index < 2
-          ? "eager"
-          : "lazy";
-
-      image.style.objectFit =
-        album.fit;
-
-      card.append(image);
-
-      const count =
-        document.createElement("span");
-
-      count.className =
-        "albumCount";
-
-      const photoCount =
-        album.photos.length || 1;
-
-      count.textContent =
-        photoCount +
-        " photo" +
-        (
-          photoCount === 1
-            ? ""
-            : "s"
-        );
-
-      card.append(count);
-
-      const text =
-        document.createElement("div");
-
-      text.className =
-        "albumCardText";
-
-      text.innerHTML =
-        "<span>Open album</span>" +
-        "<h3>" +
-        escapeHTML(album.title) +
-        "</h3>";
-
-      card.append(text);
-
-      card.onclick = () =>
-        openViewer(album.id);
-
-      wrapper.append(card);
-      grid.append(wrapper);
-    }
-
+  async function applyAllMedia() {
+    await Promise.all([applyMedia('hero'), applyMedia('profile')]);
     updateScrollEffect();
   }
 
-  async function updateCard(album) {
+  function applyLayout(key) {
+    const setting = state.layout[key];
+    const element = document.querySelector('[data-layout-key="' + key + '"]');
+    if (!element || !setting) return;
+    element.style.transform = 'translate3d(' + setting.x + 'px,' + setting.y + 'px,0) scale(' + (setting.scale / 100) + ')';
+    element.style.maxWidth = setting.width + '%';
+  }
 
-    const card =
-      document.querySelector(
-        '.albumCard[data-id="' +
-        album.id +
-        '"]'
-      );
+  function applyAllLayout() {
+    Object.keys(state.layout).forEach(applyLayout);
+  }
 
-    if (!card) {
-      return;
+  function selectedAlbum() {
+    return state.albums.find(album => album.id === selectedAlbumId) || state.albums[0];
+  }
+
+  function coverPhoto(album) {
+    return album.photos.find(photo => photo.id === album.coverId) || album.photos[0] || null;
+  }
+
+  function ratioFor(album) {
+    if (album.ratioMode === 'custom') return Math.max(1, album.ratioW) + '/' + Math.max(1, album.ratioH);
+    if (album.ratioMode !== 'original') return album.ratioMode;
+    const photo = coverPhoto(album);
+    return photo?.width && photo?.height ? photo.width + '/' + photo.height : '4/5';
+  }
+
+  function escapeHTML(value) {
+    return String(value).replace(/[&<>\"]/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[character]);
+  }
+
+  async function renderAlbums() {
+    const grid = $('#albumGrid');
+    grid.innerHTML = '';
+    for (const [index, album] of state.albums.entries()) {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'albumCardWrap';
+      wrapper.style.justifyContent = album.align;
+      const card = document.createElement('button');
+      card.className = 'albumCard';
+      card.dataset.id = album.id;
+      card.style.width = album.width + '%';
+      card.style.aspectRatio = ratioFor(album);
+      card.style.borderRadius = album.radius + 'px';
+      const image = document.createElement('img');
+      const cover = coverPhoto(album);
+      image.src = cover ? (await sourceFor(cover) || album.fallback) : album.fallback;
+      image.alt = album.title;
+      image.loading = index < 2 ? 'eager' : 'lazy';
+      image.style.objectFit = album.fit;
+      card.append(image);
+      const count = document.createElement('span');
+      count.className = 'albumCount';
+      const photoCount = album.photos.length || 1;
+      count.textContent = photoCount + ' photo' + (photoCount === 1 ? '' : 's');
+      card.append(count);
+      const text = document.createElement('div');
+      text.className = 'albumCardText';
+      text.innerHTML = '<span>' + escapeHTML(album.label) + '</span><h3>' + escapeHTML(album.title) + '</h3>';
+      card.append(text);
+      card.onclick = () => openViewer(album.id);
+      wrapper.append(card);
+      grid.append(wrapper);
     }
+    updateScrollEffect();
+  }
 
-    const wrapper =
-      card.parentElement;
-
-    wrapper.style.justifyContent =
-      album.align;
-
-    card.style.width =
-      album.width + "%";
-
-    card.style.aspectRatio =
-      ratioFor(album);
-
-    card.style.borderRadius =
-      album.radius + "px";
-
-    const image =
-      card.querySelector("img");
-
-    const cover =
-      coverPhoto(album);
-
-    image.src = cover
-      ? (
-        await sourceFor(cover) ||
-        album.fallback
-      )
-      : album.fallback;
-
-    image.style.objectFit =
-      album.fit;
-
-    card
-      .querySelector("h3")
-      .textContent =
-        album.title;
-
-    const photoCount =
-      album.photos.length || 1;
-
-    card
-      .querySelector(".albumCount")
-      .textContent =
-        photoCount +
-        " photo" +
-        (
-          photoCount === 1
-            ? ""
-            : "s"
-        );
+  async function updateAlbumCard(album) {
+    const card = document.querySelector('.albumCard[data-id="' + album.id + '"]');
+    if (!card) return renderAlbums();
+    card.parentElement.style.justifyContent = album.align;
+    card.style.width = album.width + '%';
+    card.style.aspectRatio = ratioFor(album);
+    card.style.borderRadius = album.radius + 'px';
+    const image = card.querySelector('img');
+    const cover = coverPhoto(album);
+    image.src = cover ? (await sourceFor(cover) || album.fallback) : album.fallback;
+    image.style.objectFit = album.fit;
+    card.querySelector('h3').textContent = album.title;
+    card.querySelector('.albumCardText span').textContent = album.label;
+    const photoCount = album.photos.length || 1;
+    card.querySelector('.albumCount').textContent = photoCount + ' photo' + (photoCount === 1 ? '' : 's');
   }
 
   async function openViewer(id) {
-
-    const album =
-      state.albums.find(
-        item =>
-          item.id === id
-      );
-
-    if (!album) {
-      return;
-    }
-
-    $("#viewerTitle").textContent =
-      album.title;
-
-    const grid =
-      $("#viewerGrid");
-
-    grid.innerHTML = "";
-
+    const album = state.albums.find(item => item.id === id);
+    if (!album) return;
+    $('#viewerTitle').textContent = album.title;
+    const grid = $('#viewerGrid');
+    grid.innerHTML = '';
     if (!album.photos.length) {
-
-      grid.innerHTML =
-        '<figure class="viewerItem">' +
-        '<img src="' +
-        album.fallback +
-        '" alt="' +
-        escapeHTML(album.title) +
-        '">' +
-        "</figure>";
-
+      grid.innerHTML = '<figure class="viewerItem"><img src="' + album.fallback + '" alt="' + escapeHTML(album.title) + '"></figure>';
     } else {
-
-      for (
-        const photo
-        of album.photos
-      ) {
-
-        const source =
-          await sourceFor(photo);
-
-        if (!source) {
-          continue;
-        }
-
-        const figure =
-          document.createElement(
-            "figure"
-          );
-
-        figure.className =
-          "viewerItem";
-
-        const image =
-          document.createElement(
-            "img"
-          );
-
+      for (const photo of album.photos) {
+        const source = await sourceFor(photo);
+        if (!source) continue;
+        const figure = document.createElement('figure');
+        figure.className = 'viewerItem';
+        const image = document.createElement('img');
         image.src = source;
-
-        image.alt =
-          photo.name ||
-          album.title;
-
+        image.alt = photo.name || album.title;
         figure.append(image);
         grid.append(figure);
       }
-
-      if (!grid.children.length) {
-
-        grid.innerHTML =
-          '<p class="viewerEmpty">' +
-          "No photographs are available " +
-          "in this browser." +
-          "</p>";
-
-      }
+      if (!grid.children.length) grid.innerHTML = '<p class="viewerEmpty">No photographs are available in this browser.</p>';
     }
-
-    $("#viewer")
-      .classList
-      .add("open");
-
-    document.body
-      .classList
-      .add("lock");
+    $('#viewer').classList.add('open');
+    document.body.classList.add('lock');
   }
 
   function closeViewer() {
+    $('#viewer').classList.remove('open');
+    if (!$('#studio').classList.contains('open')) document.body.classList.remove('lock');
+  }
 
-    $("#viewer")
-      .classList
-      .remove("open");
-
-    if (
-      !$("#studio")
-        .classList
-        .contains("open")
-    ) {
-
-      document.body
-        .classList
-        .remove("lock");
-
-    }
+  function presetValues(name) {
+    const presets = {
+      gentle:{lift:32,startScale:97,startOpacity:35,imageZoom:103,heroScrollZoom:106,heroTextMove:30},
+      cinematic:{lift:70,startScale:90,startOpacity:18,imageZoom:108,heroScrollZoom:112,heroTextMove:55},
+      minimal:{lift:12,startScale:99,startOpacity:70,imageZoom:101,heroScrollZoom:103,heroTextMove:12},
+      off:{lift:0,startScale:100,startOpacity:100,imageZoom:100,heroScrollZoom:100,heroTextMove:0}
+    };
+    return presets[name] || null;
   }
 
   function updateScrollEffect() {
-
-    if (
-      $("#studio")
-        .classList
-        .contains("open")
-    ) {
-      return;
+    const studioOpen = $('#studio').classList.contains('open');
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const animation = state.animation;
+    if (studioOpen || reduced || animation.preset === 'off') {
+      $$('.albumCard').forEach(card => {
+        card.style.transform = 'none';
+        card.style.opacity = '1';
+        const image = card.querySelector('img');
+        if (image) image.style.transform = 'none';
+      });
+    } else {
+      const screenCentre = innerHeight / 2;
+      $$('.albumCard').forEach(card => {
+        const rectangle = card.getBoundingClientRect();
+        const cardCentre = rectangle.top + rectangle.height / 2;
+        const distance = Math.min(1, Math.abs(cardCentre - screenCentre) / (innerHeight * .85));
+        const progress = 1 - distance;
+        const startScale = animation.startScale / 100;
+        const finalScale = 1;
+        card.style.transform = 'translate3d(0,' + ((1 - progress) * animation.lift) + 'px,0) scale(' + (startScale + progress * (finalScale - startScale)) + ')';
+        card.style.opacity = String(animation.startOpacity / 100 + progress * (1 - animation.startOpacity / 100));
+        const image = card.querySelector('img');
+        if (image) image.style.transform = 'scale(' + (1 + progress * ((animation.imageZoom - 100) / 100)) + ')';
+      });
     }
 
-    const screenCentre =
-      innerHeight / 2;
-
-    $$(".albumCard").forEach(
-      card => {
-
-        const rectangle =
-          card.getBoundingClientRect();
-
-        const cardCentre =
-          rectangle.top +
-          rectangle.height / 2;
-
-        const distance =
-          Math.min(
-            1,
-            Math.abs(
-              cardCentre -
-              screenCentre
-            ) /
-            (
-              innerHeight *
-              .85
-            )
-          );
-
-        const progress =
-          1 - distance;
-
-        card.style.transform =
-          "translateY(" +
-          (
-            (1 - progress) *
-            32
-          ) +
-          "px) scale(" +
-          (
-            .97 +
-            progress *
-            .03
-          ) +
-          ")";
-
-        card.style.opacity =
-          String(
-            .35 +
-            progress *
-            .65
-          );
-      }
-    );
+    const heroProgress = Math.min(1, Math.max(0, scrollY / Math.max(1, innerHeight)));
+    const heroMedia = state.media.hero;
+    const baseScale = heroMedia.zoom / 100;
+    const scrollScale = 1 + heroProgress * ((animation.heroScrollZoom - 100) / 100);
+    $('#heroImage').style.transform = 'scale(' + (baseScale * scrollScale) + ')';
+    const quoteLayout = state.layout.heroQuote;
+    $('#heroQuote').style.transform = 'translate3d(' + quoteLayout.x + 'px,' + (quoteLayout.y - heroProgress * animation.heroTextMove) + 'px,0) scale(' + (quoteLayout.scale / 100) + ')';
   }
 
   function onScroll() {
-
-    if (scrollQueued) {
-      return;
-    }
-
+    if (scrollQueued) return;
     scrollQueued = true;
-
     requestAnimationFrame(() => {
-
       scrollQueued = false;
-
-      $("#header")
-        .classList
-        .toggle(
-          "scrolled",
-          scrollY > 30
-        );
-
+      $('#header').classList.toggle('scrolled', scrollY > 30);
       updateScrollEffect();
-
     });
   }
 
   function isOwner() {
-
-    return new URLSearchParams(
-      location.search
-    ).get("owner") === "true";
+    return new URLSearchParams(location.search).get('owner') === 'true';
   }
 
   function requestStudio() {
-
-    if (
-      sessionStorage.getItem(
-        "tdp_owner_ok"
-      ) === "yes"
-    ) {
-
-      openStudio();
-
-    } else {
-
-      $("#login")
-        .classList
-        .add("open");
-
-      setTimeout(
-        () =>
-          $("#password").focus(),
-        50
-      );
-
+    if (sessionStorage.getItem('tdp_owner_ok') === 'yes') openStudio();
+    else {
+      $('#login').classList.add('open');
+      setTimeout(() => $('#password').focus(), 50);
     }
   }
 
   function openStudio() {
-
     closeViewer();
-
-    $("#login")
-      .classList
-      .remove("open");
-
-    $("#studio")
-      .classList
-      .add("open");
-
-    document.body
-      .classList
-      .add("lock");
-
+    $('#login').classList.remove('open');
+    $('#studio').classList.add('open');
+    document.body.classList.add('lock');
     renderStudio();
   }
 
   function closeStudio() {
-
-    $("#studio")
-      .classList
-      .remove("open");
-
-    document.body
-      .classList
-      .remove("lock");
-
+    $('#studio').classList.remove('open');
+    document.body.classList.remove('lock');
+    clearLayoutOutline();
     updateScrollEffect();
   }
 
   function login() {
-
-    if (
-      $("#password").value ===
-      OWNER_PASSWORD
-    ) {
-
-      sessionStorage.setItem(
-        "tdp_owner_ok",
-        "yes"
-      );
-
-      $("#password").value = "";
-
-      $("#loginStatus")
-        .textContent = "";
-
+    if ($('#password').value === OWNER_PASSWORD) {
+      sessionStorage.setItem('tdp_owner_ok', 'yes');
+      $('#password').value = '';
+      $('#loginStatus').textContent = '';
       openStudio();
+    } else $('#loginStatus').textContent = 'Incorrect password.';
+  }
 
-    } else {
+  function switchTab(name) {
+    activeTab = name;
+    $$('#studioTabs button').forEach(button => button.classList.toggle('active', button.dataset.tab === name));
+    $$('.studioTabPanel').forEach(panel => panel.classList.toggle('active', panel.dataset.panel === name));
+    if (name !== 'layout') clearLayoutOutline();
+    if (name === 'layout') showLayoutTarget();
+  }
 
-      $("#loginStatus")
-        .textContent =
-          "Incorrect password.";
+  function renderStudio() {
+    switchTab(activeTab);
+    populateTextControls();
+    syncAnimationControls();
+    renderAlbumSelector();
+    syncAlbumControls();
+    renderPhotoList();
+    syncMediaControls();
+    syncLayoutControls();
+  }
 
-    }
+  function syncAnimationControls() {
+    const animation = state.animation;
+    $('#animationPreset').value = animation.preset;
+    $('#animLift').value = animation.lift;
+    $('#animStartScale').value = animation.startScale;
+    $('#animOpacity').value = animation.startOpacity;
+    $('#animImageZoom').value = animation.imageZoom;
+    $('#heroScrollZoom').value = animation.heroScrollZoom;
+    $('#heroTextMove').value = animation.heroTextMove;
+    $('#animLiftValue').textContent = animation.lift + 'px';
+    $('#animStartScaleValue').textContent = animation.startScale + '%';
+    $('#animOpacityValue').textContent = animation.startOpacity + '%';
+    $('#animImageZoomValue').textContent = animation.imageZoom + '%';
+    $('#heroScrollZoomValue').textContent = animation.heroScrollZoom + '%';
+    $('#heroTextMoveValue').textContent = animation.heroTextMove + 'px';
+  }
+
+  function changeAnimation(key, value) {
+    state.animation[key] = Number(value);
+    state.animation.preset = 'custom';
+    syncAnimationControls();
+    scheduleSave();
+    updateScrollEffect();
   }
 
   function renderAlbumSelector() {
-
-    const container =
-      $("#albumSelector");
-
-    container.innerHTML = "";
-
-    state.albums.forEach(
-      album => {
-
-        const button =
-          document.createElement(
-            "button"
-          );
-
-        button.textContent =
-          album.title;
-
-        button.classList.toggle(
-          "active",
-          album.id ===
-            selectedAlbumId
-        );
-
-        button.onclick = () => {
-
-          selectedAlbumId =
-            album.id;
-
-          renderStudio();
-
-        };
-
-        container.append(button);
-      }
-    );
+    const container = $('#albumSelector');
+    container.innerHTML = '';
+    state.albums.forEach(album => {
+      const button = document.createElement('button');
+      button.textContent = album.title;
+      button.classList.toggle('active', album.id === selectedAlbumId);
+      button.onclick = () => { selectedAlbumId = album.id; renderAlbumSelector(); syncAlbumControls(); renderPhotoList(); };
+      container.append(button);
+    });
   }
 
   async function renderPhotoList() {
-
-    const album =
-      selectedAlbum();
-
-    const list =
-      $("#photoList");
-
-    list.innerHTML = "";
-
+    const album = selectedAlbum();
+    const list = $('#photoList');
+    list.innerHTML = '';
+    if (!album) return;
     if (!album.photos.length) {
-
-      list.innerHTML =
-        '<p class="help">' +
-        "No uploaded photographs yet. " +
-        "The default repository image " +
-        "is being used." +
-        "</p>";
-
+      list.innerHTML = '<p class="help">No uploaded photographs yet. The default repository image is being used.</p>';
       return;
     }
-
-    for (
-      const [index, photo]
-      of album.photos.entries()
-    ) {
-
-      const item =
-        document.createElement(
-          "article"
-        );
-
-      item.className =
-        "photoItem";
-
-      const source =
-        await sourceFor(photo);
-
-      item.innerHTML =
-        (
-          photo.id ===
-          album.coverId
-        )
-          ? '<span class="coverBadge">Cover</span>'
-          : "";
-
-      const image =
-        document.createElement(
-          "img"
-        );
-
-      image.src = source;
-
-      image.alt =
-        photo.name ||
-        "Album photograph";
-
+    for (const [index, photo] of album.photos.entries()) {
+      const item = document.createElement('article');
+      item.className = 'photoItem';
+      if (photo.id === album.coverId) item.innerHTML = '<span class="coverBadge">Cover</span>';
+      const image = document.createElement('img');
+      image.src = await sourceFor(photo);
+      image.alt = photo.name || 'Album photograph';
       item.append(image);
-
-      const actions =
-        document.createElement(
-          "div"
-        );
-
-      actions.className =
-        "photoActions";
-
-      const buttons = [
-
-        [
-          "Cover",
-          () =>
-            setCover(photo.id)
-        ],
-
-        [
-          "←",
-          () =>
-            movePhoto(index, -1)
-        ],
-
-        [
-          "→",
-          () =>
-            movePhoto(index, 1)
-        ],
-
-        [
-          "Remove",
-          () =>
-            removePhoto(photo.id)
-        ]
-
-      ];
-
-      buttons.forEach(
-        ([label, action]) => {
-
-          const button =
-            document.createElement(
-              "button"
-            );
-
-          button.textContent =
-            label;
-
-          button.onclick =
-            action;
-
-          actions.append(button);
-        }
-      );
-
+      const actions = document.createElement('div');
+      actions.className = 'photoActions';
+      [['Cover',() => setCover(photo.id)],['←',() => movePhoto(index,-1)],['→',() => movePhoto(index,1)],['Remove',() => removePhoto(photo.id)]].forEach(([label,action]) => {
+        const button = document.createElement('button');
+        button.textContent = label;
+        button.onclick = action;
+        actions.append(button);
+      });
       item.append(actions);
       list.append(item);
     }
   }
 
-  function syncControls() {
-
-    const album =
-      selectedAlbum();
-
-    $("#albumTitle").value =
-      album.title;
-
-    $("#ratioMode").value =
-      album.ratioMode;
-
-    $("#ratioW").value =
-      album.ratioW;
-
-    $("#ratioH").value =
-      album.ratioH;
-
-    $("#customRatioFields")
-      .style
-      .display =
-        album.ratioMode ===
-        "custom"
-          ? "grid"
-          : "none";
-
-    $("#boxWidth").value =
-      album.width;
-
-    $("#widthValue")
-      .textContent =
-        album.width + "%";
-
-    $("#boxAlign").value =
-      album.align;
-
-    $("#imageFit").value =
-      album.fit;
-
-    $("#boxRadius").value =
-      album.radius;
-
-    $("#radiusValue")
-      .textContent =
-        album.radius + "px";
+  function syncAlbumControls() {
+    const album = selectedAlbum();
+    if (!album) return;
+    $('#albumTitle').value = album.title;
+    $('#albumLabel').value = album.label;
+    $('#ratioMode').value = album.ratioMode;
+    $('#ratioW').value = album.ratioW;
+    $('#ratioH').value = album.ratioH;
+    $('#customRatioFields').style.display = album.ratioMode === 'custom' ? 'grid' : 'none';
+    $('#boxWidth').value = album.width;
+    $('#widthValue').textContent = album.width + '%';
+    $('#boxAlign').value = album.align;
+    $('#imageFit').value = album.fit;
+    $('#boxRadius').value = album.radius;
+    $('#radiusValue').textContent = album.radius + 'px';
+    $('#removeAlbum').disabled = state.albums.length <= 1;
   }
 
-  async function renderStudio() {
-
-    renderAlbumSelector();
-    syncControls();
-    await renderPhotoList();
-  }
-
-  function changeSetting(
-    key,
-    value
-  ) {
-
-    const album =
-      selectedAlbum();
-
+  function changeAlbumSetting(key, value) {
+    const album = selectedAlbum();
+    if (!album) return;
     album[key] = value;
-
-    updateCard(album);
+    updateAlbumCard(album);
+    if (key === 'title') renderAlbumSelector();
     scheduleSave();
   }
 
   async function setCover(id) {
-
-    const album =
-      selectedAlbum();
-
+    const album = selectedAlbum();
     album.coverId = id;
-
-    await updateCard(album);
-
+    await updateAlbumCard(album);
     scheduleSave();
     renderPhotoList();
   }
 
-  async function movePhoto(
-    index,
-    direction
-  ) {
-
-    const album =
-      selectedAlbum();
-
-    const destination =
-      index + direction;
-
-    if (
-      destination < 0 ||
-      destination >=
-        album.photos.length
-    ) {
-      return;
-    }
-
-    [
-      album.photos[index],
-      album.photos[destination]
-    ] = [
-      album.photos[destination],
-      album.photos[index]
-    ];
-
+  async function movePhoto(index, direction) {
+    const album = selectedAlbum();
+    const destination = index + direction;
+    if (destination < 0 || destination >= album.photos.length) return;
+    [album.photos[index], album.photos[destination]] = [album.photos[destination], album.photos[index]];
     scheduleSave();
-
     await renderPhotoList();
-    await updateCard(album);
+    await updateAlbumCard(album);
   }
 
   async function removePhoto(id) {
-
-    const album =
-      selectedAlbum();
-
-    album.photos =
-      album.photos.filter(
-        photo =>
-          photo.id !== id
-      );
-
-    if (
-      album.coverId === id
-    ) {
-
-      album.coverId =
-        album.photos[0]?.id ||
-        null;
-
-    }
-
-    await dbDelete(id)
-      .catch(() => {});
-
-    if (objectUrls.has(id)) {
-
-      URL.revokeObjectURL(
-        objectUrls.get(id)
-      );
-
-      objectUrls.delete(id);
-    }
-
+    const album = selectedAlbum();
+    album.photos = album.photos.filter(photo => photo.id !== id);
+    if (album.coverId === id) album.coverId = album.photos[0]?.id || null;
+    await dbDelete(id).catch(() => {});
+    if (objectUrls.has(id)) { URL.revokeObjectURL(objectUrls.get(id)); objectUrls.delete(id); }
     delete embedded.photos[id];
-
     scheduleSave();
-
     await renderPhotoList();
-    await updateCard(album);
+    await updateAlbumCard(album);
   }
 
-  async function resizeImage(
-    file,
-    maxSide = 2400,
-    quality = .86
-  ) {
+  async function decodeImage(file) {
+    if ('createImageBitmap' in window) {
+      try { return await createImageBitmap(file); } catch (error) {}
+    }
+    return new Promise((resolve, reject) => {
+      const image = new Image();
+      const url = URL.createObjectURL(file);
+      image.onload = () => { URL.revokeObjectURL(url); resolve(image); };
+      image.onerror = error => { URL.revokeObjectURL(url); reject(error); };
+      image.src = url;
+    });
+  }
 
-    const bitmap =
-      await createImageBitmap(file);
-
-    const scale =
-      Math.min(
-        1,
-        maxSide /
-          Math.max(
-            bitmap.width,
-            bitmap.height
-          )
-      );
-
-    const width =
-      Math.max(
-        1,
-        Math.round(
-          bitmap.width *
-          scale
-        )
-      );
-
-    const height =
-      Math.max(
-        1,
-        Math.round(
-          bitmap.height *
-          scale
-        )
-      );
-
-    const canvas =
-      document.createElement(
-        "canvas"
-      );
-
+  async function resizeImage(file, maxSide = 2200, quality = .84) {
+    const decoded = await decodeImage(file);
+    const originalWidth = decoded.width || decoded.naturalWidth;
+    const originalHeight = decoded.height || decoded.naturalHeight;
+    const scale = Math.min(1, maxSide / Math.max(originalWidth, originalHeight));
+    const width = Math.max(1, Math.round(originalWidth * scale));
+    const height = Math.max(1, Math.round(originalHeight * scale));
+    const canvas = document.createElement('canvas');
     canvas.width = width;
     canvas.height = height;
-
-    canvas
-      .getContext(
-        "2d",
-        {
-          alpha: false
-        }
-      )
-      .drawImage(
-        bitmap,
-        0,
-        0,
-        width,
-        height
-      );
-
-    bitmap.close();
-
-    const type =
-      file.type === "image/png"
-        ? "image/webp"
-        : "image/jpeg";
-
-    const blob =
-      await new Promise(
-        resolve =>
-          canvas.toBlob(
-            resolve,
-            type,
-            quality
-          )
-      );
-
-    return {
-      blob,
-      width,
-      height
-    };
+    canvas.getContext('2d', {alpha:false}).drawImage(decoded, 0, 0, width, height);
+    if (decoded.close) decoded.close();
+    const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg', quality));
+    if (!blob) throw new Error('Image conversion failed.');
+    return {blob,width,height};
   }
 
   async function addPhotos(files) {
-
-    const album =
-      selectedAlbum();
-
-    const status =
-      $("#uploadStatus");
-
-    status.textContent =
-      "Preparing photographs…";
-
+    const album = selectedAlbum();
+    const status = $('#uploadStatus');
+    status.textContent = 'Preparing photographs…';
     let completed = 0;
-
     for (const file of files) {
-
-      if (
-        !file.type.startsWith(
-          "image/"
-        )
-      ) {
-        continue;
-      }
-
+      if (!file.type.startsWith('image/')) continue;
       try {
-
-        const processed =
-          await resizeImage(file);
-
+        const processed = await resizeImage(file);
         const id = uid();
-
-        await dbPut({
-
-          id,
-
-          blob:
-            processed.blob,
-
-          name:
-            file.name
-
-        });
-
-        album.photos.push({
-
-          id,
-
-          name:
-            file.name,
-
-          width:
-            processed.width,
-
-          height:
-            processed.height
-
-        });
-
-        if (!album.coverId) {
-          album.coverId = id;
-        }
-
+        await dbPut({id,blob:processed.blob,name:file.name});
+        album.photos.push({id,name:file.name,width:processed.width,height:processed.height});
+        if (!album.coverId) album.coverId = id;
         completed++;
-
-        status.textContent =
-          "Added " +
-          completed +
-          " of " +
-          files.length +
-          "…";
-
-      } catch (error) {
-
-        console.error(error);
-
-      }
+        status.textContent = 'Added ' + completed + ' of ' + files.length + '…';
+      } catch (error) { console.error(error); }
     }
-
-    status.textContent =
-      completed
-        ? (
-          completed +
-          " photograph" +
-          (
-            completed === 1
-              ? ""
-              : "s"
-          ) +
-          " added."
-        )
-        : "No photographs were added.";
-
+    status.textContent = completed ? completed + ' photograph' + (completed === 1 ? '' : 's') + ' added.' : 'No photographs were added.';
     scheduleSave();
-
     await renderPhotoList();
-    await updateCard(album);
+    await updateAlbumCard(album);
+  }
+
+  function addAlbum() {
+    const title = prompt('Name of the new category:', 'New Story');
+    if (!title?.trim()) return;
+    const id = 'album-' + uid();
+    state.albums.push({id,title:title.trim(),label:'Open album',fallback:'/images/portrait.jpg',photos:[],coverId:null,ratioMode:'original',ratioW:4,ratioH:5,width:100,align:'center',fit:'cover',radius:0});
+    selectedAlbumId = id;
+    scheduleSave();
+    renderAlbums();
+    renderAlbumSelector();
+    syncAlbumControls();
+    renderPhotoList();
+  }
+
+  async function removeAlbum() {
+    if (state.albums.length <= 1) return;
+    const album = selectedAlbum();
+    if (!confirm('Remove the category “' + album.title + '” and its photographs from this browser?')) return;
+    for (const photo of album.photos) await dbDelete(photo.id).catch(() => {});
+    state.albums = state.albums.filter(item => item.id !== album.id);
+    selectedAlbumId = state.albums[0].id;
+    scheduleSave();
+    renderAlbums();
+    renderAlbumSelector();
+    syncAlbumControls();
+    renderPhotoList();
   }
 
   function resetSelectedAlbum() {
-
-    const id =
-      selectedAlbumId;
-
-    const fresh =
-      clone(
-        defaultState.albums.find(
-          album =>
-            album.id === id
-        )
-      );
-
-    const old =
-      selectedAlbum();
-
-    old.photos.forEach(
-      photo =>
-        dbDelete(photo.id)
-          .catch(() => {})
-    );
-
-    const index =
-      state.albums.findIndex(
-        album =>
-          album.id === id
-      );
-
-    state.albums[index] =
-      fresh;
-
+    const album = selectedAlbum();
+    const index = state.albums.findIndex(item => item.id === album.id);
+    const defaultAlbum = defaultState.albums.find(item => item.id === album.id);
+    const preservedPhotos = album.photos;
+    const preservedCover = album.coverId;
+    state.albums[index] = defaultAlbum ? {...clone(defaultAlbum),photos:preservedPhotos,coverId:preservedCover} : {...album,label:'Open album',ratioMode:'original',ratioW:4,ratioH:5,width:100,align:'center',fit:'cover',radius:0};
     scheduleSave();
-
     renderAlbums();
-    renderStudio();
+    renderAlbumSelector();
+    syncAlbumControls();
+  }
+
+  async function syncMediaControls() {
+    const media = state.media[selectedMediaKey];
+    $('#mediaSelect').value = selectedMediaKey;
+    $('#mediaFit').value = media.fit;
+    $('#mediaX').value = media.x;
+    $('#mediaY').value = media.y;
+    $('#mediaZoom').value = media.zoom;
+    $('#mediaXValue').textContent = media.x + '%';
+    $('#mediaYValue').textContent = media.y + '%';
+    $('#mediaZoomValue').textContent = media.zoom + '%';
+    const preview = $('#mediaPreview img');
+    preview.src = media.id ? (await sourceFor(media) || media.fallback) : media.fallback;
+    preview.style.objectFit = media.fit;
+    preview.style.objectPosition = media.x + '% ' + media.y + '%';
+    preview.style.transform = 'scale(' + (media.zoom / 100) + ')';
+  }
+
+  async function changeMediaSetting(key, value) {
+    state.media[selectedMediaKey][key] = value;
+    await applyMedia(selectedMediaKey);
+    await syncMediaControls();
+    scheduleSave();
+    updateScrollEffect();
+  }
+
+  async function replaceMedia(file) {
+    const status = $('#mediaStatus');
+    status.textContent = 'Preparing picture…';
+    try {
+      const processed = await resizeImage(file, 2600, .86);
+      const oldId = state.media[selectedMediaKey].id;
+      const id = uid();
+      await dbPut({id,blob:processed.blob,name:file.name});
+      state.media[selectedMediaKey] = {...state.media[selectedMediaKey],id,name:file.name,width:processed.width,height:processed.height};
+      if (oldId) await dbDelete(oldId).catch(() => {});
+      status.textContent = 'Picture replaced.';
+      scheduleSave();
+      await applyMedia(selectedMediaKey);
+      await syncMediaControls();
+    } catch (error) {
+      console.error(error);
+      status.textContent = 'The picture could not be added.';
+    }
+  }
+
+  async function restoreMedia() {
+    const media = state.media[selectedMediaKey];
+    if (media.id) await dbDelete(media.id).catch(() => {});
+    const fresh = clone(defaultState.media[selectedMediaKey]);
+    state.media[selectedMediaKey] = fresh;
+    scheduleSave();
+    await applyMedia(selectedMediaKey);
+    await syncMediaControls();
+  }
+
+  function clearLayoutOutline() {
+    $$('.layoutTargetOutline').forEach(element => element.classList.remove('layoutTargetOutline'));
+  }
+
+  function showLayoutTarget() {
+    clearLayoutOutline();
+    const element = document.querySelector('[data-layout-key="' + selectedLayoutKey + '"]');
+    if (!element) return;
+    element.classList.add('layoutTargetOutline');
+    element.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+
+  function syncLayoutControls() {
+    const setting = state.layout[selectedLayoutKey];
+    $('#layoutTarget').value = selectedLayoutKey;
+    $('#layoutX').value = setting.x;
+    $('#layoutY').value = setting.y;
+    $('#layoutScale').value = setting.scale;
+    $('#layoutWidth').value = setting.width;
+    $('#layoutXValue').textContent = setting.x + 'px';
+    $('#layoutYValue').textContent = setting.y + 'px';
+    $('#layoutScaleValue').textContent = setting.scale + '%';
+    $('#layoutWidthValue').textContent = setting.width + '%';
+  }
+
+  function changeLayoutSetting(key, value) {
+    state.layout[selectedLayoutKey][key] = Number(value);
+    applyLayout(selectedLayoutKey);
+    syncLayoutControls();
+    scheduleSave();
+    updateScrollEffect();
+  }
+
+  function resetLayoutTarget() {
+    state.layout[selectedLayoutKey] = clone(defaultState.layout[selectedLayoutKey]);
+    applyLayout(selectedLayoutKey);
+    syncLayoutControls();
+    scheduleSave();
+    updateScrollEffect();
+  }
+
+  function resetAllLayout() {
+    state.layout = clone(defaultState.layout);
+    applyAllLayout();
+    syncLayoutControls();
+    scheduleSave();
+    updateScrollEffect();
   }
 
   function blobToDataURL(blob) {
-
-    return new Promise(
-      (resolve, reject) => {
-
-        const reader =
-          new FileReader();
-
-        reader.onload = () =>
-          resolve(reader.result);
-
-        reader.onerror = () =>
-          reject(reader.error);
-
-        reader.readAsDataURL(blob);
-
-      }
-    );
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = () => reject(reader.error);
+      reader.readAsDataURL(blob);
+    });
   }
 
   async function collectExportPhotos() {
-
     const exported = {};
-
-    for (
-      const album
-      of state.albums
-    ) {
-
-      for (
-        const photo
-        of album.photos
-      ) {
-
-        if (exported[photo.id]) {
-          continue;
-        }
-
-        if (
-          embedded.photos?.[
-            photo.id
-          ]
-        ) {
-
-          exported[photo.id] =
-            embedded.photos[
-              photo.id
-            ];
-
-          continue;
-        }
-
-        const record =
-          await dbGet(photo.id)
-            .catch(() => null);
-
-        if (record?.blob) {
-
-          exported[photo.id] =
-            await blobToDataURL(
-              record.blob
-            );
-
-        }
-      }
+    const records = [];
+    state.albums.forEach(album => records.push(...album.photos));
+    Object.values(state.media).forEach(media => { if (media.id) records.push(media); });
+    for (const photo of records) {
+      if (!photo?.id || exported[photo.id]) continue;
+      if (embedded.photos?.[photo.id]) { exported[photo.id] = embedded.photos[photo.id]; continue; }
+      const record = await dbGet(photo.id).catch(() => null);
+      if (record?.blob) exported[photo.id] = await blobToDataURL(record.blob);
     }
-
     return exported;
   }
 
   async function downloadPublishable() {
-
-    const button =
-      $("#downloadSite");
-
-    const oldText =
-      button.textContent;
-
-    button.textContent =
-      "Preparing…";
-
+    const button = $('#downloadSite');
+    const oldText = button.textContent;
+    button.textContent = 'Preparing…';
     button.disabled = true;
-
     try {
-
-      const payload = {
-
-        version: 1,
-
-        state:
-          clone(state),
-
-        photos:
-          await collectExportPhotos()
-
-      };
-
-      const dataNode =
-        $("#embeddedData");
-
-      const previous =
-        dataNode.textContent;
-
-      dataNode.textContent =
-        JSON.stringify(payload)
-          .replace(
-            /<\//g,
-            "<\\/"
-          );
-
-      const studioWasOpen =
-        $("#studio")
-          .classList
-          .contains("open");
-
-      $("#studio")
-        .classList
-        .remove("open");
-
-      $("#login")
-        .classList
-        .remove("open");
-
-      document.body
-        .classList
-        .remove("lock");
-
-      const html =
-        "<!doctype html>\n" +
-        document.documentElement
-          .outerHTML;
-
-      dataNode.textContent =
-        previous;
-
-      if (studioWasOpen) {
-
-        $("#studio")
-          .classList
-          .add("open");
-
-        document.body
-          .classList
-          .add("lock");
-
-      }
-
-      const blob =
-        new Blob(
-          [html],
-          {
-            type: "text/html"
-          }
-        );
-
-      const url =
-        URL.createObjectURL(blob);
-
-      const link =
-        document.createElement("a");
-
+      state.savedAt = Date.now();
+      const payload = {version:2,state:clone(state),photos:await collectExportPhotos()};
+      const dataNode = $('#embeddedData');
+      const previous = dataNode.textContent;
+      dataNode.textContent = JSON.stringify(payload).replace(/<\//g, '<\\/');
+      const studioWasOpen = $('#studio').classList.contains('open');
+      const loginWasOpen = $('#login').classList.contains('open');
+      const ownerWasSet = document.body.classList.contains('owner');
+      $('#studio').classList.remove('open');
+      $('#login').classList.remove('open');
+      document.body.classList.remove('lock','owner');
+      clearLayoutOutline();
+      const html = '<!doctype html>\n' + document.documentElement.outerHTML;
+      dataNode.textContent = previous;
+      if (studioWasOpen) { $('#studio').classList.add('open'); document.body.classList.add('lock'); }
+      if (loginWasOpen) $('#login').classList.add('open');
+      if (ownerWasSet) document.body.classList.add('owner');
+      const blob = new Blob([html], {type:'text/html'});
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
       link.href = url;
-      link.download = "index.html";
-
+      link.download = 'index.html';
       link.click();
-
-      setTimeout(
-        () =>
-          URL.revokeObjectURL(url),
-        3000
-      );
-
+      setTimeout(() => URL.revokeObjectURL(url), 3000);
     } catch (error) {
-
-      alert(
-        "The website could not be prepared. " +
-        "Try fewer or smaller photographs."
-      );
-
+      console.error(error);
+      alert('The website could not be prepared. Try using fewer or smaller photographs.');
     } finally {
-
-      button.textContent =
-        oldText;
-
+      button.textContent = oldText;
       button.disabled = false;
-
     }
   }
 
-  $("#year").textContent =
-    new Date().getFullYear();
+  async function resetEverything() {
+    if (!confirm('Reset all text, animation, albums, pictures and layout changes in this browser?')) return;
+    const photoIds = [];
+    state.albums.forEach(album => album.photos.forEach(photo => photoIds.push(photo.id)));
+    Object.values(state.media).forEach(media => { if (media.id) photoIds.push(media.id); });
+    for (const id of photoIds) await dbDelete(id).catch(() => {});
+    state = clone(defaultState);
+    selectedAlbumId = state.albums[0].id;
+    selectedMediaKey = 'hero';
+    selectedLayoutKey = 'heroMast';
+    localStorage.removeItem(STORE_KEY);
+    await renderAll();
+    renderStudio();
+  }
 
-  $("#closeViewer").onclick =
-    closeViewer;
+  async function renderAll() {
+    applyText();
+    applyAllLayout();
+    await applyAllMedia();
+    await renderAlbums();
+  }
 
-  $("#viewer")
-    .addEventListener(
-      "click",
-      event => {
+  $('#year').textContent = new Date().getFullYear();
+  $('#closeViewer').onclick = closeViewer;
+  $('#openStudio').onclick = requestStudio;
+  $('#cancelLogin').onclick = () => $('#login').classList.remove('open');
+  $('#loginButton').onclick = login;
+  $('#password').addEventListener('keydown', event => { if (event.key === 'Enter') login(); });
+  $('#closeStudio').onclick = closeStudio;
+  $('#downloadSite').onclick = downloadPublishable;
+  $('#resetEverything').onclick = resetEverything;
+  $('#viewer').addEventListener('click', event => { if (event.target === $('#viewer')) closeViewer(); });
 
-        if (
-          event.target ===
-          $("#viewer")
-        ) {
+  $$('#studioTabs button').forEach(button => button.onclick = () => switchTab(button.dataset.tab));
+  $$('[data-text-field]').forEach(input => input.addEventListener('input', event => {
+    state.text[event.target.dataset.textField] = event.target.value;
+    applyText();
+    scheduleSave();
+  }));
 
-          closeViewer();
+  $('#animationPreset').onchange = event => {
+    const values = presetValues(event.target.value);
+    state.animation.preset = event.target.value;
+    if (values) Object.assign(state.animation, values);
+    syncAnimationControls();
+    scheduleSave();
+    updateScrollEffect();
+  };
+  $('#animLift').oninput = event => changeAnimation('lift', event.target.value);
+  $('#animStartScale').oninput = event => changeAnimation('startScale', event.target.value);
+  $('#animOpacity').oninput = event => changeAnimation('startOpacity', event.target.value);
+  $('#animImageZoom').oninput = event => changeAnimation('imageZoom', event.target.value);
+  $('#heroScrollZoom').oninput = event => changeAnimation('heroScrollZoom', event.target.value);
+  $('#heroTextMove').oninput = event => changeAnimation('heroTextMove', event.target.value);
+  $('#previewAnimation').onclick = () => { closeStudio(); scrollTo({top:Math.max(0,$('#stories').offsetTop - innerHeight * .35),behavior:'smooth'}); };
+  $('#resetAnimation').onclick = () => { state.animation = clone(defaultState.animation); syncAnimationControls(); scheduleSave(); updateScrollEffect(); };
 
-        }
-      }
-    );
+  $('#photoInput').onchange = event => { addPhotos([...event.target.files]); event.target.value = ''; };
+  $('#albumTitle').oninput = event => changeAlbumSetting('title', event.target.value.trim() || 'Untitled category');
+  $('#albumLabel').oninput = event => changeAlbumSetting('label', event.target.value.trim() || 'Open album');
+  $('#ratioMode').onchange = event => { changeAlbumSetting('ratioMode', event.target.value); $('#customRatioFields').style.display = event.target.value === 'custom' ? 'grid' : 'none'; };
+  $('#ratioW').oninput = event => changeAlbumSetting('ratioW', Math.max(1, Number(event.target.value) || 1));
+  $('#ratioH').oninput = event => changeAlbumSetting('ratioH', Math.max(1, Number(event.target.value) || 1));
+  $('#boxWidth').oninput = event => { $('#widthValue').textContent = event.target.value + '%'; changeAlbumSetting('width', Number(event.target.value)); };
+  $('#boxAlign').onchange = event => changeAlbumSetting('align', event.target.value);
+  $('#imageFit').onchange = event => changeAlbumSetting('fit', event.target.value);
+  $('#boxRadius').oninput = event => { $('#radiusValue').textContent = event.target.value + 'px'; changeAlbumSetting('radius', Number(event.target.value)); };
+  $('#addAlbum').onclick = addAlbum;
+  $('#removeAlbum').onclick = removeAlbum;
+  $('#resetAlbum').onclick = resetSelectedAlbum;
 
-  $("#openStudio").onclick =
-    requestStudio;
+  $('#mediaSelect').onchange = event => { selectedMediaKey = event.target.value; syncMediaControls(); };
+  $('#mediaInput').onchange = event => { const file = event.target.files[0]; if (file) replaceMedia(file); event.target.value = ''; };
+  $('#mediaFit').onchange = event => changeMediaSetting('fit', event.target.value);
+  $('#mediaX').oninput = event => changeMediaSetting('x', Number(event.target.value));
+  $('#mediaY').oninput = event => changeMediaSetting('y', Number(event.target.value));
+  $('#mediaZoom').oninput = event => changeMediaSetting('zoom', Number(event.target.value));
+  $('#restoreMedia').onclick = restoreMedia;
 
-  $("#cancelLogin").onclick =
-    () =>
-      $("#login")
-        .classList
-        .remove("open");
+  $('#layoutTarget').onchange = event => { selectedLayoutKey = event.target.value; syncLayoutControls(); showLayoutTarget(); };
+  $('#layoutX').oninput = event => changeLayoutSetting('x', event.target.value);
+  $('#layoutY').oninput = event => changeLayoutSetting('y', event.target.value);
+  $('#layoutScale').oninput = event => changeLayoutSetting('scale', event.target.value);
+  $('#layoutWidth').oninput = event => changeLayoutSetting('width', event.target.value);
+  $('#resetLayoutTarget').onclick = resetLayoutTarget;
+  $('#showLayoutTarget').onclick = showLayoutTarget;
+  $('#resetLayoutAll').onclick = resetAllLayout;
 
-  $("#loginButton").onclick =
-    login;
-
-  $("#password")
-    .addEventListener(
-      "keydown",
-      event => {
-
-        if (
-          event.key ===
-          "Enter"
-        ) {
-
-          login();
-
-        }
-      }
-    );
-
-  $("#closeStudio").onclick =
-    closeStudio;
-
-  $("#downloadSite").onclick =
-    downloadPublishable;
-
-  $("#photoInput").onchange =
-    event => {
-
-      addPhotos([
-        ...event.target.files
-      ]);
-
-      event.target.value = "";
-
-    };
-
-  $("#albumTitle").oninput =
-    event =>
-      changeSetting(
-        "title",
-        event.target.value.trim() ||
-          "Untitled Album"
-      );
-
-  $("#ratioMode").onchange =
-    event => {
-
-      changeSetting(
-        "ratioMode",
-        event.target.value
-      );
-
-      $("#customRatioFields")
-        .style
-        .display =
-          event.target.value ===
-          "custom"
-            ? "grid"
-            : "none";
-
-    };
-
-  $("#ratioW").oninput =
-    event =>
-      changeSetting(
-        "ratioW",
-        Math.max(
-          1,
-          Number(
-            event.target.value
-          ) || 1
-        )
-      );
-
-  $("#ratioH").oninput =
-    event =>
-      changeSetting(
-        "ratioH",
-        Math.max(
-          1,
-          Number(
-            event.target.value
-          ) || 1
-        )
-      );
-
-  $("#boxWidth").oninput =
-    event => {
-
-      $("#widthValue")
-        .textContent =
-          event.target.value +
-          "%";
-
-      changeSetting(
-        "width",
-        Number(
-          event.target.value
-        )
-      );
-
-    };
-
-  $("#boxAlign").onchange =
-    event =>
-      changeSetting(
-        "align",
-        event.target.value
-      );
-
-  $("#imageFit").onchange =
-    event =>
-      changeSetting(
-        "fit",
-        event.target.value
-      );
-
-  $("#boxRadius").oninput =
-    event => {
-
-      $("#radiusValue")
-        .textContent =
-          event.target.value +
-          "px";
-
-      changeSetting(
-        "radius",
-        Number(
-          event.target.value
-        )
-      );
-
-    };
-
-  $("#resetAlbum").onclick =
-    () => {
-
-      const confirmed =
-        confirm(
-          "Reset this album and remove " +
-          "its uploaded photographs " +
-          "from this browser?"
-        );
-
-      if (confirmed) {
-        resetSelectedAlbum();
-      }
-
-    };
-
-  addEventListener(
-    "scroll",
-    onScroll,
-    {
-      passive: true
-    }
-  );
-
-  addEventListener(
-    "resize",
-    onScroll,
-    {
-      passive: true
-    }
-  );
+  addEventListener('scroll', onScroll, {passive:true});
+  addEventListener('resize', onScroll, {passive:true});
 
   if (isOwner()) {
-
-    document.body
-      .classList
-      .add("owner");
-
-    const customize =
-      new URLSearchParams(
-        location.search
-      ).get("customize");
-
-    if (
-      customize === "true"
-    ) {
-
-      setTimeout(
-        requestStudio,
-        250
-      );
-
-    }
+    document.body.classList.add('owner');
+    if (new URLSearchParams(location.search).get('customize') === 'true') setTimeout(requestStudio, 250);
   }
 
-  renderAlbums();
+  renderAll();
   onScroll();
-
 })();
 </script>
-
 </body>
 </html>
